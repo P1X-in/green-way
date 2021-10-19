@@ -1,3 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sm_terrain.glb" type="PackedScene" id=1]
 
 [node name="map" type="Spatial"]
+
+[node name="sm_terrain" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70172, -0.0648017, -0.160049 )

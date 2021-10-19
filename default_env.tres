@@ -1,16 +1,20 @@
 [gd_resource type="Environment" load_steps=3 format=2]
 
-[ext_resource path="res://assets/kloppenheim_03_4k.hdr" type="Texture" id=1]
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/kloppenheim_03_4k.hdr-9393188a22828feb8b70131e4dd3d668.stex"
 
 [sub_resource type="PanoramaSky" id=1]
-panorama = ExtResource( 1 )
+radiance_size = 3
+panorama = SubResource( 2 )
 
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
-background_sky_custom_fov = 70.0
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_sky_contribution = 0.2
+fog_enabled = true
+fog_color = Color( 0.6, 0.65098, 0.654902, 1 )
 tonemap_mode = 3
 tonemap_white = 4.0
 ss_reflections_enabled = true
