@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="GreenWay"
+run/main_scene="res://scenes/map/map.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -126,4 +127,9 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/shadows/filter_mode=2
+quality/filters/use_nearest_mipmap_filter=true
+quality/voxel_cone_tracing/high_quality=true
+quality/filters/msaa=2
+quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"

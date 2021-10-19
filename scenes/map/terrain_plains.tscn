@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/M_VectorColor.material" type="Material" id=1]
+[ext_resource path="res://assets/SM_Terrain_Plains.fbx" type="PackedScene" id=2]
+
+[node name="sm_terrain_plains" instance=ExtResource( 2 )]
+
+[node name="SM_Terrain_Plains" parent="RootNode" index="0"]
+material/0 = ExtResource( 1 )
