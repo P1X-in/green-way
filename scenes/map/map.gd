@@ -10,7 +10,7 @@ onready var mouse_layer = $"/root/MouseLayer"
 var tile_box_space_size
 var tile_box_position = Vector2(0, 0)
 
-var templates = null #preload("res://scenes/map/templates.gd").new()
+var templates = preload("res://scenes/map/templates.gd").new()
 var model = preload("res://scenes/map/model.gd").new()
 var builder = preload("res://scenes/map/builder.gd").new(self)
 var loader = preload("res://scenes/map/loader.gd").new(self)
@@ -65,10 +65,6 @@ func world_to_map(position):
     tile_position.y = (camera_position_z - (camera_position_z % self.TILE_SIZE)) / self.TILE_SIZE
 
     return tile_position
-
-
-func set_tile_box_side(side):
-    self.tile_box.set_mesh_material(self.templates.get_side_material(side))
 
 func show_tile_box():
     self.tile_box.show()
