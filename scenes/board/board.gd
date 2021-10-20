@@ -162,12 +162,12 @@ func should_connect_neighbour(tile, neighbour_key, value):
 func clear_road(position):
 	var tile = self.map.model.get_tile(position)
 
-    if tile.ground.is_present():
-        tile.ground.clear()
-        self.audio.play("destroy_road")
-        self.fix_neighbouring_roads(tile)
-        self.paths.refresh_all_industrial_paths()
-        self.dispatcher.recall_trucks(tile)
-    else:
-        self.audio.play("click")
+	if tile.ground.is_present():
+		tile.ground.clear()
+		self.audio.play("destroy_road")
+		self.fix_neighbouring_roads(tile)
+		self.paths.refresh_all_industrial_paths()
+		self.dispatcher.recall_trucks(tile)
+	else:
+		self.audio.play("click")
 

@@ -20,6 +20,14 @@ func _ready():
 	self.register_sample("build_road", preload("res://assets/audio/hit_16.wav"))
 	self.register_sample("haha", preload("res://assets/audio/haha_33.wav"))
 	self.register_sample("close", preload("res://assets/audio/jeb_32.wav"))
+	self.register_sample("dog_0", preload("res://assets/audio/woof_34.wav"))
+	self.register_sample("dog_1", preload("res://assets/audio/woof_35.wav"))
+	self.register_sample("dog_2", preload("res://assets/audio/woof_36.wav"))
+	self.register_sample("dog_3", preload("res://assets/audio/woof_37.wav"))
+	self.register_sample("dog_4", preload("res://assets/audio/woof_38.wav"))
+	self.register_sample("dog_5", preload("res://assets/audio/woof_39.wav"))
+	self.register_sample("dog_6", preload("res://assets/audio/woof_40.wav"))
+	self.register_sample("dog_7", preload("res://assets/audio/woof_41.wav"))
 
 	self.register_track("menu", preload("res://assets/audio/soundtrack/soundtrack.ogg"))
 

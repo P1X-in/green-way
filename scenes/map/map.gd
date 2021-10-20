@@ -94,11 +94,11 @@ func snap_camera_to_position(destination):
 	self.camera.set_camera_position(destination * self.TILE_SIZE + Vector2(0.5, 0.5) * self.TILE_SIZE)
 
 func anchor_truck(truck, position):
-    var world_position = self.map_to_world(position)
-    world_position.y = self.GROUND_HEIGHT
-    self.tiles_units_anchor.add_child(truck)
-    truck.set_translation(world_position)
+	var world_position = self.map_to_world(position)
+	world_position.y = self.GROUND_HEIGHT
+	self.tiles_units_anchor.add_child(truck)
+	truck.set_translation(world_position)
 
 
 func detach_truck(truck):
-    self.tiles_units_anchor.remove_child(truck)
+	self.tiles_units_anchor.remove_child(truck)

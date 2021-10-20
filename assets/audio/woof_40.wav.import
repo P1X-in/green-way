@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/woof_40.wav-443c2c8d7a81424045891dde46b1cdfa.sample"
+
+[deps]
+
+source_file="res://assets/audio/woof_40.wav"
+dest_files=[ "res://.import/woof_40.wav-443c2c8d7a81424045891dde46b1cdfa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
