@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/map/terrain_plains.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/tiles/tile_road_straight.tscn" type="PackedScene" id=2]
@@ -9,8 +9,12 @@
 [ext_resource path="res://scenes/actors/trashbin_yellow.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/actors/trashbin_blue.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/actors/trashbin_red.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/actors/icon_asterix.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/camera.tscn" type="PackedScene" id=11]
 [ext_resource path="res://default_env.tres" type="Environment" id=12]
+[ext_resource path="res://scenes/tiles/tile_road_bend.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/tiles/tile_road_t.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/tiles/tile_road_crossroad.tscn" type="PackedScene" id=15]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -128, -10, -128, 256, 20, 256 )
@@ -26,6 +30,7 @@ propagation = 0.7
 script = ExtResource( 4 )
 
 [node name="plain_background" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.310533, -0.259115, 5.93038 )
 
 [node name="tiles" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
@@ -36,21 +41,84 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
 
 [node name="terrain" type="Spatial" parent="tiles"]
 
-[node name="sm_road_straight" parent="tiles/terrain" instance=ExtResource( 2 )]
+[node name="Tile_Road_Straight" parent="tiles/terrain" instance=ExtResource( 2 )]
+
+[node name="Tile_Road_Straight2" parent="tiles/terrain" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
+
+[node name="Tile_Road_Straight3" parent="tiles/terrain" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24 )
+
+[node name="Tile_Road_Straight4" parent="tiles/terrain" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -16 )
+
+[node name="Tile_Road_Straight5" parent="tiles/terrain" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24 )
+
+[node name="Tile_Road_Crossroad" parent="tiles/terrain" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
+
+[node name="Tile_Road_T" parent="tiles/terrain" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16 )
+
+[node name="Tile_Road_T2" parent="tiles/terrain" instance=ExtResource( 14 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 0, -8 )
+
+[node name="Tile_Road_Bend" parent="tiles/terrain" instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 8 )
+
+[node name="Tile_Road_Bend4" parent="tiles/terrain" instance=ExtResource( 13 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -8 )
+
+[node name="Tile_Road_Bend2" parent="tiles/terrain" instance=ExtResource( 13 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -8, 0, 8 )
+
+[node name="Tile_Road_Bend3" parent="tiles/terrain" instance=ExtResource( 13 )]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -8, 0, -16 )
+
+[node name="Tile_Road_Bend5" parent="tiles/terrain" instance=ExtResource( 13 )]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, -32 )
+
+[node name="Tile_Road_Bend6" parent="tiles/terrain" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 8, 0, -32 )
 
 [node name="buildings" type="Spatial" parent="tiles"]
 
 [node name="TrashBIn_Red" parent="tiles/buildings" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56016, 0, -0.115986 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72954, 0, -0.115986 )
 
 [node name="TrashBIn_Yellow" parent="tiles/buildings" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65675, -0.0508575, -0.580739 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.82613, -0.0508575, -0.580739 )
 
 [node name="TrashBin_Green" parent="tiles/buildings" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.64316, -4.76837e-07, 1.85435 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.81253, -4.76837e-07, 1.85435 )
 
 [node name="TrashBin_Blue" parent="tiles/buildings" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6123, 4.76837e-07, 1.73195 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78167, 4.76837e-07, 1.73195 )
+
+[node name="TrashBIn_Red2" parent="tiles/buildings" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81225, 0, -0.593749 )
+
+[node name="SM_Trash_Red" parent="tiles/buildings/TrashBIn_Red2/RootNode/SM_Bin_Red" index="0"]
+visible = false
+
+[node name="TrashBIn_Yellow2" parent="tiles/buildings" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.90884, -0.0508575, -1.0585 )
+
+[node name="SM_Trash_Yellow" parent="tiles/buildings/TrashBIn_Yellow2/RootNode/SM_Bin_Yellow" index="0"]
+visible = false
+
+[node name="TrashBin_Green2" parent="tiles/buildings" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.89525, -4.76837e-07, 1.37659 )
+
+[node name="SM_Trash_Green" parent="tiles/buildings/TrashBin_Green2/RootNode/SM_Bin_Green" index="0"]
+visible = false
+
+[node name="TrashBin_Blue2" parent="tiles/buildings" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.86439, 4.76837e-07, 1.25419 )
+
+[node name="SM_Trash_Blue" parent="tiles/buildings/TrashBin_Blue2/RootNode/SM_Bin_Blue" index="0"]
+visible = false
 
 [node name="tile_box" parent="tiles" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
@@ -83,3 +151,20 @@ directional_shadow_normal_bias = 0.7
 transform = Transform( 0.99998, -0.00203754, 0.00605401, 0.0020147, 0.999991, 0.00377681, -0.00606165, -0.00376453, 0.999975, 0, 8.03332, 0 )
 extents = Vector3( 128, 10, 128 )
 data = SubResource( 1 )
+
+[node name="Icon_Asterix" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.80916, 0, 4.97183 )
+
+[node name="Icon_Asterix2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7942, 0, 6.67679 )
+
+[node name="Icon_Asterix3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.82411, 0, 3.4912 )
+
+[node name="Icon_Asterix4" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74933, 0, 2.02553 )
+
+[editable path="tiles/buildings/TrashBIn_Red2"]
+[editable path="tiles/buildings/TrashBIn_Yellow2"]
+[editable path="tiles/buildings/TrashBin_Green2"]
+[editable path="tiles/buildings/TrashBin_Blue2"]
