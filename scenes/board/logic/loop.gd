@@ -30,7 +30,7 @@ func _loop_tick():
     var industrial_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, self.loop_count * 5 + 5)
 
     home_tile.building.tile.init_thrash_bin(thrash_type)
-	industrial_tile.building.tile.set_type(thrash_type)
+    industrial_tile.building.tile.set_type(thrash_type)
 
 
     self.board.map.model.add_industrial(industrial_tile)
