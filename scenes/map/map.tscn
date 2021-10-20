@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/map/terrain_plains.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/tiles/tile_road_straight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/tiles/roads/tile_road_straight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/markers/tile_box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/map/map.gd" type="Script" id=4]
 [ext_resource path="res://scenes/actors/garbage-truck_blue.tscn" type="PackedScene" id=5]
@@ -12,15 +12,15 @@
 [ext_resource path="res://scenes/actors/icon_asterix.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/camera.tscn" type="PackedScene" id=11]
 [ext_resource path="res://default_env.tres" type="Environment" id=12]
-[ext_resource path="res://scenes/tiles/tile_road_bend.tscn" type="PackedScene" id=13]
-[ext_resource path="res://scenes/tiles/tile_road_t.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/tiles/tile_road_crossroad.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/tiles/roads/tile_road_bend.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/tiles/roads/tile_road_t.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/tiles/roads/tile_road_crossroad.tscn" type="PackedScene" id=15]
 
 [sub_resource type="GIProbeData" id=1]
 bounds = AABB( -128, -10, -128, 256, 20, 256 )
 cell_size = 2.0
 to_cell_xform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 64, 5, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 16, 128, 1, 0, 0, 0, -1018691584, 0, 0, 0, 0, 0, 26, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 8, 128, 16, 128, 1, 0, 0, 1110441984, 1123155968, 1065353216, 1065353216, 1094713344, 1123155968, 0, 1065353216, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
