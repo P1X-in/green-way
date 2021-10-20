@@ -43,10 +43,11 @@ func _loop_tick():
 
 func _garbage_tick():
     print("garbage tick")
+    var result
 
     for house in self.board.map.model.get_house_building_tiles():
-        if randi() % 3 == 0:
-            house.building.tile.plant_thrash()
+        result = house.building.tile.plant_thrash()
+        if result:
             self.board.audio.play("garbage_dump")
             print("garbage planted")
 

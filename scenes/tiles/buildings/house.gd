@@ -22,9 +22,13 @@ func init_thrash_bin(type):
         $SM_TrashBin_Blue.visible = true
     if type == self.THRASH_GLASS:
         $SM_TrashBin_Green.visible = true
+    self.plant_thrash()
 
 
 func plant_thrash():
+    if not self.has_thrash and self.assigned_truck != null:
+        return false
+
     self.has_thrash = true
     self.thrash_level += 1
 
@@ -37,7 +41,7 @@ func plant_thrash():
             $SM_TrashBin_Blue.visible = true
         if self.type == self.THRASH_GLASS:
             $SM_TrashBin_Green.visible = true
-    
+
     if self.thrash_level > 1:
         if self.type == self.THRASH_METAL:
             $"SM_TrashBin_Red/RootNode/SM_Bin_Red/SM_Trash_Red".visible = true
@@ -50,6 +54,8 @@ func plant_thrash():
 
     if self.thrash_level > 2:
         $Exclamation.visible = true
+
+    return true
 
 func empty_thrash():
     self.has_thrash = false
