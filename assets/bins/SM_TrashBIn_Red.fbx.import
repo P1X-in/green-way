@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SM_TrashBIn_Red.fbx-78468bd845984fe9bf3b6746dcf49253.scn"
+path="res://.import/SM_TrashBin_Red.fbx-32420203e82b1e86ef1312b5273fd4d1.scn"
 
 [deps]
 
-source_file="res://assets/bins/SM_TrashBIn_Red.fbx"
-dest_files=[ "res://.import/SM_TrashBIn_Red.fbx-78468bd845984fe9bf3b6746dcf49253.scn" ]
+source_file="res://assets/bins/SM_TrashBin_Red.fbx"
+dest_files=[ "res://.import/SM_TrashBin_Red.fbx-32420203e82b1e86ef1312b5273fd4d1.scn" ]
 
 [params]
 

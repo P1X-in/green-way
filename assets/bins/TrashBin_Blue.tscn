@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/materials/M_VectorColorMate.material" type="Material" id=1]
-[ext_resource path="res://assets/bins/SM_TrashBIn_Blue.fbx" type="PackedScene" id=2]
+[ext_resource path="res://assets/bins/SM_TrashBin_Blue.fbx" type="PackedScene" id=2]
 [ext_resource path="res://assets/materials/M_VectorColor.material" type="Material" id=3]
 
-[node name="TrashBin_Blue" instance=ExtResource( 2 )]
+[node name="SM_TrashBin_Blue" instance=ExtResource( 2 )]
 
 [node name="SM_Bin_Blue" parent="RootNode" index="0"]
 material/0 = ExtResource( 1 )

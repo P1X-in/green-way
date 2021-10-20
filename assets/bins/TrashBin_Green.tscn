@@ -2,9 +2,9 @@
 
 [ext_resource path="res://assets/materials/M_VectorColor.material" type="Material" id=1]
 [ext_resource path="res://assets/materials/M_VectorColorMate.material" type="Material" id=2]
-[ext_resource path="res://assets/bins/SM_TrashBIn_Green.fbx" type="PackedScene" id=3]
+[ext_resource path="res://assets/bins/SM_TrashBin_Green.fbx" type="PackedScene" id=3]
 
-[node name="TrashBin_Green" instance=ExtResource( 3 )]
+[node name="SM_TrashBIn_Green" instance=ExtResource( 3 )]
 
 [node name="SM_Bin_Green" parent="RootNode" index="0"]
 material/0 = ExtResource( 2 )
