@@ -80,13 +80,13 @@ text = "w84death"
 margin_top = 39.0
 margin_right = 725.0
 margin_bottom = 66.0
-text = "P1X Indie Game Studio // https://p1x.in"
+text = "P1X Indie Game Studio,  https://p1x.in"
 align = 1
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 78.0
 margin_right = 725.0
-margin_bottom = 110.0
+margin_bottom = 121.0
 text = "OK"
 __meta__ = {
 "_edit_use_anchors_": false
