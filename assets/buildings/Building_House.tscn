@@ -5,8 +5,23 @@
 
 [node name="Building_House" instance=ExtResource( 1 )]
 
-[node name="Base" parent="RootNode" index="0"]
+[node name="BaseGrass" parent="RootNode" index="0"]
 material/0 = ExtResource( 2 )
 
-[node name="House" parent="RootNode" index="1"]
+[node name="Bushes" parent="RootNode" index="1"]
+material/0 = ExtResource( 2 )
+
+[node name="Fence" parent="RootNode" index="2"]
+material/0 = ExtResource( 2 )
+
+[node name="House" parent="RootNode" index="3"]
+material/0 = ExtResource( 2 )
+
+[node name="TreeBig" parent="RootNode" index="4"]
+material/0 = ExtResource( 2 )
+
+[node name="TreeSmall" parent="RootNode" index="5"]
+material/0 = ExtResource( 2 )
+
+[node name="TreeSmall001" parent="RootNode" index="6"]
 material/0 = ExtResource( 2 )

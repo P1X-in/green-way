@@ -135,7 +135,6 @@ common/physics_fps=144
 [rendering]
 
 quality/shadows/filter_mode=2
-quality/filters/use_nearest_mipmap_filter=true
 quality/voxel_cone_tracing/high_quality=true
 quality/filters/msaa=2
 quality/filters/use_fxaa=true

@@ -1,28 +1,40 @@
-[gd_resource type="Environment" load_steps=2 format=2]
+[gd_resource type="Environment" load_steps=3 format=2]
 
-[sub_resource type="ProceduralSky" id=1]
-radiance_size = 3
-sky_top_color = Color( 0.796078, 0.878431, 0.92549, 1 )
-sky_horizon_color = Color( 0.894118, 0.854902, 0.54902, 1 )
+[ext_resource path="res://assets/materials/stuttgart_suburbs_2k.hdr" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
 
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
-ambient_light_color = Color( 0.466667, 0.466667, 0.466667, 1 )
-fog_color = Color( 0.658824, 0.658824, 0.658824, 1 )
-fog_depth_begin = 200.0
-fog_depth_end = 500.0
-tonemap_mode = 3
-tonemap_exposure = 0.5
-tonemap_white = 2.0
+ambient_light_color = Color( 0.65098, 0.494118, 0.286275, 1 )
+ambient_light_sky_contribution = 0.6
+fog_enabled = true
+fog_color = Color( 0.670588, 0.721569, 0.54902, 1 )
+fog_depth_begin = 24.0
+fog_depth_end = 64.0
+fog_transmit_enabled = true
+tonemap_mode = 2
+tonemap_exposure = 0.9
+tonemap_white = 1.1
 ss_reflections_enabled = true
 ssao_enabled = true
+ssao_radius = 2.0
+ssao_intensity = 2.0
+ssao_radius2 = 3.0
+ssao_intensity2 = 0.5
+ssao_light_affect = 1.0
 ssao_quality = 2
+ssao_blur = 2
 dof_blur_far_enabled = true
-dof_blur_far_distance = 300.0
-dof_blur_far_transition = 50.0
+dof_blur_far_distance = 32.0
+dof_blur_far_transition = 6.0
 dof_blur_far_quality = 2
-dof_blur_near_distance = 10.0
-dof_blur_near_transition = 5.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 20.0
+dof_blur_near_transition = 6.0
 dof_blur_near_quality = 2
-glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.4
