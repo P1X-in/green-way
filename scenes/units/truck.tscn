@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/cars/GarbageTrack_Green.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/cars/GarbageTrack_Red.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/cars/GarbageTrack_Blue.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/cars/GarbageTrack_Yellow.tscn" type="PackedScene" id=4]
+
+[node name="truck" type="Spatial"]
+
+[node name="GarbageTrack_Blue" parent="." instance=ExtResource( 3 )]
+
+[node name="GarbageTrack_Red" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="GarbageTrack_Green" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="GarbageTrack_Yellow" parent="." instance=ExtResource( 4 )]
+visible = false

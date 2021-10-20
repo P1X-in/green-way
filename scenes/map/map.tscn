@@ -30,9 +30,11 @@ zoom_speed = 60
 move_speed = 40
 camera_max_deg = -35
 camera_distance_min = 35
-camera_distance_max = 150
-tof_camera_distance_max = 200
-aw_camera_distance_max = 200
+camera_distance_max = 110
+tof_camera_distance_min = 35
+tof_camera_distance_max = 110
+aw_camera_distance_min = 35
+aw_camera_distance_max = 110
 camera_space_size = 320
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
