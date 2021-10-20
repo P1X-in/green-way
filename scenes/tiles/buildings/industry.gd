@@ -10,5 +10,5 @@ func set_type(_type):
     self.type = _type
     self.truck.set_type(_type)
 
-func dispatch_truck(destination_tile, path):
-    self.truck.dispatch(destination_tile, path)
+func dispatch_truck(destination_tile, path, directions, return_directions):
+    self.truck.dispatch(destination_tile, path, directions, return_directions)

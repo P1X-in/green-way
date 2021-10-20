@@ -56,8 +56,32 @@ func _dispatch(industrial_tile, house_tile):
     var house = house_tile.building.tile
     var industrial = industrial_tile.building.tile
     var path = self.board.paths.get_path_to_tile(industrial_tile, house_tile)
+    var directions = self._convert_path_to_directions(path)
 
-    industrial.dispatch_truck(house_tile, path)
+    path.invert()
+
+    var return_directions = self._convert_path_to_directions(path)
+
+    industrial.dispatch_truck(house_tile, path, directions, return_directions)
 
     house.assigned_truck = industrial.truck
-    print("truck dispatched")
+
+    var spawn_tile = self.board.map.model.tiles[path[1]]
+    self.board.map.anchor_truck(industrial.truck, spawn_tile.position)
+
+func _convert_path_to_directions(path):
+    var directions = []
+    for i in path.size():
+        if i > 0:
+            directions.append(self._get_rotation_to_tile(path[i], path[i-1]))
+        elif i == 0:
+            directions.append(self._get_rotation_to_tile(path[i+1], path[i]))
+
+    directions.invert()
+    return directions
+
+
+func _get_rotation_to_tile(source_key, destination_key):
+    var source_tile = self.board.map.model.tiles[source_key]
+    var destination_tile = self.board.map.model.tiles[destination_key]
+    return source_tile.get_direction_to_neighbour(destination_tile)
