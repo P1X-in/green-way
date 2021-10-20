@@ -67,10 +67,10 @@ func unselect_tile():
     self.selected_tile = null
 
 
-func update_tile_highlight(tile):
+func update_tile_highlight(_tile):
     return
 
-func end_game(winner):
+func end_game(_winner):
     self.map.camera.paused = true
 
 func place_road(position):

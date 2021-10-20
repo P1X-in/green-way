@@ -4,11 +4,11 @@ var map
 func _init(map_scene):
     self.map = map_scene
 
-func save_map_file(filename):
+func save_map_file(_filename):
     #MapManager.save_map_to_file(filename, self.map.model.get_dict())
     return
 
-func load_map_file(filename):
+func load_map_file(_filename):
     #var content = MapManager.get_map_data(filename)
     #if content.empty():
     #    return
