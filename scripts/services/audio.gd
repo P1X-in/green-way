@@ -16,7 +16,7 @@ func _ready():
 	self.register_sample("destroy_road", preload("res://assets/audio/clap_13.wav"))
 	self.register_sample("build_1", preload("res://assets/audio/hammer_hits_23.wav"))
 	self.register_sample("build_2", preload("res://assets/audio/hammer_hits_26.wav"))
-	self.register_sample("build_3", preload("res://assets/audio/hammer_hits_25.wav"))
+	self.register_sample("build_0", preload("res://assets/audio/hammer_hits_25.wav"))
 	self.register_sample("build_road", preload("res://assets/audio/hit_16.wav"))
 	self.register_sample("haha", preload("res://assets/audio/haha_33.wav"))
 	self.register_sample("close", preload("res://assets/audio/jeb_32.wav"))
