@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/tiles/tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://assets/bins/TrashBin_Yellow.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/bins/TrashBin_Red.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/bins/TrashBin_Blue.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/tiles/buildings/house.gd" type="Script" id=8]
 
 [node name="house2" instance=ExtResource( 1 )]
+script = ExtResource( 8 )
 
 [node name="Building_House_2" parent="." index="0" instance=ExtResource( 2 )]
 
