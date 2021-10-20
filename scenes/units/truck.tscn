@@ -41,6 +41,7 @@ script = ExtResource( 5 )
 [node name="mesh_anchor" type="Spatial" parent="."]
 
 [node name="GarbageTrack_Blue" parent="mesh_anchor" instance=ExtResource( 3 )]
+visible = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0 )
 
 [node name="GarbageTrack_Red" parent="mesh_anchor" instance=ExtResource( 2 )]

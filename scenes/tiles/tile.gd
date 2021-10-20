@@ -7,9 +7,9 @@ export var unit_vertical_offset = 0
 var current_rotation = 0
 
 func get_dict():
-    var rotation = self.get_rotation_degrees()
+	var rotation = self.get_rotation_degrees()
 
-    return {
-        "tile" : self.template_name,
-        "rotation" : rotation.y,
-    }
+	return {
+		"tile" : self.template_name,
+		"rotation" : rotation.y,
+	}

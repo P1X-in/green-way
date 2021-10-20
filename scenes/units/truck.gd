@@ -11,6 +11,7 @@ var current_path_index = 0
 
 onready var animations = $"animations"
 onready var audio = $"/root/SimpleAudioLibrary"
+var templates = load("res://scenes/map/templates.gd").new()
 
 #func _ready():
 #    self.move_to_target()
@@ -18,8 +19,17 @@ onready var audio = $"/root/SimpleAudioLibrary"
 func is_truck_free():
 	return target == null
 
+
 func set_type(_type):
 	self.type = _type
+	if _type == self.templates.THRASH_METAL:
+		$"mesh_anchor/GarbageTrack_Red".visible = true
+	if _type == self.templates.THRASH_PLASTIC:
+		$"mesh_anchor/GarbageTrack_Yellow".visible = true
+	if _type == self.templates.THRASH_PAPER:
+		$"mesh_anchor/GarbageTrack_Blue".visible = true
+	if _type == self.templates.THRASH_GLASS:
+		$"mesh_anchor/GarbageTrack_Green".visible = true
 
 func dispatch(destination_tile, _path, _directions, _return_directions):
 	self.target = destination_tile
@@ -44,9 +54,6 @@ func abort():
 	self.has_thrash = false
 	self.get_parent().remove_child(self)
 	self.target = null
-
-
-
 
 
 func move_to_target():
