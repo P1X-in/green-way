@@ -140,4 +140,3 @@ quality/shadows/filter_mode=2
 quality/voxel_cone_tracing/high_quality=true
 quality/filters/msaa=2
 quality/filters/use_fxaa=true
-environment/default_environment="res://default_env.tres"
