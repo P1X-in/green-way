@@ -8,7 +8,7 @@ sky_horizon_color = Color( 0.894118, 0.854902, 0.54902, 1 )
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
-ambient_light_energy = 0.4
+ambient_light_color = Color( 0.466667, 0.466667, 0.466667, 1 )
 fog_color = Color( 0.658824, 0.658824, 0.658824, 1 )
 fog_depth_begin = 200.0
 fog_depth_end = 500.0
@@ -16,7 +16,6 @@ tonemap_mode = 3
 tonemap_exposure = 0.5
 tonemap_white = 2.0
 ss_reflections_enabled = true
-ss_reflections_max_steps = 16
 ssao_enabled = true
 ssao_quality = 2
 dof_blur_far_enabled = true
