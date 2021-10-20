@@ -9,6 +9,9 @@
 [node name="map" type="Spatial"]
 script = ExtResource( 4 )
 
+[node name="Terrain_Plains" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 0, 160 )
+
 [node name="tiles" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
 
@@ -42,6 +45,3 @@ environment = ExtResource( 12 )
 transform = Transform( 0.518929, 0.805738, -0.285481, -0.384389, 0.518248, 0.763979, 0.763517, -0.286715, 0.57865, 24.8979, 28.6066, 1.54649 )
 light_energy = 0.5
 shadow_enabled = true
-
-[node name="Terrain_Plains" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 0, 160 )

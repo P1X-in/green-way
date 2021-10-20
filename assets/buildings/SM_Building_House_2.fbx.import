@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SM_Building_House.fbx-f1b1fceb4f5d116f98119e3feac86af6.scn"
+path="res://.import/SM_Building_House_2.fbx-c83d8cba306c8eb69dd57df865ec8d92.scn"
 
 [deps]
 
-source_file="res://assets/buildings/SM_Building_House.fbx"
-dest_files=[ "res://.import/SM_Building_House.fbx-f1b1fceb4f5d116f98119e3feac86af6.scn" ]
+source_file="res://assets/buildings/SM_Building_House_2.fbx"
+dest_files=[ "res://.import/SM_Building_House_2.fbx-c83d8cba306c8eb69dd57df865ec8d92.scn" ]
 
 [params]
 
@@ -23,7 +23,7 @@ materials/keep_on_reimport=true
 meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
-meshes/light_baking=1
+meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 external_files/store_in_subdir=false
