@@ -10,4 +10,5 @@
 material/0 = ExtResource( 2 )
 
 [node name="SM_Trash_Yellow" parent="RootNode/SM_Bin_Yellow" index="0"]
+visible = false
 material/0 = ExtResource( 1 )
