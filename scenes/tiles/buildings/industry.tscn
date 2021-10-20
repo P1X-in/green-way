@@ -13,6 +13,9 @@ script = ExtResource( 7 )
 
 [node name="Building_Industry" parent="." index="0" instance=ExtResource( 1 )]
 
+[node name="Red" parent="Building_Industry/RootNode" index="1"]
+visible = false
+
 [node name="Green" parent="Building_Industry/RootNode" index="4"]
 visible = false
 
@@ -35,6 +38,7 @@ transform = Transform( 0.981293, 0, -0.192522, 0, 1, 0, 0.192522, 0, 0.981293, -
 transform = Transform( 0.904827, 0, 0.425779, 0, 1, 0, -0.425779, 0, 0.904827, -3.12181, -0.000856221, 0.0511405 )
 
 [node name="Red" type="Spatial" parent="." index="2"]
+visible = false
 
 [node name="SM_TrashBin_Red" parent="Red" index="0" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12181, -0.000856221, 2.73396 )

@@ -37,4 +37,3 @@ func get_template(template):
 	new_tile.template_name = template
 
 	return new_tile
-
