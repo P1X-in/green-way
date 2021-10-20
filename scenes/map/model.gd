@@ -5,6 +5,9 @@ var tile_template = preload("res://scenes/map/tile.gd")
 
 var tiles = {}
 
+var houses = []
+var industrials = []
+
 func _init():
     for x in range(self.SIZE):
         for y in range(self.SIZE):
@@ -49,19 +52,13 @@ func connect_neightbours():
 
 
 func get_industrial_building_tiles():
-    var building_tiles = []
-
-    for tile in self.tiles.values():
-        if tile.has_industrial():
-            building_tiles.append(tile)
-
-    return building_tiles
+    return self.industrials
 
 func get_house_building_tiles():
-    var building_tiles = []
+    return self.houses
 
-    for tile in self.tiles.values():
-        if tile.has_home():
-            building_tiles.append(tile)
+func add_house(house_tile):
+    self.houses.append(house_tile)
 
-    return building_tiles
+func add_industrial(industrial_tile):
+    self.industrials.append(industrial_tile)

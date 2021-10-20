@@ -25,10 +25,14 @@ func _loop_tick():
 		home_tile = self._place_random_building(false, home_template)
 	self._play_building_sound();
 
-	var industrial_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, self.loop_count * 5 + 5)
+    self.board.map.model.add_house(home_tile)
+
+    var industrial_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, self.loop_count * 5 + 5)
 
 	home_tile.building.tile.init_thrash_bin(thrash_type)
 	industrial_tile.building.tile.type = thrash_type
+
+    self.board.map.model.add_industrial(industrial_tile)
 
 	self.board.paths.build_paths_for_industrial_building(industrial_tile)
 
@@ -44,7 +48,6 @@ func _garbage_tick():
 			house.building.tile.plant_thrash()
 			self.board.audio.play("garbage_dump")
 			print("garbage planted")
-
 
 	yield(self.board.get_tree().create_timer(self.GARBAGE_TICK_DURATION), "timeout")
 	self.call_deferred("_garbage_tick")
