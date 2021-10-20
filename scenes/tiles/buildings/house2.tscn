@@ -22,7 +22,7 @@ visible = false
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4, 0 )
 visible = false
 
-[node name="SM_TrashBIn_Green" parent="." index="3" instance=ExtResource( 4 )]
+[node name="SM_TrashBin_Green" parent="." index="3" instance=ExtResource( 4 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4, 0 )
 visible = false
 
@@ -33,3 +33,8 @@ visible = false
 [node name="SM_TrashBin_Yellow" parent="." index="5" instance=ExtResource( 5 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4, 0 )
 visible = false
+
+[editable path="SM_TrashBin_Blue"]
+[editable path="SM_TrashBin_Green"]
+[editable path="SM_TrashBin_Red"]
+[editable path="SM_TrashBin_Yellow"]
