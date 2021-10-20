@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hammer_hits_23.wav-63d904b1649854851e635ee4dae5b580.sample"
+
+[deps]
+
+source_file="res://assets/audio/hammer_hits_23.wav"
+dest_files=[ "res://.import/hammer_hits_23.wav-63d904b1649854851e635ee4dae5b580.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

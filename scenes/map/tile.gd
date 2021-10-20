@@ -78,3 +78,9 @@ func has_neighbouring_building():
         if neighbour.building.is_present():
             return true
     return false
+
+func has_neighbouring_home():
+    for neighbour in self.neighbours.values():
+        if neighbour.building.is_present() and neighbour.building.tile.template_name == "building_house":
+            return true
+    return false
