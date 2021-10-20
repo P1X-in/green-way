@@ -21,7 +21,7 @@ func _ready():
 	self.register_sample("haha", preload("res://assets/audio/haha_33.wav"))
 	self.register_sample("close", preload("res://assets/audio/jeb_32.wav"))
 
-	self.register_track("menu", preload("res://assets/audio/soundtrack/grand_beats_menu_soundtrack.ogg"))
+	self.register_track("menu", preload("res://assets/audio/soundtrack/soundtrack.ogg"))
 
 
 func play(name):

@@ -81,6 +81,23 @@ func has_neighbouring_building():
 
 func has_neighbouring_home():
     for neighbour in self.neighbours.values():
-        if neighbour.building.is_present() and neighbour.building.tile.template_name == "building_house":
+        if neighbour.has_home():
             return true
     return false
+
+func has_industrial():
+    return self.building.is_present() and self.building.tile.template_name == "building_industrial"
+
+func has_home():
+    return self.building.is_present() and self.building.tile.template_name == "building_house"
+
+func cartesian_distance_to(tile):
+    var x_diff = self.position.x - tile.position.x
+    var y_diff = self.position.y - tile.position.y
+
+    if x_diff < 0:
+        x_diff *= -1
+    if y_diff < 0:
+        y_diff *= -1
+
+    return x_diff + y_diff - 1
