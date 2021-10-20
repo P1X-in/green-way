@@ -81,12 +81,12 @@ func end_game(_winner):
     self.map.camera.paused = true
 
 func place_road(position):
+    var tile = self.map.model.get_tile(position)
+
     if tile.ground.is_present():
         return
 
     self.map.builder.place_ground(position, self.map.templates.ROAD_STRAIGHT, 0)
-
-    var tile = self.map.model.get_tile(position)
 
     self.replace_road_tile(tile)
     self.fix_neighbouring_roads(tile)

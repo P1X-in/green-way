@@ -18,8 +18,8 @@ func build_paths_for_industrial_building(building_tile):
     var source_key = self._get_key(building_tile)
 
     self._reset(source_key)
-    self._add_path_root(source_key, source_tile)
-    self._expand_from_tile(source_key, source_tile, 0)
+    self._add_path_root(source_key, building_tile)
+    self._expand_from_tile(source_key, building_tile, 0)
 
 
 func is_tile_reachable(source_tile, destination_tile):
@@ -68,7 +68,7 @@ func _expand_from_tile(source_key, tile, reach_cost):
             self._connect_path(source_key, tile, neighbour)
 
             if neighbour.ground.is_present():
-                self.expand_from_tile(source_key, neighbour, reach_cost + 1)
+                self._expand_from_tile(source_key, neighbour, reach_cost + 1)
 
 func _mark_tile_cost(tile, cost):
     self.visited_tiles[self._get_key(tile)] = tile

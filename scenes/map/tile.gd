@@ -90,3 +90,14 @@ func has_industrial():
 
 func has_home():
     return self.building.is_present() and self.building.tile.template_name == "building_house"
+
+func cartesian_distance_to(tile):
+    var x_diff = self.position.x - tile.position.x
+    var y_diff = self.position.y - tile.position.y
+
+    if x_diff < 0:
+        x_diff *= -1
+    if y_diff < 0:
+        y_diff *= -1
+
+    return x_diff + y_diff - 1
