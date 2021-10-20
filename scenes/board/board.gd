@@ -22,6 +22,11 @@ func _input(event):
             self.select_tile(self.map.tile_box_position)
         self.mouse_click_position = null
 
+    if event.is_action_pressed("ui_accept"):
+        self.select_tile(self.map.tile_box_position)
+    if event.is_action_pressed("ui_cancel"):
+        self.clear_road(self.map.tile_box_position)
+
 func _physics_process(_delta):
     self.hover_tile()
 
@@ -49,9 +54,11 @@ func select_tile(position):
     if self.map.camera.camera_in_transit or self.map.camera.script_operated:
         return
 
-    self.place_road(position)
-
     var tile = self.map.model.get_tile(position)
+
+    if not tile.has_content():
+        self.place_road(position)
+
 
     self.selected_tile = tile
 
@@ -95,13 +102,13 @@ func replace_road_tile(tile):
 
     match mask:
         0:
-            return
+            self.map.builder.place_ground(tile.position, self.map.templates.ROAD_STRAIGHT, 0)
         1:
-            return
+            self.map.builder.place_ground(tile.position, self.map.templates.ROAD_STRAIGHT, 0)
         2:
-            return
+            self.map.builder.place_ground(tile.position, self.map.templates.ROAD_STRAIGHT, 0)
         3:
-            return
+            self.map.builder.place_ground(tile.position, self.map.templates.ROAD_STRAIGHT, 0)
         4:
             self.map.builder.place_ground(tile.position, self.map.templates.ROAD_STRAIGHT, 90)
         5:
@@ -134,8 +141,18 @@ func should_connect_neighbour(tile, neighbour_key, value):
     if neighbour == null:
         return 0
 
+    if neighbour.has_content():
+        return value
+
     if neighbour.ground.is_present():
         return value
 
     return 0
 
+func clear_road(position):
+    var tile = self.map.model.get_tile(position)
+
+    if tile.ground.is_present():
+        tile.ground.clear()
+        for neighbour in tile.neighbours.values():
+            self.replace_road_tile(neighbour)
