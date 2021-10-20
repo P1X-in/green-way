@@ -386,6 +386,9 @@ func _shift_camera_translation(offset):
     current_position.x += offset.x
     current_position.z += offset.y
 
+    current_position.x = clamp(current_position.x, 0, self.camera_space_size)
+    current_position.z = clamp(current_position.z, 0, self.camera_space_size)
+
     self.set_translation(current_position)
 
 func _mouse_zoom_in():
@@ -412,14 +415,14 @@ func _mouse_zoom_out():
 func _mouse_shift_camera(relative_offset):
     var camera_fraction
     if self.camera_mode == self.MODE_TOF:
-        camera_fraction = self.tof_camera_distance / self.tof_camera_distance_max
+        camera_fraction = self.tof_camera_distance / 110.0 #self.tof_camera_distance_max
         relative_offset = relative_offset * camera_fraction * Vector2(0.08, 0.16)
         relative_offset = relative_offset.rotated(deg2rad(-45))
     if self.camera_mode == self.MODE_AW:
-        camera_fraction = self.aw_camera_distance / self.aw_camera_distance_max
+        camera_fraction = self.aw_camera_distance / 110.0 #self.aw_camera_distance_max
         relative_offset = relative_offset * camera_fraction * Vector2(0.08, 0.12)
     if self.camera_mode == self.MODE_FREE:
-        camera_fraction = self.camera_distance / self.camera_distance_max
+        camera_fraction = self.camera_distance / 110.0 #self.camera_distance_max
         relative_offset = relative_offset * camera_fraction * 0.08
         relative_offset = relative_offset.rotated(deg2rad(-self.camera_angle_y))
 
