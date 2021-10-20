@@ -36,7 +36,14 @@ func hover_tile():
 
 func set_up_map():
     var content = {
-        'tiles' : {}
+        'tiles' : {
+            "18_18" : {
+                "ground": {
+                    "rotation" : 0,
+                    "tile" : "road_straight"
+                }
+            }
+        }
     }
 
     self.map.loader.fill_map_from_data(content)

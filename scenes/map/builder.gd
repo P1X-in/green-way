@@ -147,17 +147,17 @@ func attach_mouse_layer():
 func place_tile(tile_id, tile_data):
     var tile = self.map.model.tiles[tile_id]
 
-    if tile_data["ground"]["tile"] != null:
+    if tile_data.has("ground") and tile_data["ground"]["tile"] != null:
         self.place_ground(tile.position, tile_data["ground"]["tile"], tile_data["ground"]["rotation"])
 
-    if tile_data["frame"]["tile"] != null:
+    if tile_data.has("frame") and tile_data["frame"]["tile"] != null:
         self.place_frame(tile.position, tile_data["frame"]["tile"], tile_data["frame"]["rotation"])
 
-    if tile_data["decoration"]["tile"] != null:
+    if tile_data.has("decoration") and tile_data["decoration"]["tile"] != null:
         self.place_decoration(tile.position, tile_data["decoration"]["tile"], tile_data["decoration"]["rotation"])
 
-    if tile_data["terrain"]["tile"] != null:
+    if tile_data.has("terrain") and tile_data["terrain"]["tile"] != null:
         self.place_terrain(tile.position, tile_data["terrain"]["tile"], tile_data["terrain"]["rotation"])
 
-    if tile_data["building"]["tile"] != null:
+    if tile_data.has("building") and tile_data["building"]["tile"] != null:
         self.place_building(tile.position, tile_data["building"]["tile"], tile_data["building"]["rotation"])

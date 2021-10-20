@@ -17,10 +17,10 @@
 [ext_resource path="res://scenes/tiles/roads/tile_road_crossroad.tscn" type="PackedScene" id=15]
 
 [sub_resource type="GIProbeData" id=1]
-bounds = AABB( -128, -10, -128, 256, 20, 256 )
-cell_size = 2.0
-to_cell_xform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 64, 5, 64 )
-dynamic_data = PoolIntArray( 0, 8, 128, 16, 128, 1, 0, 0, 1110441984, 1123155968, 1065353216, 1065353216, 1094713344, 1123155968, 0, 1065353216, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -200, -10, -200, 400, 20, 400 )
+cell_size = 3.125
+to_cell_xform = Transform( 0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 64, 3.2, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 8, 128, 1, 0, 0, 0, 0, 166229120, 0, 1094713344, 1118961664, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -30,7 +30,7 @@ propagation = 0.7
 script = ExtResource( 4 )
 
 [node name="plain_background" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.310533, -0.259115, 5.93038 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 0, 160 )
 
 [node name="tiles" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
@@ -42,45 +42,59 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
 [node name="terrain" type="Spatial" parent="tiles"]
 
 [node name="Tile_Road_Straight" parent="tiles/terrain" instance=ExtResource( 2 )]
+visible = false
 
 [node name="Tile_Road_Straight2" parent="tiles/terrain" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0 )
+visible = false
 
 [node name="Tile_Road_Straight3" parent="tiles/terrain" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24 )
+visible = false
 
 [node name="Tile_Road_Straight4" parent="tiles/terrain" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -16 )
+visible = false
 
 [node name="Tile_Road_Straight5" parent="tiles/terrain" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -24 )
+visible = false
 
 [node name="Tile_Road_Crossroad" parent="tiles/terrain" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
+visible = false
 
 [node name="Tile_Road_T" parent="tiles/terrain" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16 )
+visible = false
 
 [node name="Tile_Road_T2" parent="tiles/terrain" instance=ExtResource( 14 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 0, -8 )
+visible = false
 
 [node name="Tile_Road_Bend" parent="tiles/terrain" instance=ExtResource( 13 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 8 )
+visible = false
 
 [node name="Tile_Road_Bend4" parent="tiles/terrain" instance=ExtResource( 13 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -8 )
+visible = false
 
 [node name="Tile_Road_Bend2" parent="tiles/terrain" instance=ExtResource( 13 )]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -8, 0, 8 )
+visible = false
 
 [node name="Tile_Road_Bend3" parent="tiles/terrain" instance=ExtResource( 13 )]
 transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -8, 0, -16 )
+visible = false
 
 [node name="Tile_Road_Bend5" parent="tiles/terrain" instance=ExtResource( 13 )]
 transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, -32 )
+visible = false
 
 [node name="Tile_Road_Bend6" parent="tiles/terrain" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 8, 0, -32 )
+visible = false
 
 [node name="buildings" type="Spatial" parent="tiles"]
 
@@ -148,8 +162,8 @@ directional_shadow_blend_splits = true
 directional_shadow_normal_bias = 0.7
 
 [node name="GIProbe" type="GIProbe" parent="."]
-transform = Transform( 0.99998, -0.00203754, 0.00605401, 0.0020147, 0.999991, 0.00377681, -0.00606165, -0.00376453, 0.999975, 0, 8.03332, 0 )
-extents = Vector3( 128, 10, 128 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 8, 160 )
+extents = Vector3( 200, 10, 200 )
 data = SubResource( 1 )
 
 [node name="Icon_Asterix" parent="." instance=ExtResource( 10 )]
