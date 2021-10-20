@@ -86,10 +86,10 @@ func has_neighbouring_home():
     return false
 
 func has_industrial():
-    return self.building.is_present() and self.building.tile.template_name == "building_industrial"
+    return self.building.is_present() and self.building.tile.template_name == "building_industry"
 
 func has_home():
-    return self.building.is_present() and self.building.tile.template_name == "building_house"
+    return self.building.is_present() and self.building.tile.template_name in ["building_house", "building_house2"]
 
 func cartesian_distance_to(tile):
     var x_diff = self.position.x - tile.position.x

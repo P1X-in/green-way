@@ -8,6 +8,7 @@ onready var audio = $"/root/SimpleAudioLibrary"
 
 var loop = preload("res://scenes/board/logic/loop.gd").new()
 var paths = preload("res://scenes/board/logic/paths.gd").new(self)
+var dispatcher = preload("res://scenes/board/logic/dispatcher.gd").new(self)
 
 var selected_tile = null
 var last_hover_tile = null
@@ -34,6 +35,7 @@ func _input(event):
 
 func _physics_process(_delta):
     self.hover_tile()
+    self.dispatcher.process_dispatch()
 
 func hover_tile():
     var tile = self.map.model.get_tile(self.map.tile_box_position)

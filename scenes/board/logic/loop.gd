@@ -14,6 +14,7 @@ func _loop_tick():
 
     var home_template = self._get_random_house_template()
     var home_tile
+    var thrash_type = self._get_random_thrash_type()
     if randi() % 2 == 1:
         home_tile = self._place_random_building(true, home_template)
         if not home_tile:
@@ -23,9 +24,12 @@ func _loop_tick():
     self._play_building_sound();
     self.board.audio.play("build_1 ")
 
-    var new_building_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, self.loop_count * 5 + 5)
+    var industrial_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, self.loop_count * 5 + 5)
 
-    self.board.paths.build_paths_for_industrial_building(new_building_tile)
+    home_tile.building.tile.type = thrash_type
+    industrial_tile.building.tile.type = thrash_type
+
+    self.board.paths.build_paths_for_industrial_building(industrial_tile)
 
     self.loop_count += 1
     yield(self.board.get_tree().create_timer(self.LOOP_TICK_DURATION), "timeout")
@@ -77,3 +81,13 @@ func _get_random_house_template():
     ]
 
     return templates[randi() % templates.size()]
+
+func _get_random_thrash_type():
+    var types = [
+        self.board.map.templates.THRASH_METAL,
+        self.board.map.templates.THRASH_PLASTIC,
+        self.board.map.templates.THRASH_PAPER,
+        self.board.map.templates.THRASH_GLASS,
+    ]
+
+    return types[randi() % types.size()]
