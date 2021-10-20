@@ -24,7 +24,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
 [node name="buildings" type="Spatial" parent="tiles"]
 
 [node name="tile_box" parent="tiles" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 
 [node name="units" type="Spatial" parent="tiles"]
 
@@ -33,10 +32,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 164, 4.05, 164 )
 zoom_speed = 60
 move_speed = 40
 camera_max_deg = -35
-camera_distance_max = 60
-tof_camera_distance_max = 110
-aw_camera_distance_max = 110
-camera_space_size = 328
+camera_distance_max = 200
+tof_camera_distance_max = 200
+aw_camera_distance_max = 200
+camera_space_size = 320
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 12 )
