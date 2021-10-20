@@ -84,6 +84,9 @@ func place_road(position):
     var tile = self.map.model.get_tile(position)
 
     self.replace_road_tile(tile)
+    self.fix_neighbouring_roads(tile)
+
+func fix_neighbouring_roads(tile):
     for neighbour in tile.neighbours.values():
         self.replace_road_tile(neighbour)
 
@@ -152,5 +155,4 @@ func clear_road(position):
 
     if tile.ground.is_present():
         tile.ground.clear()
-        for neighbour in tile.neighbours.values():
-            self.replace_road_tile(neighbour)
+        self.fix_neighbouring_roads(tile)
