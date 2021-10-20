@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/terrain/Alps.tscn" type="PackedScene" id=1]
+
+[node name="alps" type="Spatial"]
+
+[node name="Alps" parent="." instance=ExtResource( 1 )]
