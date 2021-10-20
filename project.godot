@@ -18,6 +18,11 @@ config/icon="res://icon.png"
 
 MouseLayer="*res://scripts/services/mouse_layer.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
 [input]
 
 ui_cancel={
