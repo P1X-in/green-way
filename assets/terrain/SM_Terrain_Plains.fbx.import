@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SM_TrashBIn_Blue.fbx-bd25e1044e2ff4100dbce2ba63197ff9.scn"
+path="res://.import/SM_Terrain_Plains.fbx-1be34f4c3c5b615b1603d1c50d567b42.scn"
 
 [deps]
 
-source_file="res://assets/SM_TrashBIn_Blue.fbx"
-dest_files=[ "res://.import/SM_TrashBIn_Blue.fbx-bd25e1044e2ff4100dbce2ba63197ff9.scn" ]
+source_file="res://assets/terrain/SM_Terrain_Plains.fbx"
+dest_files=[ "res://.import/SM_Terrain_Plains.fbx-1be34f4c3c5b615b1603d1c50d567b42.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SM_Terrain_Plains.fbx-a7a863a654a7f1e7f58ad6d764555e15.scn"
+path="res://.import/SM_GarbageTrack_Yellow.fbx-892a0d3f14a6df4d2eb1db45c563136e.scn"
 
 [deps]
 
-source_file="res://assets/SM_Terrain_Plains.fbx"
-dest_files=[ "res://.import/SM_Terrain_Plains.fbx-a7a863a654a7f1e7f58ad6d764555e15.scn" ]
+source_file="res://assets/cars/SM_GarbageTrack_Yellow.fbx"
+dest_files=[ "res://.import/SM_GarbageTrack_Yellow.fbx-892a0d3f14a6df4d2eb1db45c563136e.scn" ]
 
 [params]
 

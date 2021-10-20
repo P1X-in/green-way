@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SM_Road_Crossroad.fbx-be7bac8f809c3fef6c554abe97185968.scn"
+path="res://.import/SM_Road_Straight.fbx-1c0073c73991056be03403934bdae1ac.scn"
 
 [deps]
 
-source_file="res://assets/SM_Road_Crossroad.fbx"
-dest_files=[ "res://.import/SM_Road_Crossroad.fbx-be7bac8f809c3fef6c554abe97185968.scn" ]
+source_file="res://assets/terrain/SM_Road_Straight.fbx"
+dest_files=[ "res://.import/SM_Road_Straight.fbx-1c0073c73991056be03403934bdae1ac.scn" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SM_Icon_Asterix.fbx-f6497a0a2eb712085d0dd355818caa0e.scn"
+path="res://.import/SM_Icon_Asterix.fbx-d9c342a67ac9ecdce2bda9f139f5d8fc.scn"
 
 [deps]
 
-source_file="res://assets/SM_Icon_Asterix.fbx"
-dest_files=[ "res://.import/SM_Icon_Asterix.fbx-f6497a0a2eb712085d0dd355818caa0e.scn" ]
+source_file="res://assets/ui/SM_Icon_Asterix.fbx"
+dest_files=[ "res://.import/SM_Icon_Asterix.fbx-d9c342a67ac9ecdce2bda9f139f5d8fc.scn" ]
 
 [params]
 

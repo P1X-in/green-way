@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SM_Road_Straight.fbx-1a413b82d1ad1d447d98a52775e5d54c.scn"
+path="res://.import/SM_TrashBIn_Green.fbx-373fbba92230427bd78ace5ee2583370.scn"
 
 [deps]
 
-source_file="res://assets/SM_Road_Straight.fbx"
-dest_files=[ "res://.import/SM_Road_Straight.fbx-1a413b82d1ad1d447d98a52775e5d54c.scn" ]
+source_file="res://assets/bins/SM_TrashBIn_Green.fbx"
+dest_files=[ "res://.import/SM_TrashBIn_Green.fbx-373fbba92230427bd78ace5ee2583370.scn" ]
 
 [params]
 

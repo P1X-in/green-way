@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/tiles/tile.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/tiles/roads/tile_road_straight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=2]
+
 
 [node name="road_straight" instance=ExtResource( 1 )]
 

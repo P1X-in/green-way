@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/map/terrain_plains.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/tiles/roads/road_straight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/ui/markers/tile_box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/map/map.gd" type="Script" id=4]
-[ext_resource path="res://assets/GarbageTrack_Blue.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/camera.tscn" type="PackedScene" id=11]
 [ext_resource path="res://default_env.tres" type="Environment" id=12]
 
@@ -32,10 +30,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
 [node name="frames" type="Spatial" parent="tiles"]
 
 [node name="terrain" type="Spatial" parent="tiles"]
-
-[node name="GarbageTrack_Blue" parent="tiles/terrain" instance=ExtResource( 5 )]
-
-[node name="road_straight" parent="tiles/terrain" instance=ExtResource( 2 )]
 
 [node name="buildings" type="Spatial" parent="tiles"]
 

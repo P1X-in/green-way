@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/M_VectorColor.material" type="Material" id=1]
-[ext_resource path="res://assets/SM_Icon_Asterix.fbx" type="PackedScene" id=2]
+[ext_resource path="res://assets/materials/M_VectorColor.material" type="Material" id=1]
+[ext_resource path="res://assets/ui/SM_Icon_Asterix.fbx" type="PackedScene" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
