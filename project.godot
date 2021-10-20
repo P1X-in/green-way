@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 MouseLayer="*res://scripts/services/mouse_layer.gd"
+SimpleAudioLibrary="*res://scripts/services/audio.gd"
 
 [display]
 
@@ -131,6 +132,7 @@ mouse_zoom_out={
 [physics]
 
 common/physics_fps=144
+common/enable_pause_aware_picking=true
 
 [rendering]
 

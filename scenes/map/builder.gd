@@ -36,52 +36,36 @@ func place_frame(position, name, rotation):
 func place_decoration(position, name, rotation):
     var tile = self.map.model.get_tile(position)
 
-    if not tile.ground.is_present():
-        return
     if tile.decoration.is_present():
         tile.decoration.clear()
     if tile.terrain.is_present():
         tile.terrain.clear()
     if tile.building.is_present():
         tile.building.clear()
-    if tile.damage.is_present():
-        tile.damage.clear()
 
     self.place_element(position, name, rotation, self.map.GROUND_HEIGHT, self.map.tiles_terrain_anchor, tile.decoration)
 
 func place_terrain(position, name, rotation):
     var tile = self.map.model.get_tile(position)
 
-    if not tile.ground.is_present():
-        return
     if tile.decoration.is_present():
         tile.decoration.clear()
-    if tile.unit.is_present():
-        tile.unit.clear()
     if tile.terrain.is_present():
         tile.terrain.clear()
     if tile.building.is_present():
         tile.building.clear()
-    if tile.damage.is_present():
-        tile.damage.clear()
 
     self.place_element(position, name, rotation, self.map.GROUND_HEIGHT, self.map.tiles_terrain_anchor, tile.terrain)
 
 func place_building(position, name, rotation):
     var tile = self.map.model.get_tile(position)
 
-    if not tile.ground.is_present():
-        return
     if tile.decoration.is_present():
         tile.decoration.clear()
-    if tile.unit.is_present():
-        tile.unit.clear()
     if tile.terrain.is_present():
         tile.terrain.clear()
     if tile.building.is_present():
         tile.building.clear()
-    if tile.damage.is_present():
-        tile.damage.clear()
 
     self.place_element(position, name, rotation, self.map.GROUND_HEIGHT, self.map.tiles_buildings_anchor, tile.building)
 

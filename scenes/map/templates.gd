@@ -6,6 +6,8 @@ const ROAD_BEND = "road_bend"
 const ROAD_CROSS = "road_cross"
 const ROAD_T = "road_t"
 
+const BUILDING_HOUSE = "building_house"
+
 var templates = {
     self.DUMMY_GROUND : preload("res://scenes/tiles/base_ground.tscn"),
 
@@ -13,6 +15,8 @@ var templates = {
     self.ROAD_BEND : preload("res://scenes/tiles/roads/road_bend.tscn"),
     self.ROAD_CROSS : preload("res://scenes/tiles/roads/road_crossroad.tscn"),
     self.ROAD_T : preload("res://scenes/tiles/roads/road_t.tscn"),
+
+    self.BUILDING_HOUSE : preload("res://scenes/tiles/buildings/house.tscn"),
 }
 
 

@@ -1,7 +1,7 @@
 extends Spatial
 
 const TILE_SIZE = 8
-const GROUND_HEIGHT = 4
+const GROUND_HEIGHT = 0
 
 onready var tile_box = $"tiles/tile_box"
 onready var camera = $"camera"
