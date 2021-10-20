@@ -64,6 +64,8 @@ func _find_free_truck(house_tile):
             preffered_tile = matching_tile
             best_path = compared_path
 
+    return preffered_tile
+
 
 func _dispatch(industrial_tile, house_tile):
     var house = house_tile.building.tile

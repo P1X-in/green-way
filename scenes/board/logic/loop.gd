@@ -30,7 +30,7 @@ func _loop_tick():
     var industrial_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, self.loop_count * 5 + 5)
 
     home_tile.building.tile.init_thrash_bin(thrash_type)
-	industrial_tile.building.tile.set_type(thrash_type)
+    industrial_tile.building.tile.set_type(thrash_type)
 
 
     self.board.map.model.add_industrial(industrial_tile)
@@ -43,10 +43,11 @@ func _loop_tick():
 
 func _garbage_tick():
     print("garbage tick")
+    var result
 
     for house in self.board.map.model.get_house_building_tiles():
-        if randi() % 3 == 0:
-            house.building.tile.plant_thrash()
+        result = house.building.tile.plant_thrash()
+        if result:
             self.board.audio.play("garbage_dump")
             print("garbage planted")
 
