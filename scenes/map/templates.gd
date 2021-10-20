@@ -7,6 +7,7 @@ const ROAD_CROSS = "road_cross"
 const ROAD_T = "road_t"
 
 const BUILDING_HOUSE = "building_house"
+const BUILDING_HOUSE_2 = "building_house2"
 const BUILDING_INDUSTRY = "building_industry"
 
 var templates = {
@@ -18,6 +19,7 @@ var templates = {
     self.ROAD_T : preload("res://scenes/tiles/roads/road_t.tscn"),
 
     self.BUILDING_HOUSE : preload("res://scenes/tiles/buildings/house.tscn"),
+    self.BUILDING_HOUSE_2 : preload("res://scenes/tiles/buildings/house2.tscn"),
     self.BUILDING_INDUSTRY : preload("res://scenes/tiles/buildings/industry.tscn"),
 }
 

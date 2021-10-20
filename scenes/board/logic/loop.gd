@@ -12,13 +12,16 @@ func start(_board):
 func _loop_tick():
     print("loop " + str(self.loop_count))
 
+    var home_template = self._get_random_house_template()
     var home_tile
     if randi() % 2 == 1:
-        home_tile = self._place_random_building(true, self.board.map.templates.BUILDING_HOUSE)
+        home_tile = self._place_random_building(true, home_template)
         if not home_tile:
-            home_tile = self._place_random_building(false, self.board.map.templates.BUILDING_HOUSE)
+            home_tile = self._place_random_building(false, home_template)
     else:
-        home_tile = self._place_random_building(false, self.board.map.templates.BUILDING_HOUSE)
+        home_tile = self._place_random_building(false, home_template)
+    self._play_building_sound();
+    self.board.audio.play("build_1 ")
 
     var new_building_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, self.loop_count * 5 + 5)
 
@@ -28,6 +31,8 @@ func _loop_tick():
     yield(self.board.get_tree().create_timer(self.LOOP_TICK_DURATION), "timeout")
     self.call_deferred("_loop_tick")
 
+func _play_building_sound():
+    self.board.audio.play("build_" + str(randi() % 2 ))
 
 func _place_random_building(with_neighbour, template, source_tile=null, distance=999):
     var free_tiles = self._get_free_tiles(with_neighbour)
@@ -64,3 +69,11 @@ func _filter_by_distance(source_tile, tiles, distance):
         if tile.cartesian_distance_to(source_tile) <= distance:
             filtered_tiles.append(tile)
     return filtered_tiles
+
+func _get_random_house_template():
+    var templates = [
+        self.board.map.templates.BUILDING_HOUSE,
+        self.board.map.templates.BUILDING_HOUSE_2,
+    ]
+
+    return templates[randi() % templates.size()]
