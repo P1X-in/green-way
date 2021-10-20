@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/Logo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/buildings/Building_House_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=7]
+
+[node name="MainMenu" type="Spatial"]
+
+[node name="Logo" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+
+[node name="main_camera" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.328, 2.631 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.819152, 0.242404, -0.519837, 0, 0.906308, 0.422618, 0.573577, -0.346189, 0.742404, 0, 0, 0 )
+light_energy = 3.0
+shadow_enabled = true
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -147.5
+margin_top = -256.0
+margin_right = 147.5
+margin_bottom = -128.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 4.0
+margin_right = 295.0
+margin_bottom = 36.0
+text = "StartRecycling"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 48.0
+margin_right = 295.0
+margin_bottom = 80.0
+text = "Credits"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 92.0
+margin_right = 295.0
+margin_bottom = 124.0
+text = "Quit"
+
+[node name="sm_road_straight" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, -7 )
+
+[node name="sm_road_straight2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, 1 )
+
+[node name="sm_road_straight3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, 9 )
+
+[node name="Building_House_1" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -0.962, -7 )
+
+[node name="Building_House_2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 8, -0.962, -7 )
+
+[node name="Building_House_3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.962, 2 )
+
+[node name="Building_House_4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 7.35137e-08, 0, 1, 0, -7.35137e-08, 0, 1, -8, -0.962, 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 7 )
