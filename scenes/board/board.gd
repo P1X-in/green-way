@@ -142,8 +142,8 @@ func should_connect_neighbour(tile, neighbour_key, value):
     if neighbour == null:
         return 0
 
-    if neighbour.has_content():
-        return value
+    #if neighbour.has_content():
+    #    return value
 
     if neighbour.ground.is_present():
         return value

@@ -72,3 +72,9 @@ func get_direction_to_neighbour(tile):
         if self.neighbours[direction] == tile:
             return direction
     return null
+
+func has_neighbouring_building():
+    for neighbour in self.neighbours.values():
+        if neighbour.building.is_present():
+            return true
+    return false
