@@ -16,7 +16,7 @@ var templates = {
     self.ROAD_CROSS : preload("res://scenes/tiles/roads/road_crossroad.tscn"),
     self.ROAD_T : preload("res://scenes/tiles/roads/road_t.tscn"),
 
-    self.BUILDING_HOUSE : preload("res://scenes/tiles/buildings/building_house.tscn"),
+    self.BUILDING_HOUSE : preload("res://scenes/tiles/buildings/house.tscn"),
 }
 
 

@@ -2,9 +2,11 @@ extends Spatial
 
 onready var map = $"map"
 
-#onready var audio = $"/root/SimpleAudioLibrary"
+onready var audio = $"/root/SimpleAudioLibrary"
 #onready var switcher = $"/root/SceneSwitcher"
 #onready var match_setup = $"/root/MatchSetup"
+
+var loop = preload("res://scenes/board/logic/loop.gd").new()
 
 var selected_tile = null
 var last_hover_tile = null
@@ -13,6 +15,7 @@ var mouse_click_position = null
 func _ready():
     self.set_up_map()
     self.set_up_board()
+    self.loop.start(self)
 
 func _input(event):
     if event.is_action_pressed("mouse_click"):
@@ -20,12 +23,15 @@ func _input(event):
     if event.is_action_released("mouse_click"):
         if self.mouse_click_position != null and event.position.distance_squared_to(self.mouse_click_position) < self.map.camera.MOUSE_MOVE_THRESHOLD:
             self.select_tile(self.map.tile_box_position)
+            self.audio.play("menu_click")
         self.mouse_click_position = null
 
     if event.is_action_pressed("ui_accept"):
         self.select_tile(self.map.tile_box_position)
+        self.audio.play("menu_click")
     if event.is_action_pressed("ui_cancel"):
         self.clear_road(self.map.tile_box_position)
+        self.audio.play("menu_click")
 
 func _physics_process(_delta):
     self.hover_tile()
@@ -47,8 +53,7 @@ func set_up_map():
     self.map.loader.fill_map_from_data(content)
 
 func set_up_board():
-    #self.audio.track("soundtrack_1")
-    return
+    self.audio.track("menu")
 
 func select_tile(position):
     if self.map.camera.camera_in_transit or self.map.camera.script_operated:
@@ -59,15 +64,8 @@ func select_tile(position):
     if not tile.has_content():
         self.place_road(position)
 
-
     self.selected_tile = tile
-
-
     self.update_tile_highlight(tile)
-
-    if self.selected_tile != null:
-        #self.audio.play("menu_click")
-        pass
 
 
 func unselect_tile():
