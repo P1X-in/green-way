@@ -11,8 +11,8 @@ var current_path_index = 0
 
 onready var animations = $"animations"
 
-func _ready():
-    self.move_to_target()
+#func _ready():
+#    self.move_to_target()
 
 func is_truck_free():
     return target == null
@@ -27,9 +27,22 @@ func dispatch(destination_tile, _path, _directions, _return_directions):
     self.return_directions = _return_directions
     self.current_path_index = 1
 
+func has_key_in_path(key):
+    for step in self.path:
+        if step == key:
+            return true
+    return false
 
+func abort():
+    if self.has_thrash:
+        self.target.building.tile.has_thrash = true
 
-
+    self.animations.stop()
+    $"mesh_anchor".set_translation(Vector3(0, 0, 0))
+    self.target.building.tile.assigned_truck = null
+    self.has_thrash = false
+    self.get_parent().remove_child(self)
+    self.target = null
 
 
 
@@ -57,6 +70,9 @@ func _animate_initial_path_segment():
     self._move_in_direction(direction)
 
 func _animate_next_path_segment():
+    if self.target == null:
+        return
+
     var direction = self.directions[self.current_path_index]
     $"mesh_anchor".set_translation(Vector3(0, 0, 0))
     self.set_translation(self.get_translation() + self.unit_translations[direction])

@@ -10,6 +10,19 @@ func process_dispatch():
     for house_tile in house_tiles:
         self._process_house(house_tile)
 
+func recall_trucks(destroyed_road_tile):
+    var key = self.board.paths._get_key(destroyed_road_tile)
+    var industrial_tiles = self.board.map.model.get_industrial_building_tiles()
+    var building
+    var truck
+
+    for industrial_tile in industrial_tiles:
+        building = industrial_tile.building.tile
+        truck = building.truck
+
+        if not building.is_truck_free() and truck.has_key_in_path(key):
+            truck.abort()
+
 func _process_house(house_tile):
     var house = house_tile.building.tile
 
@@ -68,6 +81,7 @@ func _dispatch(industrial_tile, house_tile):
 
     var spawn_tile = self.board.map.model.tiles[path[1]]
     self.board.map.anchor_truck(industrial.truck, spawn_tile.position)
+    industrial.truck.move_to_target()
 
 func _convert_path_to_directions(path):
     var directions = []
