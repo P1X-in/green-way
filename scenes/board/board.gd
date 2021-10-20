@@ -36,14 +36,7 @@ func hover_tile():
 
 func set_up_map():
     var content = {
-        'tiles' : {
-            "18_18" : {
-                "ground": {
-                    "rotation" : 0,
-                    "tile" : "road_straight"
-                }
-            }
-        }
+        'tiles' : {}
     }
 
     self.map.loader.fill_map_from_data(content)
@@ -55,6 +48,8 @@ func set_up_board():
 func select_tile(position):
     if self.map.camera.camera_in_transit or self.map.camera.script_operated:
         return
+
+    self.place_road(position)
 
     var tile = self.map.model.get_tile(position)
 
@@ -77,3 +72,6 @@ func update_tile_highlight(tile):
 
 func end_game(winner):
     self.map.camera.paused = true
+
+func place_road(position):
+    self.map.builder.place_ground(position, self.map.templates.ROAD_STRAIGHT, 0)
