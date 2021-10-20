@@ -42,7 +42,8 @@ func _place_random_building(with_neighbour, template, source_tile=null, distance
     var free_tiles = self._get_free_tiles(with_neighbour)
 
     if source_tile != null:
-        free_tiles = self._filter_by_distance(source_tile, free_tiles, distance)
+        free_tiles = self._filter_by_max_distance(source_tile, free_tiles, distance)
+        free_tiles = self._filter_by_min_distance(source_tile, free_tiles, 2)
 
     if free_tiles.size() > 0:
         var rotations = [0, 90, 180, 270]
@@ -67,10 +68,17 @@ func _get_free_tiles(with_neighbours):
 
     return tiles
 
-func _filter_by_distance(source_tile, tiles, distance):
+func _filter_by_max_distance(source_tile, tiles, distance):
     var filtered_tiles = []
     for tile in tiles:
         if tile.cartesian_distance_to(source_tile) <= distance:
+            filtered_tiles.append(tile)
+    return filtered_tiles
+
+func _filter_by_min_distance(source_tile, tiles, distance):
+    var filtered_tiles = []
+    for tile in tiles:
+        if tile.cartesian_distance_to(source_tile) >= distance:
             filtered_tiles.append(tile)
     return filtered_tiles
 

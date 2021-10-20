@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/cars/GarbageTrack_Green.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/cars/GarbageTrack_Red.tscn" type="PackedScene" id=2]
@@ -6,16 +6,50 @@
 [ext_resource path="res://assets/cars/GarbageTrack_Yellow.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/units/truck.gd" type="Script" id=5]
 
+[sub_resource type="Animation" id=1]
+resource_name = "move"
+tracks/0/type = "value"
+tracks/0/path = NodePath("mesh_anchor:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -8 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_animate_next_path_segment"
+} ]
+}
+
 [node name="truck" type="Spatial"]
 script = ExtResource( 5 )
 
-[node name="GarbageTrack_Blue" parent="." instance=ExtResource( 3 )]
+[node name="mesh_anchor" type="Spatial" parent="."]
 
-[node name="GarbageTrack_Red" parent="." instance=ExtResource( 2 )]
+[node name="GarbageTrack_Blue" parent="mesh_anchor" instance=ExtResource( 3 )]
+
+[node name="GarbageTrack_Red" parent="mesh_anchor" instance=ExtResource( 2 )]
 visible = false
 
-[node name="GarbageTrack_Green" parent="." instance=ExtResource( 1 )]
+[node name="GarbageTrack_Green" parent="mesh_anchor" instance=ExtResource( 1 )]
 visible = false
 
-[node name="GarbageTrack_Yellow" parent="." instance=ExtResource( 4 )]
+[node name="GarbageTrack_Yellow" parent="mesh_anchor" instance=ExtResource( 4 )]
 visible = false
+
+[node name="animations" type="AnimationPlayer" parent="."]
+anims/move = SubResource( 1 )
