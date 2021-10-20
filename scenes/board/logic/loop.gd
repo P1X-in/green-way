@@ -19,7 +19,9 @@ func _loop_tick():
     else:
         self._place_random_building(false, self.board.map.templates.BUILDING_HOUSE)
 
-    self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY)
+    var new_building_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY)
+
+    self.board.paths.build_paths_for_industrial_building(new_building_tile)
 
     self.loop_count += 1
     yield(self.board.get_tree().create_timer(self.LOOP_TICK_DURATION), "timeout")
@@ -35,7 +37,7 @@ func _place_random_building(with_neighbour, template):
         var rotation = rotations[randi() % rotations.size()]
         self.board.map.builder.place_building(tile.position, template, rotation)
         self.board.fix_neighbouring_roads(tile)
-        return true
+        return tile
     return false
 
 func _get_free_tiles(with_neighbours):
