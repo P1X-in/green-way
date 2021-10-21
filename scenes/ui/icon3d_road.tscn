@@ -11,6 +11,7 @@ tonemap_mode = 2
 environment = SubResource( 2 )
 
 [node name="Icon3D" type="Control"]
+rect_min_size = Vector2( 80, 80 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -29,5 +30,7 @@ world = SubResource( 1 )
 transparent_bg = true
 handle_input_locally = false
 msaa = 3
+render_target_update_mode = 3
 
 [node name="Camera" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
+size = 6.0
