@@ -28,9 +28,31 @@ func _ready():
 	self.register_sample("dog_5", preload("res://assets/audio/woof_39.wav"))
 	self.register_sample("dog_6", preload("res://assets/audio/woof_40.wav"))
 	self.register_sample("dog_7", preload("res://assets/audio/woof_41.wav"))
+	self.register_sample("garbage_0", preload("res://assets/audio/glass_02.wav"))
+	self.register_sample("garbage_1", preload("res://assets/audio/glass_03.wav"))
+	self.register_sample("garbage_2", preload("res://assets/audio/glass_10.wav"))
+	self.register_sample("garbage_3", preload("res://assets/audio/metal_17.wav"))
+	self.register_sample("garbage_4", preload("res://assets/audio/metal_18.wav"))
+	self.register_sample("garbage_5", preload("res://assets/audio/metal_19.wav"))
+	self.register_sample("garbage_6", preload("res://assets/audio/metal_box_12.wav"))
+	self.register_sample("garbage_7", preload("res://assets/audio/garbage_05.wav"))
+	self.register_sample("garbage_8", preload("res://assets/audio/garbage_11.wav"))
+	self.register_sample("garbage_9", preload("res://assets/audio/steam_07.wav"))
 
 	self.register_track("menu", preload("res://assets/audio/soundtrack/soundtrack.ogg"))
 
+func param_play(name, pitch = 1, vol = 0):
+	if not self.sounds_enabled:
+		return
+
+	if not self.samples.has(name):
+		return
+	self.samples[name].set_pitch_scale(pitch)
+	self.samples[name].set_volume_db(vol)
+
+	self.samples[name].play()
+	self.samples[name].set_pitch_scale(1)
+	self.samples[name].set_volume_db(0)
 
 func play(name):
 	if not self.sounds_enabled:
@@ -38,7 +60,6 @@ func play(name):
 
 	if not self.samples.has(name):
 		return
-
 	self.samples[name].play()
 
 func track(name):

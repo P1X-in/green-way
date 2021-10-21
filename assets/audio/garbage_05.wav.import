@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/garbage_05.wav-f53e78df5927853e1c8ca0d0fa6fa92e.sample"
+
+[deps]
+
+source_file="res://assets/audio/garbage_05.wav"
+dest_files=[ "res://.import/garbage_05.wav-f53e78df5927853e1c8ca0d0fa6fa92e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
