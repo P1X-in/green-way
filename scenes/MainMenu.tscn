@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ui/Logo.tscn" type="PackedScene" id=2]
@@ -18,6 +18,23 @@ corner_radius_top_left = 48
 corner_radius_top_right = 48
 corner_radius_bottom_right = 48
 corner_radius_bottom_left = 48
+
+[sub_resource type="Animation" id=2]
+resource_name = "demo"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 16 ) ]
+}
 
 [node name="MainMenu" type="Spatial"]
 
@@ -105,26 +122,66 @@ rect_min_size = Vector2( 0, 24 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="sm_road_straight" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, -7 )
+[node name="BackgroundAssets" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.17252 )
 
-[node name="sm_road_straight2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, 1 )
+[node name="sm_road_straight" parent="BackgroundAssets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, -14 )
 
-[node name="sm_road_straight3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, 9 )
+[node name="sm_road_straight4" parent="BackgroundAssets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, -22 )
 
-[node name="Building_House_1" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -0.962, -7 )
+[node name="sm_road_straight5" parent="BackgroundAssets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, -30 )
 
-[node name="Building_House_2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 8, -0.962, -7 )
+[node name="sm_road_straight6" parent="BackgroundAssets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, -38 )
 
-[node name="Building_House_3" parent="." instance=ExtResource( 5 )]
+[node name="sm_road_straight2" parent="BackgroundAssets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, -6 )
+
+[node name="sm_road_straight3" parent="BackgroundAssets" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, 2 )
+
+[node name="Building_House_1" parent="BackgroundAssets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -0.962, -6 )
+
+[node name="Building_House_2" parent="BackgroundAssets" instance=ExtResource( 6 )]
+transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 8, -0.962, -6 )
+
+[node name="Building_House_3" parent="BackgroundAssets" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.962, 2 )
 
-[node name="Building_House_4" parent="." instance=ExtResource( 6 )]
+[node name="Building_House_4" parent="BackgroundAssets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 7.35137e-08, 0, 1, 0, -7.35137e-08, 0, 1, -8, -0.962, 2 )
+
+[node name="Building_House_5" parent="BackgroundAssets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -0.962, -22 )
+
+[node name="Building_House_6" parent="BackgroundAssets" instance=ExtResource( 6 )]
+transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 8, -0.962, -22 )
+
+[node name="Building_House_11" parent="BackgroundAssets" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -0.962, -38 )
+
+[node name="Building_House_12" parent="BackgroundAssets" instance=ExtResource( 6 )]
+transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 8, -0.962, -38 )
+
+[node name="Building_House_7" parent="BackgroundAssets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.962, -14 )
+
+[node name="Building_House_8" parent="BackgroundAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 7.35137e-08, 0, 1, 0, -7.35137e-08, 0, 1, -8, -0.962, -14 )
+
+[node name="Building_House_9" parent="BackgroundAssets" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.962, -30 )
+
+[node name="Building_House_10" parent="BackgroundAssets" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 7.35137e-08, 0, 1, 0, -7.35137e-08, 0, 1, -8, -0.962, -30 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundAssets"]
+autoplay = "demo"
+anims/demo = SubResource( 2 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 7 )
