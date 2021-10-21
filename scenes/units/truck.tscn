@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/cars/GarbageTrack_Green.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/cars/GarbageTrack_Red.tscn" type="PackedScene" id=2]
@@ -35,14 +35,58 @@ tracks/1/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "pickup"
+length = 2.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("mesh_anchor/GarbageTrack_Blue/AnimationBlue")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "Pickup" ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("mesh_anchor/GarbageTrack_Red/AnimationRed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "Pickup" ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("mesh_anchor/GarbageTrack_Green/AnimationGreen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "Pickup" ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "animation"
+tracks/3/path = NodePath("mesh_anchor/GarbageTrack_Yellow/AnimationYellow")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": PoolStringArray( "Pickup" ),
+"times": PoolRealArray( 0 )
+}
+
 [node name="truck" type="Spatial"]
 script = ExtResource( 5 )
 
 [node name="mesh_anchor" type="Spatial" parent="."]
 
 [node name="GarbageTrack_Blue" parent="mesh_anchor" instance=ExtResource( 3 )]
-visible = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0 )
+visible = false
 
 [node name="GarbageTrack_Red" parent="mesh_anchor" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0 )
@@ -58,3 +102,4 @@ visible = false
 
 [node name="animations" type="AnimationPlayer" parent="."]
 anims/move = SubResource( 1 )
+anims/pickup = SubResource( 2 )

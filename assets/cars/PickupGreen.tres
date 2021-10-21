@@ -1,0 +1,41 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "Pickup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RootNode/BodyYellow/Rear:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 1.4, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.00102963, 0.0209478 ), Vector3( 0, -0.00375283, 0.0210429 ), Vector3( 0, -0.00375283, 0.0210429 ), Vector3( 0, -0.00375283, 0.0210429 ), Vector3( 0, -0.00375283, 0.0210429 ), Vector3( 0, -0.00102963, 0.0209478 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RootNode/BodyYellow/Rear:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 1.4, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -68.3148, 0.157267, -0.473413 ), Vector3( -68.3148, 0.157267, -0.473413 ), Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -5.90184, 0.0584207, -0.333284 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("RootNode/BodyYellow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 0.9, 1.1, 1.4, 1.6, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -88, 0, 0 ), Vector3( -89.487, 0, 0 ), Vector3( -88, 0, 0 ), Vector3( -85.447, 0, 0 ), Vector3( -84.9233, -26.2237, 26.3131 ), Vector3( -83.7357, 43.3224, -43.4937 ), Vector3( -88, 0, 0 ), Vector3( -88, 0, 0 ) ]
+}
