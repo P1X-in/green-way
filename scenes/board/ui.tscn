@@ -1,25 +1,94 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
 
 [node name="ui" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="tiles" type="MarginContainer" parent="."]
+[node name="bottom" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -20.0
-margin_top = -40.0
-margin_right = 20.0
+margin_left = -640.0
+margin_top = -64.0
+margin_right = 640.0
+rect_min_size = Vector2( 0, 64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="count" type="Label" parent="tiles"]
-margin_top = 13.0
-margin_right = 40.0
-margin_bottom = 27.0
+[node name="vertical" type="HBoxContainer" parent="bottom"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tiles" type="HBoxContainer" parent="bottom/vertical"]
+margin_left = 431.0
+margin_right = 611.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tiles_left_" type="Label" parent="bottom/vertical/tiles"]
+margin_top = 18.0
+margin_right = 150.0
+margin_bottom = 45.0
+text = "TILES LEFT:"
+align = 1
+valign = 1
+
+[node name="count" type="Label" parent="bottom/vertical/tiles"]
+margin_left = 166.0
+margin_top = 18.0
+margin_right = 180.0
+margin_bottom = 45.0
 text = "5"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space" type="Control" parent="bottom/vertical"]
+margin_left = 627.0
+margin_right = 691.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 0 )
+
+[node name="score" type="HBoxContainer" parent="bottom/vertical"]
+margin_left = 707.0
+margin_right = 849.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score_" type="Label" parent="bottom/vertical/score"]
+margin_top = 18.0
+margin_right = 84.0
+margin_bottom = 45.0
+text = "SCORE:"
+align = 1
+valign = 1
+
+[node name="count" type="Label" parent="bottom/vertical/score"]
+margin_left = 100.0
+margin_top = 18.0
+margin_right = 142.0
+margin_bottom = 45.0
+text = "999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
