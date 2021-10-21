@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/materials/M_VectorColorFresnel.material" type="Material" id=1]
 [ext_resource path="res://assets/cars/TrackRun_Blue.anim" type="Animation" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/materials/M_VectorColor.material" type="Material" id=4]
 [ext_resource path="res://assets/materials/M_VectorColorMate.material" type="Material" id=5]
 [ext_resource path="res://assets/cars/PickupBlue.tres" type="Animation" id=6]
+[ext_resource path="res://assets/cars/TruckLights.tscn" type="PackedScene" id=7]
 
 [node name="GarbageTrack_Blue" instance=ExtResource( 3 )]
 
@@ -29,3 +30,5 @@ material/0 = ExtResource( 5 )
 autoplay = "TrackRun"
 anims/Pickup = ExtResource( 6 )
 anims/TrackRun = ExtResource( 2 )
+
+[node name="TruckLights" parent="." index="2" instance=ExtResource( 7 )]

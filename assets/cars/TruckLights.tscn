@@ -1,0 +1,25 @@
+[gd_scene format=2]
+
+[node name="TruckLights" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.622827, 0.939484, -2.29016 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_energy = 5.0
+omni_range = 2.0
+
+[node name="OmniLight2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38229, 0, 0 )
+light_energy = 5.0
+omni_range = 2.0
+
+[node name="OmniLight3" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.160876, 4.62904 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 5.0
+omni_range = 2.0
+
+[node name="OmniLight4" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38229, -0.160876, 4.62904 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 5.0
+omni_range = 2.0
