@@ -61,7 +61,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"clips": PoolStringArray( "TrackRun" ),
+"clips": PoolStringArray( "TrackRun_Red" ),
 "times": PoolRealArray( 0 )
 }
 tracks/5/type = "animation"
@@ -137,6 +137,7 @@ tracks/4/keys = {
 script = ExtResource( 5 )
 
 [node name="mesh_anchor" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
 
 [node name="GarbageTrack_Blue" parent="mesh_anchor" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0 )
