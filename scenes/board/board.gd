@@ -52,6 +52,7 @@ func set_up_map():
     }
 
     self.map.loader.fill_map_from_data(content)
+    self._place_random_terrain()
 
 func set_up_board():
     self.audio.track("menu")
@@ -170,4 +171,35 @@ func clear_road(position):
         self.dispatcher.recall_trucks(tile)
     else:
         self.audio.play("click")
+
+
+
+
+func _place_random_terrain():
+    var tile = null
+    for i in range(100):
+        tile = null
+
+        while tile == null:
+            tile = self.map.model.get_random_tile()
+
+            if tile.terrain.is_present():
+                tile = null
+
+        self._place_random_terrain_tile(tile)
+
+
+func _place_random_terrain_tile(tile):
+    var templates = [
+        self.map.templates.TERRAIN_ALPS,
+        self.map.templates.TERRAIN_FOREST_1,
+        self.map.templates.TERRAIN_FOREST_2,
+        self.map.templates.TERRAIN_FOREST_3,
+    ]
+    var rotations = [0, 90, 180, 270]
+
+    var template = templates[randi() % templates.size()]
+    var rotation = rotations[randi() % rotations.size()]
+
+    self.map.builder.place_terrain(tile.position, template, rotation)
 
