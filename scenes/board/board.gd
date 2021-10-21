@@ -36,6 +36,9 @@ func _input(event):
     if event.is_action_pressed("ui_cancel"):
         self.clear_road(self.map.tile_box_position)
 
+    if Input.is_key_pressed(KEY_ESCAPE):
+        get_tree().quit()
+
 func _physics_process(_delta):
     self.hover_tile()
     self.dispatcher.process_dispatch()
