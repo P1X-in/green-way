@@ -32,8 +32,8 @@ __meta__ = {
 }
 
 [node name="tiles" type="HBoxContainer" parent="bottom/vertical"]
-margin_left = 227.0
-margin_right = 437.0
+margin_left = 199.0
+margin_right = 409.0
 margin_bottom = 64.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,14 +69,14 @@ __meta__ = {
 }
 
 [node name="space2" type="Control" parent="bottom/vertical"]
-margin_left = 453.0
-margin_right = 517.0
+margin_left = 425.0
+margin_right = 489.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 0 )
 
 [node name="attention" type="HBoxContainer" parent="bottom/vertical"]
-margin_left = 533.0
-margin_right = 785.0
+margin_left = 505.0
+margin_right = 757.0
 margin_bottom = 64.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -112,14 +112,14 @@ __meta__ = {
 }
 
 [node name="space" type="Control" parent="bottom/vertical"]
-margin_left = 801.0
-margin_right = 865.0
+margin_left = 773.0
+margin_right = 837.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 64, 0 )
 
 [node name="score" type="HBoxContainer" parent="bottom/vertical"]
-margin_left = 881.0
-margin_right = 1053.0
+margin_left = 853.0
+margin_right = 1081.0
 margin_bottom = 64.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -136,16 +136,16 @@ valign = 1
 [node name="score_" type="Label" parent="bottom/vertical/score"]
 margin_left = 30.0
 margin_top = 18.0
-margin_right = 114.0
+margin_right = 170.0
 margin_bottom = 45.0
-text = "SCORE:"
+text = "COLLECTED:"
 align = 1
 valign = 1
 
 [node name="count" type="Label" parent="bottom/vertical/score"]
-margin_left = 130.0
+margin_left = 186.0
 margin_top = 18.0
-margin_right = 172.0
+margin_right = 228.0
 margin_bottom = 45.0
 text = "999"
 align = 1
