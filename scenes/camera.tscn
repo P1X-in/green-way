@@ -21,6 +21,7 @@ fov = 50.0
 
 [node name="effects" parent="pivot/arm/lens" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.493 )
+visible = false
 
 [node name="tof_pivot" type="Spatial" parent="."]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0 )

@@ -40,6 +40,7 @@ var camera_mode = "tof"
 var camera_pivot
 var camera_arm
 var camera_lens
+var camera_lens_effect
 var camera_tof
 var camera_aw
 
@@ -85,6 +86,7 @@ func _ready():
     self.camera_pivot = $"pivot"
     self.camera_arm = $"pivot/arm"
     self.camera_lens = $"pivot/arm/lens"
+    self.camera_lens_effect = $"pivot/arm/lens/effects"
     self.camera_tof = $"tof_pivot/tof_arm/tof_style_camera"
     self.camera_aw = $"aw_pivot/aw_arm/aw_style_camera"
 
@@ -286,14 +288,17 @@ func switch_camera():
     if self.camera_mode == self.MODE_TOF:
         self.camera_mode = self.MODE_AW
         self.camera_aw.make_current()
+        self.camera_lens_effect.hide()
         return
     if self.camera_mode == self.MODE_AW:
         self.camera_mode = self.MODE_FREE
         self.camera_lens.make_current()
+        self.camera_lens_effect.show()
         return
     if self.camera_mode == self.MODE_FREE:
         self.camera_mode = self.MODE_TOF
         self.camera_tof.make_current()
+        self.camera_lens_effect.hide()
         return
 
 func force_stick_reset():
