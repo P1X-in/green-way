@@ -1,5 +1,10 @@
 extends Spatial
 
+onready var audio = $"/root/SimpleAudioLibrary"
+
+func _ready():
+    self.audio.track("menu")
+
 func _input(event):
     if Input.is_key_pressed(KEY_ESCAPE):
         get_tree().quit()

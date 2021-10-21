@@ -62,7 +62,7 @@ func set_up_map():
     self._place_random_terrain()
 
 func set_up_board():
-    self.audio.track("menu")
+    return
 
 func select_tile(position):
     if self.map.camera.camera_in_transit or self.map.camera.script_operated:
