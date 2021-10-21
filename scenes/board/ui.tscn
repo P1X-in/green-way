@@ -10,7 +10,109 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bottom" type="Panel" parent="."]
+[node name="left" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -64.0
+margin_right = 1280.0
+rect_min_size = Vector2( 0, 64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tiles" type="HBoxContainer" parent="left"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = -64.0
+margin_right = 1304.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="emoji" type="Label" parent="left/tiles"]
+margin_top = 18.0
+margin_right = 14.0
+margin_bottom = 45.0
+text = ">"
+align = 1
+valign = 1
+
+[node name="tiles_left_" type="Label" parent="left/tiles"]
+margin_left = 30.0
+margin_top = 18.0
+margin_right = 180.0
+margin_bottom = 45.0
+text = "TILES LEFT:"
+align = 1
+valign = 1
+
+[node name="count" type="Label" parent="left/tiles"]
+margin_left = 196.0
+margin_top = 18.0
+margin_right = 210.0
+margin_bottom = 45.0
+text = "5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1280.0
+margin_top = -64.0
+rect_min_size = Vector2( 0, 64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="HBoxContainer" parent="right"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -252.0
+margin_top = -64.0
+margin_right = -24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="emoji2" type="Label" parent="right/score"]
+margin_top = 18.0
+margin_right = 14.0
+margin_bottom = 45.0
+text = ">"
+align = 1
+valign = 1
+
+[node name="score_" type="Label" parent="right/score"]
+margin_left = 30.0
+margin_top = 18.0
+margin_right = 170.0
+margin_bottom = 45.0
+text = "COLLECTED:"
+align = 1
+valign = 1
+
+[node name="count" type="Label" parent="right/score"]
+margin_left = 186.0
+margin_top = 18.0
+margin_right = 228.0
+margin_bottom = 45.0
+text = "999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="center" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -23,23 +125,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="vertical" type="HBoxContainer" parent="bottom"]
-anchor_right = 1.0
+[node name="attention" type="HBoxContainer" parent="center"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-alignment = 1
+margin_left = -126.0
+margin_top = -64.0
+margin_right = 126.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="tiles" type="HBoxContainer" parent="bottom/vertical"]
-margin_left = 199.0
-margin_right = 409.0
-margin_bottom = 64.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="emoji" type="Label" parent="bottom/vertical/tiles"]
+[node name="emoji" type="Label" parent="center/attention"]
 margin_top = 18.0
 margin_right = 14.0
 margin_bottom = 45.0
@@ -47,50 +145,7 @@ text = ">"
 align = 1
 valign = 1
 
-[node name="tiles_left_" type="Label" parent="bottom/vertical/tiles"]
-margin_left = 30.0
-margin_top = 18.0
-margin_right = 180.0
-margin_bottom = 45.0
-text = "TILES LEFT:"
-align = 1
-valign = 1
-
-[node name="count" type="Label" parent="bottom/vertical/tiles"]
-margin_left = 196.0
-margin_top = 18.0
-margin_right = 210.0
-margin_bottom = 45.0
-text = "5"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="space2" type="Control" parent="bottom/vertical"]
-margin_left = 425.0
-margin_right = 489.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 0 )
-
-[node name="attention" type="HBoxContainer" parent="bottom/vertical"]
-margin_left = 505.0
-margin_right = 757.0
-margin_bottom = 64.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="emoji" type="Label" parent="bottom/vertical/attention"]
-margin_top = 18.0
-margin_right = 14.0
-margin_bottom = 45.0
-text = ">"
-align = 1
-valign = 1
-
-[node name="trash_wait_" type="Label" parent="bottom/vertical/attention"]
+[node name="trash_wait_" type="Label" parent="center/attention"]
 margin_left = 30.0
 margin_top = 18.0
 margin_right = 222.0
@@ -99,55 +154,12 @@ text = "TRASH WAITING:"
 align = 1
 valign = 1
 
-[node name="count" type="Label" parent="bottom/vertical/attention"]
+[node name="count" type="Label" parent="center/attention"]
 margin_left = 238.0
 margin_top = 18.0
 margin_right = 252.0
 margin_bottom = 45.0
 text = "0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="space" type="Control" parent="bottom/vertical"]
-margin_left = 773.0
-margin_right = 837.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 0 )
-
-[node name="score" type="HBoxContainer" parent="bottom/vertical"]
-margin_left = 853.0
-margin_right = 1081.0
-margin_bottom = 64.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="emoji2" type="Label" parent="bottom/vertical/score"]
-margin_top = 18.0
-margin_right = 14.0
-margin_bottom = 45.0
-text = ">"
-align = 1
-valign = 1
-
-[node name="score_" type="Label" parent="bottom/vertical/score"]
-margin_left = 30.0
-margin_top = 18.0
-margin_right = 170.0
-margin_bottom = 45.0
-text = "COLLECTED:"
-align = 1
-valign = 1
-
-[node name="count" type="Label" parent="bottom/vertical/score"]
-margin_left = 186.0
-margin_top = 18.0
-margin_right = 228.0
-margin_bottom = 45.0
-text = "999"
 align = 1
 valign = 1
 __meta__ = {
