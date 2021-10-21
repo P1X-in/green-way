@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ui/Logo.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=7]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=8]
+[ext_resource path="res://assets/cars/GarbageTrack_Blue.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 16.0
@@ -35,7 +36,7 @@ corner_radius_bottom_left = 48
 length = 4.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:translation")
+tracks/0/path = NodePath("BackgroundAssets:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -45,6 +46,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 16 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("GarbageTrack_Blue:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -1.861, -0.989, -45 ), Vector3( -1.861, -0.989, 5 ) ]
 }
 
 [node name="MainMenu" type="Spatial"]
@@ -120,7 +137,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="BackgroundAssets" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.17252 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.66407 )
 
 [node name="sm_road_straight" parent="BackgroundAssets" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.962, -14 )
@@ -176,9 +193,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -0.962, -30 )
 [node name="Building_House_10" parent="BackgroundAssets" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 7.35137e-08, 0, 1, 0, -7.35137e-08, 0, 1, -8, -0.962, -30 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundAssets"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 7 )
+
+[node name="GarbageTrack_Blue" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.86104, -0.989002, 15.3233 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "demo"
 anims/demo = SubResource( 3 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 7 )
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+autoplay = "demo"
+anims/demo = SubResource( 4 )
+
+[editable path="Logo"]
