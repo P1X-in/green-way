@@ -14,6 +14,8 @@ var selected_tile = null
 var last_hover_tile = null
 var mouse_click_position = null
 
+var tiles_available = 5
+
 func _ready():
     self.set_up_map()
     self.set_up_board()
@@ -36,6 +38,7 @@ func _input(event):
 func _physics_process(_delta):
     self.hover_tile()
     self.dispatcher.process_dispatch()
+    self._update_count()
 
 func hover_tile():
     var tile = self.map.model.get_tile(self.map.tile_box_position)
@@ -66,8 +69,9 @@ func select_tile(position):
     if tile.has_content():
         self.audio.play("click")
     else:
-        self.audio.play("build_road")
-        self.place_road(position)
+        if self.tiles_available > 0:
+            self.audio.play("build_road")
+            self.place_road(position)
 
     self.selected_tile = tile
     self.update_tile_highlight(tile)
@@ -95,6 +99,7 @@ func place_road(position):
     self.fix_neighbouring_roads(tile)
 
     self.paths.refresh_all_industrial_paths()
+    self.tiles_available -= 1
 
 func fix_neighbouring_roads(tile):
     for neighbour in tile.neighbours.values():
@@ -169,6 +174,7 @@ func clear_road(position):
         self.fix_neighbouring_roads(tile)
         self.paths.refresh_all_industrial_paths()
         self.dispatcher.recall_trucks(tile)
+        self.tiles_available += 1
     else:
         self.audio.play("click")
 
@@ -203,3 +209,5 @@ func _place_random_terrain_tile(tile):
 
     self.map.builder.place_terrain(tile.position, template, rotation)
 
+func _update_count():
+    $"ui/tiles/count".set_text(str(self.tiles_available))

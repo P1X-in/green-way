@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/map/map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/board/board.gd" type="Script" id=2]
+[ext_resource path="res://scenes/board/ui.tscn" type="PackedScene" id=3]
 
 [sub_resource type="PlaneMesh" id=1]
 
@@ -21,3 +22,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 4 )
 transform = Transform( 1024, 0, 0, 0, 0, 0, 0, 0, 1024, 160, -1, 160 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
+
+[node name="ui" parent="." instance=ExtResource( 3 )]
+mouse_filter = 2

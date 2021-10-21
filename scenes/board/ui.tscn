@@ -1,0 +1,25 @@
+[gd_scene format=2]
+
+[node name="ui" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tiles" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -40.0
+margin_right = 20.0
+
+[node name="count" type="Label" parent="tiles"]
+margin_top = 13.0
+margin_right = 40.0
+margin_bottom = 27.0
+text = "5"
+align = 1
+valign = 1

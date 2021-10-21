@@ -46,6 +46,8 @@ func _loop_tick():
     self.board.paths.build_paths_for_industrial_building(industrial_tile)
 
     self.loop_count += 1
+
+    self.board.tiles_available += 5
     yield(self.board.get_tree().create_timer(self.LOOP_TICK_DURATION), "timeout")
     self.call_deferred("_loop_tick")
 
