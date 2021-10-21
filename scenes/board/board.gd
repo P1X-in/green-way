@@ -17,6 +17,8 @@ var mouse_click_position = null
 var tiles_available = 5
 var score = 0
 var score_to_win = 3000
+var latest_house = null
+var latest_industrial = null
 
 func _ready():
     self.set_up_map()
@@ -36,6 +38,11 @@ func _input(event):
         self.audio.play("menu_click")
     if event.is_action_pressed("ui_cancel"):
         self.clear_road(self.map.tile_box_position)
+
+    if event.is_action_pressed("end_turn") and self.latest_house != null:
+        self.map.move_camera_to_position(self.latest_house.position)
+    if event.is_action_pressed("editor_clear") and self.latest_industrial != null:
+        self.map.move_camera_to_position(self.latest_industrial.position)
 
     if Input.is_key_pressed(KEY_ESCAPE):
         get_tree().quit()

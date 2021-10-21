@@ -52,6 +52,8 @@ func _loop_tick():
     self.loop_count += 1
 
     self.board.tiles_available += 5
+    self.board.latest_house = home_tile
+    self.board.latest_industrial = industrial_tile
     yield(self.board.get_tree().create_timer(self.LOOP_TICK_DURATION), "timeout")
     self.call_deferred("_loop_tick")
 
