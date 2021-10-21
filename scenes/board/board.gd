@@ -211,9 +211,9 @@ func _place_random_terrain_tile(tile):
     self.map.builder.place_terrain(tile.position, template, rotation)
 
 func _update_count():
-    $"ui/bottom/vertical/tiles/count".set_text(str(self.tiles_available))
+    $"ui/left/tiles/count".set_text(str(self.tiles_available))
     self._update_waiting_thrash()
-    $"ui/bottom/vertical/score/count".set_text(str(self.score))
+    $"ui/right/score/count".set_text(str(self.score))
 
 func _update_waiting_thrash():
     var count = 0
