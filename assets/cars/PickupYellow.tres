@@ -4,7 +4,7 @@
 resource_name = "Pickup"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("RootNode/BodyGreen/Rear:translation")
+tracks/0/path = NodePath("RootNode/BodyYellow/Rear:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -16,7 +16,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, -0.00102963, 0.0209478 ), Vector3( 0, -0.00375283, 0.0210429 ), Vector3( 0, -0.00375283, 0.0210429 ), Vector3( 0, -0.00375283, 0.0210429 ), Vector3( 0, -0.00375283, 0.0210429 ), Vector3( 0, -0.00102963, 0.0209478 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RootNode/BodyGreen/Rear:rotation_degrees")
+tracks/1/path = NodePath("RootNode/BodyYellow/Rear:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -28,7 +28,7 @@ tracks/1/keys = {
 "values": [ Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -68.3148, 0.157267, -0.473413 ), Vector3( -68.3148, 0.157267, -0.473413 ), Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -5.90184, 0.0584207, -0.333284 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RootNode/BodyGreen:rotation_degrees")
+tracks/2/path = NodePath("RootNode/BodyYellow:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false

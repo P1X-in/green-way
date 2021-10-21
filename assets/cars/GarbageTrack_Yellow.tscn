@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/materials/M_VectorColor.material" type="Material" id=2]
 [ext_resource path="res://assets/cars/SM_GarbageTrack_Yellow.fbx" type="PackedScene" id=3]
 [ext_resource path="res://assets/materials/M_VectorColorMate.material" type="Material" id=4]
-[ext_resource path="res://assets/cars/PickupGreen.tres" type="Animation" id=5]
+[ext_resource path="res://assets/cars/PickupYellow.tres" type="Animation" id=5]
 [ext_resource path="res://assets/cars/TruckLights.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
@@ -66,10 +66,10 @@ material/0 = ExtResource( 1 )
 transform = Transform( 0.01, 0, 0, 0, 0.000348994, -0.00999391, 0, 0.00999391, 0.000348994, -0.00622827, 0.0232155, 0.00858986 )
 
 [node name="Rear" parent="RootNode/BodyYellow" index="1"]
-transform = Transform( 0.999983, 0.00571202, 0.00101423, -0.00578604, 0.994683, 0.102824, -0.0004215, -0.102829, 0.994699, 0, -0.00102963, 0.0209478 )
+transform = Transform( 0.999983, 0.00571202, 0.00101423, -0.00578603, 0.994683, 0.102824, -0.0004215, -0.102829, 0.994699, 0, -0.00102963, 0.0209478 )
 material/0 = ExtResource( 2 )
 
 [node name="AnimationYellow" type="AnimationPlayer" parent="." index="1"]
 autoplay = "TrackRun"
-anims/Pickup = ExtResource( 5 )
+anims/PickupYellow = ExtResource( 5 )
 anims/TrackRun = SubResource( 1 )

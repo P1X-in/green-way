@@ -52,7 +52,7 @@ tracks/2/keys = {
 
 [node name="AnimationGreen" type="AnimationPlayer" parent="." index="0"]
 autoplay = "TrackRun"
-anims/Pickup = ExtResource( 5 )
+anims/PickupGreen = ExtResource( 5 )
 anims/TrackRun = SubResource( 1 )
 
 [node name="WheelsRear" parent="RootNode" index="0"]

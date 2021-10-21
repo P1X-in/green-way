@@ -15,11 +15,11 @@ transform = Transform( -1.26779e-06, 0, 95.9231, 0, 29.0036, 0, -29.0036, 0, -4.
 material/0 = ExtResource( 5 )
 
 [node name="BodyBlue" parent="RootNode" index="1"]
-transform = Transform( 100, 0, 0, 0, 3.48994, 99.9391, 0, -99.939, 3.48994, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, 3.48993, 99.9391, 0, -99.939, 3.48994, 0, 0, 0 )
 material/0 = ExtResource( 1 )
 
 [node name="Rear" parent="RootNode/BodyBlue" index="0"]
-transform = Transform( 0.999983, 0.00571202, 0.00101423, -0.00578603, 0.994682, 0.102825, -0.0004215, -0.102829, 0.9947, 0, -0.00102963, 0.0209478 )
+transform = Transform( 0.999983, 0.00571202, 0.00101423, -0.00578604, 0.994682, 0.102825, -0.0004215, -0.102829, 0.9947, 0, -0.00102963, 0.0209478 )
 material/0 = ExtResource( 4 )
 
 [node name="TruckLights" parent="RootNode/BodyBlue" index="1" instance=ExtResource( 7 )]
@@ -31,5 +31,5 @@ material/0 = ExtResource( 5 )
 
 [node name="AnimationBlue" type="AnimationPlayer" parent="." index="1"]
 autoplay = "TrackRun"
-anims/Pickup = ExtResource( 6 )
+anims/PickupBlue = ExtResource( 6 )
 anims/TrackRun = ExtResource( 2 )

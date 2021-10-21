@@ -4,7 +4,7 @@
 resource_name = "Pickup"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("RootNode/BodyRed/Rear:translation")
+tracks/0/path = NodePath("RootNode/BodyBlue/Rear:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,7 +28,7 @@ tracks/1/keys = {
 "values": [ Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -68.3148, 0.157267, -0.473413 ), Vector3( -68.3148, 0.157267, -0.473413 ), Vector3( -5.90184, 0.0584207, -0.333284 ), Vector3( -5.90184, 0.0584207, -0.333284 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("RootNode/BodyRed:rotation_degrees")
+tracks/2/path = NodePath("RootNode/BodyBlue:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
