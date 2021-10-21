@@ -67,7 +67,7 @@ func _expand_from_tile(source_key, tile, reach_cost):
         if neighbour_cost == null || neighbour_cost > reach_cost + 1:
             self._connect_path(source_key, tile, neighbour)
 
-            if neighbour.ground.is_present():
+            if neighbour.ground.is_present() and reach_cost < 40:
                 self._expand_from_tile(source_key, neighbour, reach_cost + 1)
 
 func _mark_tile_cost(tile, cost):
