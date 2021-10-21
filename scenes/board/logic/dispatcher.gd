@@ -77,7 +77,7 @@ func _dispatch(industrial_tile, house_tile):
 
     var return_directions = self._convert_path_to_directions(path)
 
-    industrial.dispatch_truck(house_tile, path, directions, return_directions)
+    industrial.dispatch_truck(house_tile, path, directions, return_directions, self.board)
 
     house.assigned_truck = industrial.truck
 
