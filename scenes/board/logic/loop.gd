@@ -17,17 +17,25 @@ func _loop_tick():
     var home_template = self._get_random_house_template()
     var home_tile
     var thrash_type = self._get_random_thrash_type()
+
+    var leash_tile = null
+    var industrial_distance = 10
+
+    if self.loop_count < 4:
+        leash_tile = self.board.map.model.get_tile2(20, 20)
+        industrial_distance = 5
+
     if randi() % 2 == 1:
-        home_tile = self._place_random_building(true, home_template)
+        home_tile = self._place_random_building(true, home_template, leash_tile, 10)
         if not home_tile:
-            home_tile = self._place_random_building(false, home_template)
+            home_tile = self._place_random_building(false, home_template, leash_tile, 10)
     else:
-        home_tile = self._place_random_building(false, home_template)
+        home_tile = self._place_random_building(false, home_template, leash_tile, 10)
     self._play_building_sound();
 
     self.board.map.model.add_house(home_tile)
 
-    var industrial_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, self.loop_count * 5 + 5)
+    var industrial_tile = self._place_random_building(false, self.board.map.templates.BUILDING_INDUSTRY, home_tile, industrial_distance)
 
     home_tile.building.tile.init_thrash_bin(thrash_type)
     industrial_tile.building.tile.set_type(thrash_type)
