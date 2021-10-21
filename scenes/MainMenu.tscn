@@ -9,30 +9,10 @@
 [ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=7]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=8]
 [ext_resource path="res://assets/cars/GarbageTrack_Blue.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/ui/green.stylebox" type="StyleBox" id=10]
+[ext_resource path="res://scenes/ui/gray.stylebox" type="StyleBox" id=11]
 
-[sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 16.0
-content_margin_right = 16.0
-content_margin_top = 8.0
-content_margin_bottom = 8.0
-bg_color = Color( 0.247059, 0.431373, 0.247059, 1 )
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
-
-[sub_resource type="StyleBoxFlat" id=2]
-content_margin_left = 16.0
-content_margin_right = 16.0
-content_margin_top = 8.0
-content_margin_bottom = 8.0
-bg_color = Color( 0.215686, 0.215686, 0.215686, 1 )
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -48,7 +28,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 16 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 length = 8.0
 loop = true
 tracks/0/type = "value"
@@ -101,7 +81,7 @@ __meta__ = {
 [node name="start" type="Label" parent="Panel/VBoxContainer2"]
 margin_right = 502.0
 margin_bottom = 43.0
-custom_styles/normal = SubResource( 1 )
+custom_styles/normal = ExtResource( 10 )
 text = "PRESS ANY KEY TO START RECYCLING..."
 align = 1
 __meta__ = {
@@ -120,7 +100,7 @@ size_flags_vertical = 3
 margin_top = 146.0
 margin_right = 502.0
 margin_bottom = 219.0
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = ExtResource( 11 )
 text = "Game by P1X made on 
 Polish-Swiss GameJam 2021"
 align = 1
@@ -201,10 +181,10 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.8610
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "demo"
-anims/demo = SubResource( 3 )
+anims/demo = SubResource( 1 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 autoplay = "demo"
-anims/demo = SubResource( 4 )
+anims/demo = SubResource( 2 )
 
 [editable path="Logo"]

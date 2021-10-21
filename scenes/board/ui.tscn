@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/icon3d_road.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/ui/green.stylebox" type="StyleBox" id=4]
+[ext_resource path="res://scenes/ui/gray.stylebox" type="StyleBox" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 use_mipmaps = true
@@ -96,12 +98,12 @@ valign = 1
 
 [node name="count" type="Label" parent="left/tiles"]
 margin_left = 310.0
-margin_top = 26.0
-margin_right = 324.0
-margin_bottom = 53.0
+margin_top = 18.0
+margin_right = 356.0
+margin_bottom = 61.0
+custom_styles/normal = ExtResource( 4 )
 text = "5"
 align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -149,12 +151,12 @@ valign = 1
 
 [node name="count" type="Label" parent="center/attention"]
 margin_left = 304.0
-margin_top = 26.0
-margin_right = 318.0
-margin_bottom = 53.0
+margin_top = 18.0
+margin_right = 350.0
+margin_bottom = 61.0
+custom_styles/normal = ExtResource( 5 )
 text = "0"
 align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -213,19 +215,19 @@ valign = 1
 
 [node name="count" type="Label" parent="right/score"]
 margin_left = 252.0
-margin_top = 26.0
-margin_right = 294.0
-margin_bottom = 53.0
+margin_top = 18.0
+margin_right = 326.0
+margin_bottom = 61.0
+custom_styles/normal = ExtResource( 5 )
 text = "999"
 align = 1
-valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="space" type="Control" parent="right/score"]
-margin_left = 310.0
-margin_right = 342.0
+margin_left = 342.0
+margin_right = 374.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 32, 0 )
 

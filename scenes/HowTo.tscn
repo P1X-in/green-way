@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/terrain/Terrain_Plains.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://scenes/HowTo.gd" type="Script" id=10]
 [ext_resource path="res://assets/terrain/Road_Bend.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/ui/green.stylebox" type="StyleBox" id=12]
+[ext_resource path="res://scenes/ui/gray.stylebox" type="StyleBox" id=13]
 
 [sub_resource type="QuadMesh" id=1]
 size = Vector2( 16, 9 )
@@ -142,32 +144,35 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Top"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 96.0
+margin_right = -96.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="space" type="Control" parent="Top/VBoxContainer"]
-margin_right = 1280.0
+margin_right = 1088.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="howto" type="Label" parent="Top/VBoxContainer"]
 margin_top = 28.0
-margin_right = 1280.0
-margin_bottom = 55.0
+margin_right = 1088.0
+margin_bottom = 71.0
+custom_styles/normal = ExtResource( 12 )
 text = "CONNECT TRASH TYPE WITH CORRECT UTILIZATION CENTER"
 align = 1
 
 [node name="space2" type="Control" parent="Top/VBoxContainer"]
-margin_top = 67.0
-margin_right = 1280.0
-margin_bottom = 83.0
+margin_top = 83.0
+margin_right = 1088.0
+margin_bottom = 99.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Top/VBoxContainer"]
-margin_top = 95.0
-margin_right = 1280.0
-margin_bottom = 122.0
+margin_top = 111.0
+margin_right = 1088.0
+margin_bottom = 154.0
 custom_constants/separation = 48
 alignment = 1
 __meta__ = {
@@ -175,37 +180,44 @@ __meta__ = {
 }
 
 [node name="red" type="Label" parent="Top/VBoxContainer/HBoxContainer"]
-margin_left = 308.0
-margin_right = 436.0
-margin_bottom = 27.0
+margin_left = 177.0
+margin_right = 305.0
+margin_bottom = 43.0
 rect_min_size = Vector2( 128, 0 )
+custom_styles/normal = ExtResource( 13 )
 custom_colors/font_color = Color( 0.972549, 0.0705882, 0.0666667, 1 )
 text = "RED BIN"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="blue" type="Label" parent="Top/VBoxContainer/HBoxContainer"]
-margin_left = 484.0
-margin_right = 612.0
-margin_bottom = 27.0
+margin_left = 353.0
+margin_right = 493.0
+margin_bottom = 43.0
 rect_min_size = Vector2( 128, 0 )
+custom_styles/normal = ExtResource( 13 )
 custom_colors/font_color = Color( 0.254902, 0.47451, 1, 1 )
 text = "BLUE BIN"
 align = 1
 
 [node name="green" type="Label" parent="Top/VBoxContainer/HBoxContainer"]
-margin_left = 660.0
-margin_right = 788.0
-margin_bottom = 27.0
+margin_left = 541.0
+margin_right = 695.0
+margin_bottom = 43.0
 rect_min_size = Vector2( 128, 0 )
+custom_styles/normal = ExtResource( 13 )
 custom_colors/font_color = Color( 0.207843, 0.929412, 0.203922, 1 )
 text = "GREEN BIN"
 align = 1
 
 [node name="yellow" type="Label" parent="Top/VBoxContainer/HBoxContainer"]
-margin_left = 836.0
-margin_right = 972.0
-margin_bottom = 27.0
+margin_left = 743.0
+margin_right = 911.0
+margin_bottom = 43.0
 rect_min_size = Vector2( 128, 0 )
+custom_styles/normal = ExtResource( 13 )
 custom_colors/font_color = Color( 1, 0.964706, 0.0980392, 1 )
 text = "YELLOW BIN"
 align = 1
@@ -226,45 +238,46 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -640.0
-margin_top = -146.0
-margin_right = 640.0
+margin_left = -488.0
+margin_top = -178.0
+margin_right = 488.0
 custom_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="space" type="Control" parent="Bottom/VBoxContainer"]
-margin_right = 1280.0
+margin_right = 976.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="howto" type="Label" parent="Bottom/VBoxContainer"]
 margin_top = 16.0
-margin_right = 1280.0
-margin_bottom = 73.0
+margin_right = 976.0
+margin_bottom = 89.0
+custom_styles/normal = ExtResource( 12 )
 text = "ROAD TILES ARE LIMITED. MAKE YOUR INFRASTRUCTURE SIMPLE AND EFFICIENT.
 MORE BUILDINGS WILL SHOW UP OVER TIME."
 align = 1
 
 [node name="space2" type="Control" parent="Bottom/VBoxContainer"]
-margin_top = 73.0
-margin_right = 1280.0
-margin_bottom = 89.0
+margin_top = 89.0
+margin_right = 976.0
+margin_bottom = 105.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="howto2" type="Label" parent="Bottom/VBoxContainer"]
-margin_top = 89.0
-margin_right = 1280.0
-margin_bottom = 130.0
+margin_top = 105.0
+margin_right = 976.0
+margin_bottom = 146.0
 custom_fonts/font = SubResource( 2 )
 text = "READY?"
 align = 1
 
 [node name="space3" type="Control" parent="Bottom/VBoxContainer"]
-margin_top = 130.0
-margin_right = 1280.0
-margin_bottom = 162.0
+margin_top = 146.0
+margin_right = 976.0
+margin_bottom = 178.0
 rect_min_size = Vector2( 0, 32 )
 
 [node name="Tile_Road_Bend" parent="." instance=ExtResource( 11 )]
