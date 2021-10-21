@@ -13,6 +13,7 @@ config_version=4
 config/name="GreenWay"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/icon="res://assets/icon.png"
+config/windows_native_icon="res://assets/icon.ico"
 
 [autoload]
 
