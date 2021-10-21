@@ -62,3 +62,8 @@ func add_house(house_tile):
 
 func add_industrial(industrial_tile):
     self.industrials.append(industrial_tile)
+
+func get_random_tile():
+    var tiles_array = self.tiles.values()
+
+    return tiles_array[randi() % tiles_array.size()]
