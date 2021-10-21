@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/tiles/tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/bins/TrashBin_Red.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/bins/TrashBin_Blue.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/tiles/buildings/house.gd" type="Script" id=8]
+[ext_resource path="res://assets/audio/hammer_hits_24.wav" type="AudioStream" id=9]
 
 [node name="house2" instance=ExtResource( 1 )]
 script = ExtResource( 8 )
@@ -33,3 +34,10 @@ visible = false
 [node name="SM_TrashBin_Yellow" parent="." index="5" instance=ExtResource( 5 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 5, 0 )
 visible = false
+
+[node name="player" type="AudioStreamPlayer3D" parent="." index="6"]
+stream = ExtResource( 9 )
+unit_db = 1.0
+unit_size = 82.4
+autoplay = true
+bus = "Units"

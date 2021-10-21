@@ -66,8 +66,9 @@ func _garbage_tick():
 
 
 func _play_building_sound():
-	self.board.audio.play("build_" + str(randi() % 2 ))
-
+	#self.board.audio.play("build_" + str(randi() % 2 ))
+	pass
+	
 func _place_random_building(with_neighbour, template, source_tile=null, distance=999):
 	var free_tiles = self._get_free_tiles(with_neighbour)
 
