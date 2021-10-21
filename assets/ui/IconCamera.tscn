@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/cars/GarbageTrack_Red.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/Exclamation.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/bins/TrashBin_Red.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=4]
+
+[node name="Camera" type="Camera"]
+transform = Transform( 0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 0, 0 )
+projection = 1
+current = true
+size = 8.0
+
+[node name="sm_road_straight" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.519615, 0, -0.3, -0.212132, 0.424264, -0.367424, 0.212132, 0.424264, 0.367424, 0, 0, -14 )
+
+[node name="SM_TrashBin_Red" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.897, -1.387, -1 )
+
+[node name="Exclamation" parent="SM_TrashBin_Red" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.546, -1.634, -4 )
+
+[node name="GarbageTrack_Red" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.2222e-08, 1.13133e-08, 1, 0.258819, 0.965926, 0, -0.965926, 0.258819, -4.37114e-08, 0, -1.078, -2.097 )
+visible = false
