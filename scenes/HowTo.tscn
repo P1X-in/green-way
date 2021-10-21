@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/terrain/Terrain_Plains.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=2]
@@ -8,17 +8,10 @@
 [ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://default_env.tres" type="Environment" id=7]
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=8]
-[ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://scenes/HowTo.gd" type="Script" id=10]
 
 [sub_resource type="QuadMesh" id=1]
 size = Vector2( 16, 9 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 9 )
 
 [node name="HowTo" type="Control"]
 anchor_right = 1.0
@@ -166,21 +159,20 @@ rect_min_size = Vector2( 0, 16 )
 [node name="howto" type="Label" parent="Panel/VBoxContainer"]
 margin_top = 28.0
 margin_right = 1280.0
-margin_bottom = 69.0
-custom_fonts/font = SubResource( 2 )
+margin_bottom = 55.0
 text = "CONNECT TRASH TYPE WITH CORRECT UTILIZATION CENTER"
 align = 1
 
 [node name="space2" type="Control" parent="Panel/VBoxContainer"]
-margin_top = 81.0
+margin_top = 67.0
 margin_right = 1280.0
-margin_bottom = 97.0
+margin_bottom = 83.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 109.0
+margin_top = 95.0
 margin_right = 1280.0
-margin_bottom = 136.0
+margin_bottom = 122.0
 custom_constants/separation = 48
 alignment = 1
 __meta__ = {
@@ -188,39 +180,39 @@ __meta__ = {
 }
 
 [node name="red" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 312.0
-margin_right = 440.0
+margin_left = 308.0
+margin_right = 436.0
 margin_bottom = 27.0
 rect_min_size = Vector2( 128, 0 )
 custom_colors/font_color = Color( 0.972549, 0.0705882, 0.0666667, 1 )
-text = "PLASTIC"
+text = "RED BIN"
 align = 1
 
 [node name="blue" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 488.0
-margin_right = 616.0
+margin_left = 484.0
+margin_right = 612.0
 margin_bottom = 27.0
 rect_min_size = Vector2( 128, 0 )
 custom_colors/font_color = Color( 0.254902, 0.47451, 1, 1 )
-text = "PAPER"
+text = "BLUE BIN"
 align = 1
 
 [node name="green" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 664.0
-margin_right = 792.0
+margin_left = 660.0
+margin_right = 788.0
 margin_bottom = 27.0
 rect_min_size = Vector2( 128, 0 )
 custom_colors/font_color = Color( 0.207843, 0.929412, 0.203922, 1 )
-text = "GLASS"
+text = "GREEN BIN"
 align = 1
 
 [node name="yellow" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 840.0
-margin_right = 968.0
+margin_left = 836.0
+margin_right = 972.0
 margin_bottom = 27.0
 rect_min_size = Vector2( 128, 0 )
 custom_colors/font_color = Color( 1, 0.964706, 0.0980392, 1 )
-text = "CANS"
+text = "YELLOW BIN"
 align = 1
 
 [node name="Panel2" type="Panel" parent="."]
@@ -240,7 +232,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -640.0
-margin_top = -90.0
+margin_top = -116.0
 margin_right = 640.0
 custom_constants/separation = 0
 __meta__ = {
@@ -249,7 +241,7 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel2/VBoxContainer"]
 margin_right = 1280.0
-margin_bottom = 27.0
+margin_bottom = 57.0
 custom_constants/separation = 48
 alignment = 1
 __meta__ = {
@@ -259,56 +251,60 @@ __meta__ = {
 [node name="red" type="Label" parent="Panel2/VBoxContainer/HBoxContainer"]
 margin_left = 312.0
 margin_right = 440.0
-margin_bottom = 27.0
+margin_bottom = 57.0
 rect_min_size = Vector2( 128, 0 )
 custom_colors/font_color = Color( 0.972549, 0.0705882, 0.0666667, 1 )
-text = "RED"
+text = "RED
+CENTER"
 align = 1
 
 [node name="blue" type="Label" parent="Panel2/VBoxContainer/HBoxContainer"]
 margin_left = 488.0
 margin_right = 616.0
-margin_bottom = 27.0
+margin_bottom = 57.0
 rect_min_size = Vector2( 128, 0 )
 custom_colors/font_color = Color( 0.254902, 0.47451, 1, 1 )
-text = "BLUE"
+text = "BLUE
+CENTER"
 align = 1
 
 [node name="green" type="Label" parent="Panel2/VBoxContainer/HBoxContainer"]
 margin_left = 664.0
 margin_right = 792.0
-margin_bottom = 27.0
+margin_bottom = 57.0
 rect_min_size = Vector2( 128, 0 )
 custom_colors/font_color = Color( 0.207843, 0.929412, 0.203922, 1 )
-text = "GREEN"
+text = "GREEN
+CENTER"
 align = 1
 
 [node name="yellow" type="Label" parent="Panel2/VBoxContainer/HBoxContainer"]
 margin_left = 840.0
 margin_right = 968.0
-margin_bottom = 27.0
+margin_bottom = 57.0
 rect_min_size = Vector2( 128, 0 )
 custom_colors/font_color = Color( 1, 0.964706, 0.0980392, 1 )
-text = "YELLOW"
+text = "YELLOW
+CENTER"
 align = 1
 
 [node name="space" type="Control" parent="Panel2/VBoxContainer"]
-margin_top = 27.0
+margin_top = 57.0
 margin_right = 1280.0
-margin_bottom = 43.0
+margin_bottom = 73.0
 rect_min_size = Vector2( 0, 16 )
 
 [node name="howto" type="Label" parent="Panel2/VBoxContainer"]
-margin_top = 43.0
+margin_top = 73.0
 margin_right = 1280.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 text = "READY?"
 align = 1
 
 [node name="space2" type="Control" parent="Panel2/VBoxContainer"]
-margin_top = 70.0
+margin_top = 100.0
 margin_right = 1280.0
-margin_bottom = 86.0
+margin_bottom = 116.0
 rect_min_size = Vector2( 0, 16 )
 
 [editable path="main_camera"]
