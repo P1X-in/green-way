@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/cars/PickupRed.tres" type="Animation" id=6]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Pickup"
+resource_name = "PickupRed"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("RootNode/BodyRed/Rear:translation")
@@ -51,7 +51,7 @@ tracks/2/keys = {
 
 [node name="AnimationRed" type="AnimationPlayer" parent="." index="0"]
 autoplay = "TrackRun"
-anims/Pickup = SubResource( 1 )
+anims/PickupRed = SubResource( 1 )
 anims/TrackRun = ExtResource( 6 )
 
 [node name="WheelsRear" parent="RootNode" index="0"]
