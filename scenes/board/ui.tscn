@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/icon3d_road.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
 
 [node name="ui" type="Control"]
 anchor_right = 1.0
@@ -10,6 +16,42 @@ theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="top" type="Panel" parent="."]
+anchor_right = 1.0
+margin_top = 16.0
+margin_bottom = 16.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="top/HBoxContainer"]
+margin_left = 464.0
+margin_right = 816.0
+margin_bottom = 48.0
+custom_constants/separation = 0
+
+[node name="Label" type="Label" parent="top/HBoxContainer/VBoxContainer"]
+margin_right = 352.0
+margin_bottom = 27.0
+text = "POLISH-SWISS GAME JAM 2021"
+align = 1
+
+[node name="Label2" type="Label" parent="top/HBoxContainer/VBoxContainer"]
+margin_top = 27.0
+margin_right = 352.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+text = "48H VERSION"
+align = 1
 
 [node name="left" type="Panel" parent="."]
 anchor_top = 1.0
@@ -24,7 +66,7 @@ __meta__ = {
 [node name="tiles" type="HBoxContainer" parent="left"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -64.0
+margin_top = -80.0
 margin_right = 1280.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,108 +74,41 @@ __meta__ = {
 
 [node name="space2" type="Control" parent="left/tiles"]
 margin_right = 32.0
-margin_bottom = 64.0
+margin_bottom = 80.0
 rect_min_size = Vector2( 32, 0 )
 
 [node name="Icon3D" parent="left/tiles" instance=ExtResource( 2 )]
 margin_left = 48.0
-margin_right = 112.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_right = 128.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Viewport" parent="left/tiles/Icon3D/ViewportContainer" index="0"]
+render_target_update_mode = 3
 
 [node name="SM_TrashBin_Red" parent="left/tiles/Icon3D/ViewportContainer/Viewport/Camera" index="1"]
 visible = false
 
 [node name="tiles_left_" type="Label" parent="left/tiles"]
-margin_left = 128.0
-margin_top = 18.0
-margin_right = 278.0
-margin_bottom = 45.0
+margin_left = 144.0
+margin_top = 26.0
+margin_right = 294.0
+margin_bottom = 53.0
 text = "TILES LEFT:"
 align = 1
 valign = 1
 
 [node name="count" type="Label" parent="left/tiles"]
-margin_left = 294.0
-margin_top = 18.0
-margin_right = 308.0
-margin_bottom = 45.0
+margin_left = 310.0
+margin_top = 26.0
+margin_right = 324.0
+margin_bottom = 53.0
 text = "5"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="right" type="Panel" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1280.0
-margin_top = -64.0
-rect_min_size = Vector2( 0, 64 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="score" type="HBoxContainer" parent="right"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -326.0
-margin_top = -64.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Icon3D2" parent="right/score" instance=ExtResource( 2 )]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-
-[node name="Camera" parent="right/score/Icon3D2/ViewportContainer/Viewport" index="0"]
-transform = Transform( 0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 15.8437, 1.08666, 16.7491 )
-
-[node name="sm_road_straight" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera" index="0"]
-visible = false
-
-[node name="SM_TrashBin_Red" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera" index="1"]
-visible = false
-
-[node name="Exclamation" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera/SM_TrashBin_Red" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
-
-[node name="GarbageTrack_Red" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera" index="2"]
-visible = true
-
-[node name="score_" type="Label" parent="right/score"]
-margin_left = 80.0
-margin_top = 18.0
-margin_right = 220.0
-margin_bottom = 45.0
-text = "COLLECTED:"
-align = 1
-valign = 1
-
-[node name="count" type="Label" parent="right/score"]
-margin_left = 236.0
-margin_top = 18.0
-margin_right = 278.0
-margin_bottom = 45.0
-text = "999"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="space" type="Control" parent="right/score"]
-margin_left = 294.0
-margin_right = 326.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 32, 0 )
 
 [node name="center" type="Panel" parent="."]
 anchor_left = 0.5
@@ -153,35 +128,38 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -126.0
-margin_top = -64.0
-margin_right = 126.0
+margin_left = -159.0
+margin_top = -80.0
+margin_right = 159.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Icon3D2" parent="center/attention" instance=ExtResource( 2 )]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Viewport" parent="center/attention/Icon3D2/ViewportContainer" index="0"]
+render_target_update_mode = 3
 
 [node name="sm_road_straight" parent="center/attention/Icon3D2/ViewportContainer/Viewport/Camera" index="0"]
 visible = false
 
 [node name="trash_wait_" type="Label" parent="center/attention"]
-margin_left = 80.0
-margin_top = 18.0
-margin_right = 272.0
-margin_bottom = 45.0
+margin_left = 96.0
+margin_top = 26.0
+margin_right = 288.0
+margin_bottom = 53.0
 text = "TRASH WAITING:"
 align = 1
 valign = 1
 
 [node name="count" type="Label" parent="center/attention"]
-margin_left = 288.0
-margin_top = 18.0
-margin_right = 302.0
-margin_bottom = 45.0
+margin_left = 304.0
+margin_top = 26.0
+margin_right = 318.0
+margin_bottom = 53.0
 text = "0"
 align = 1
 valign = 1
@@ -189,9 +167,83 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="right" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -64.0
+margin_right = 640.0
+rect_min_size = Vector2( 0, 64 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="HBoxContainer" parent="right"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -342.0
+margin_top = -80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon3D2" parent="right/score" instance=ExtResource( 2 )]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+
+[node name="Viewport" parent="right/score/Icon3D2/ViewportContainer" index="0"]
+render_target_update_mode = 3
+
+[node name="Camera" parent="right/score/Icon3D2/ViewportContainer/Viewport" index="0"]
+transform = Transform( 0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 15.8437, 1.08666, 16.7491 )
+
+[node name="sm_road_straight" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera" index="0"]
+visible = false
+
+[node name="SM_TrashBin_Red" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera" index="1"]
+visible = false
+
+[node name="Exclamation" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera/SM_TrashBin_Red" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
+
+[node name="GarbageTrack_Red" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera" index="2"]
+visible = true
+
+[node name="score_" type="Label" parent="right/score"]
+margin_left = 96.0
+margin_top = 26.0
+margin_right = 236.0
+margin_bottom = 53.0
+text = "COLLECTED:"
+align = 1
+valign = 1
+
+[node name="count" type="Label" parent="right/score"]
+margin_left = 252.0
+margin_top = 26.0
+margin_right = 294.0
+margin_bottom = 53.0
+text = "999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space" type="Control" parent="right/score"]
+margin_left = 310.0
+margin_right = 342.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 32, 0 )
+
 [editable path="left/tiles/Icon3D"]
 [editable path="left/tiles/Icon3D/ViewportContainer/Viewport/Camera"]
-[editable path="right/score/Icon3D2"]
-[editable path="right/score/Icon3D2/ViewportContainer/Viewport/Camera"]
 [editable path="center/attention/Icon3D2"]
 [editable path="center/attention/Icon3D2/ViewportContainer/Viewport/Camera"]
+[editable path="right/score/Icon3D2"]
+[editable path="right/score/Icon3D2/ViewportContainer/Viewport/Camera"]

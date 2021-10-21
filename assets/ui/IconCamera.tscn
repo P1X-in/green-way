@@ -12,7 +12,7 @@ current = true
 size = 8.0
 
 [node name="sm_road_straight" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.519615, 0, -0.3, -0.212132, 0.424264, -0.367424, 0.212132, 0.424264, 0.367424, 0, 0, -14 )
+transform = Transform( 0.433013, -1.49012e-08, -0.25, -0.176777, 0.353553, -0.306186, 0.176777, 0.353553, 0.306186, 0, 0, -14 )
 
 [node name="SM_TrashBin_Red" parent="." instance=ExtResource( 3 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.897, -1.387, -1 )
