@@ -24,7 +24,7 @@ func set_type(_type):
 		$"Building_Industry/RootNode/Green".visible = true
 		$Green.visible = true
 
-func dispatch_truck(destination_tile, path, directions, return_directions):
-	self.truck.dispatch(destination_tile, path, directions, return_directions)
+func dispatch_truck(destination_tile, path, directions, return_directions, board):
+	self.truck.dispatch(destination_tile, path, directions, return_directions, board)
 
 

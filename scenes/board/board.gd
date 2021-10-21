@@ -15,6 +15,7 @@ var last_hover_tile = null
 var mouse_click_position = null
 
 var tiles_available = 5
+var score = 0
 
 func _ready():
     self.set_up_map()
@@ -210,4 +211,16 @@ func _place_random_terrain_tile(tile):
     self.map.builder.place_terrain(tile.position, template, rotation)
 
 func _update_count():
+    $"ui/bottom/vertical/tiles/count".set_text(str(self.tiles_available))
+    self._update_waiting_thrash()
+    $"ui/bottom/vertical/score/count".set_text(str(self.score))
+
+func _update_waiting_thrash():
+    var count = 0
+    var house_tiles = self.map.model.get_house_building_tiles()
+
+    for house_tile in house_tiles:
+        if house_tile.building.tile.has_thrash and house_tile.building.tile.thrash_level > 1:
+            count += 1
+
     $"ui/left/tiles/count".set_text(str(self.tiles_available))
