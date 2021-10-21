@@ -220,7 +220,7 @@ func _update_waiting_thrash():
     var house_tiles = self.map.model.get_house_building_tiles()
 
     for house_tile in house_tiles:
-        if house_tile.building.tile.has_thrash and house_tile.building.tile.thrash_level > 1:
+        if house_tile.building.tile.has_thrash:
             count += 1
 
-    $"ui/left/tiles/count".set_text(str(self.tiles_available))
+    $"ui/center/attention/count".set_text(str(count))
