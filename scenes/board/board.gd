@@ -177,7 +177,7 @@ func clear_road(position):
 
 func _place_random_terrain():
     var tile = null
-    for i in range(100):
+    for _i in range(100):
         tile = null
 
         while tile == null:

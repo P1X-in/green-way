@@ -12,15 +12,15 @@ const THRASH_PAPER = 3
 const THRASH_GLASS = 4
 
 
-func init_thrash_bin(type):
-    self.type = type
-    if type == self.THRASH_METAL:
+func init_thrash_bin(_type):
+    self.type = _type
+    if _type == self.THRASH_METAL:
         $SM_TrashBin_Red.visible = true
-    if type == self.THRASH_PLASTIC:
+    if _type == self.THRASH_PLASTIC:
         $SM_TrashBin_Yellow.visible = true
-    if type == self.THRASH_PAPER:
+    if _type == self.THRASH_PAPER:
         $SM_TrashBin_Blue.visible = true
-    if type == self.THRASH_GLASS:
+    if _type == self.THRASH_GLASS:
         $SM_TrashBin_Green.visible = true
     self.plant_thrash()
 
