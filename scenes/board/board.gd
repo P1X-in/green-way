@@ -16,6 +16,7 @@ var mouse_click_position = null
 
 var tiles_available = 5
 var score = 0
+var score_to_win = 3000
 
 func _ready():
     self.set_up_map()
@@ -217,6 +218,10 @@ func _update_count():
     $"ui/left/tiles/count".set_text(str(self.tiles_available))
     self._update_waiting_thrash()
     $"ui/right/score/count".set_text(str(self.score))
+
+    if self.score >= self.score_to_win:
+        self.loop.stopped = true
+        return self.get_tree().change_scene("res://scenes/Credits.tscn")
 
 func _update_waiting_thrash():
     var count = 0
