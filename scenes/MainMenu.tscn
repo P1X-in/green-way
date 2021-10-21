@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ui/Logo.tscn" type="PackedScene" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://assets/buildings/Building_House_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=7]
+[ext_resource path="res://scenes/MainMenu.gd" type="Script" id=8]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 16.0
 content_margin_right = 16.0
 content_margin_top = 8.0
@@ -19,7 +20,7 @@ corner_radius_top_right = 48
 corner_radius_bottom_right = 48
 corner_radius_bottom_left = 48
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 16.0
 content_margin_right = 16.0
 content_margin_top = 8.0
@@ -30,8 +31,7 @@ corner_radius_top_right = 48
 corner_radius_bottom_right = 48
 corner_radius_bottom_left = 48
 
-[sub_resource type="Animation" id=2]
-resource_name = "demo"
+[sub_resource type="Animation" id=3]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -48,6 +48,7 @@ tracks/0/keys = {
 }
 
 [node name="MainMenu" type="Spatial"]
+script = ExtResource( 8 )
 
 [node name="Logo" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
@@ -83,7 +84,7 @@ __meta__ = {
 [node name="start" type="Label" parent="Panel/VBoxContainer2"]
 margin_right = 502.0
 margin_bottom = 43.0
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 1 )
 text = "PRESS ANY KEY TO START RECYCLING..."
 align = 1
 __meta__ = {
@@ -102,7 +103,7 @@ size_flags_vertical = 3
 margin_top = 146.0
 margin_right = 502.0
 margin_bottom = 219.0
-custom_styles/normal = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
 text = "Game by P1X made on 
 Polish-Swiss GameJam 2021"
 align = 1
@@ -177,7 +178,7 @@ transform = Transform( 1, 0, 7.35137e-08, 0, 1, 0, -7.35137e-08, 0, 1, -8, -0.96
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundAssets"]
 autoplay = "demo"
-anims/demo = SubResource( 2 )
+anims/demo = SubResource( 3 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 7 )
