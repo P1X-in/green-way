@@ -35,6 +35,20 @@ tracks/1/keys = {
 "method": "_animate_next_path_segment"
 } ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath("player")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "pickup"
@@ -120,11 +134,10 @@ visible = false
 anims/move = SubResource( 1 )
 anims/pickup = SubResource( 2 )
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="player" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 6 )
-attenuation_model = 3
 unit_db = 1.0
 unit_size = 74.2
 autoplay = true
-max_distance = 3.0
+max_distance = 100.0
 bus = "Units"
