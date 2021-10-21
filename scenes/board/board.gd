@@ -16,7 +16,7 @@ var mouse_click_position = null
 
 var tiles_available = 5
 var score = 0
-var score_to_win = 3000
+var score_to_win = 1500
 var latest_house = null
 var latest_industrial = null
 
@@ -228,6 +228,7 @@ func _update_count():
 
     if self.score >= self.score_to_win:
         self.loop.stopped = true
+        self.map.mouse_layer.detach()
         return self.get_tree().change_scene("res://scenes/Credits.tscn")
 
 func _update_waiting_thrash():
