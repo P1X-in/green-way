@@ -49,6 +49,46 @@ tracks/2/keys = {
 "method": "play"
 } ]
 }
+tracks/3/type = "animation"
+tracks/3/path = NodePath("mesh_anchor/GarbageTrack_Blue/AnimationBlue")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": PoolStringArray( "TrackRun" ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "animation"
+tracks/4/path = NodePath("mesh_anchor/GarbageTrack_Red/AnimationRed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"clips": PoolStringArray( "TrackRun_Red" ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "animation"
+tracks/5/path = NodePath("mesh_anchor/GarbageTrack_Green/AnimationGreen")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": PoolStringArray( "TrackRun" ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "animation"
+tracks/6/path = NodePath("mesh_anchor/GarbageTrack_Yellow/AnimationYellow")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"clips": PoolStringArray( "TrackRun" ),
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "pickup"
@@ -112,7 +152,6 @@ tracks/4/keys = {
 script = ExtResource( 5 )
 
 [node name="mesh_anchor" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
 
 [node name="GarbageTrack_Blue" parent="mesh_anchor" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0 )
