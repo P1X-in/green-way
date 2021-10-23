@@ -94,43 +94,43 @@ tracks/6/keys = {
 resource_name = "pickup"
 length = 2.0
 tracks/0/type = "animation"
-tracks/0/path = NodePath("mesh_anchor/GarbageTrack_Blue/AnimationBlue")
+tracks/0/path = NodePath("mesh_anchor/GarbageTrack_Blue/AnimationPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"clips": PoolStringArray( "PickupBlue" ),
+"clips": PoolStringArray( "Pickup" ),
 "times": PoolRealArray( 0 )
 }
 tracks/1/type = "animation"
-tracks/1/path = NodePath("mesh_anchor/GarbageTrack_Red/AnimationRed")
+tracks/1/path = NodePath("mesh_anchor/GarbageTrack_Red/AnimationPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"clips": PoolStringArray( "PickupRed" ),
+"clips": PoolStringArray( "Pickup" ),
 "times": PoolRealArray( 0 )
 }
 tracks/2/type = "animation"
-tracks/2/path = NodePath("mesh_anchor/GarbageTrack_Green/AnimationGreen")
+tracks/2/path = NodePath("mesh_anchor/GarbageTrack_Green/AnimationPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"clips": PoolStringArray( "PickupGreen" ),
+"clips": PoolStringArray( "Pickup" ),
 "times": PoolRealArray( 0 )
 }
 tracks/3/type = "animation"
-tracks/3/path = NodePath("mesh_anchor/GarbageTrack_Yellow/AnimationYellow")
+tracks/3/path = NodePath("mesh_anchor/GarbageTrack_Yellow/AnimationPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"clips": PoolStringArray( "PickupYellow" ),
+"clips": PoolStringArray( "Pickup" ),
 "times": PoolRealArray( 0 )
 }
 tracks/4/type = "method"
@@ -155,7 +155,6 @@ script = ExtResource( 5 )
 
 [node name="GarbageTrack_Blue" parent="mesh_anchor" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0 )
-visible = false
 
 [node name="GarbageTrack_Red" parent="mesh_anchor" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0 )
