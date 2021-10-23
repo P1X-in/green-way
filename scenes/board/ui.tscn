@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/icon3d_road.tscn" type="PackedScene" id=2]
@@ -10,6 +10,24 @@
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Label
+
+var fps = 0
+
+func _ready():
+    pass
+
+func _process(delta):
+    var current_fps = Performance.get_monitor(Performance.TIME_FPS)
+    if current_fps > fps:
+        fps += 1
+    if current_fps < fps:
+        fps -= 1
+         
+    set_text(str(fps).pad_zeros(2) + 'fps')
+"
 
 [node name="ui" type="Control"]
 anchor_right = 1.0
@@ -230,6 +248,23 @@ margin_left = 342.0
 margin_right = 374.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 32, 0 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 106.0
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "144fps"
+align = 1
+valign = 1
+script = SubResource( 2 )
 
 [editable path="left/tiles/Icon3D"]
 [editable path="left/tiles/Icon3D/ViewportContainer/Viewport/Camera"]
