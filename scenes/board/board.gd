@@ -195,7 +195,7 @@ func clear_road(position):
 
 func _place_random_terrain():
     var tile = null
-    for _i in range(100):
+    for _i in range(20):
         tile = null
 
         while tile == null:
@@ -205,6 +205,23 @@ func _place_random_terrain():
                 tile = null
 
         self._place_random_terrain_tile(tile)
+
+    for _i in range(80):
+        tile = null
+
+        while tile == null:
+            tile = self.map.model.get_random_tile()
+
+            if tile.terrain.is_present():
+                tile = null
+            elif not tile.has_neighbouring_terrain():
+                tile = null
+
+        self._place_random_terrain_tile(tile)
+
+    for i in self.map.model.tiles.values():
+        if i.is_cut_off_with_terrain():
+            self._place_random_terrain_tile(i)
 
 
 func _place_random_terrain_tile(tile):

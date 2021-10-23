@@ -10,7 +10,6 @@ func is_truck_free():
 func set_type(_type):
     self.type = _type
     self.truck.set_type(_type)
-    print(_type)
     if _type == self.templates.THRASH_METAL:
         $"SM_Building_Industry/Red".visible = true
         $Red.visible = true

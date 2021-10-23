@@ -79,6 +79,18 @@ func has_neighbouring_building():
 			return true
 	return false
 
+func has_neighbouring_terrain():
+	for neighbour in self.neighbours.values():
+		if neighbour.terrain.is_present():
+			return true
+	return false
+
+func is_cut_off_with_terrain():
+	for neighbour in self.neighbours.values():
+		if not neighbour.terrain.is_present():
+			return false
+	return true
+
 func has_neighbouring_home():
 	for neighbour in self.neighbours.values():
 		if neighbour.has_home():

@@ -6,6 +6,7 @@ var board
 
 var loop_count = 0
 var stopped = false
+var cluster_chance = 2
 
 func start(_board):
     self.board = _board
@@ -15,8 +16,6 @@ func start(_board):
 func _loop_tick():
     if self.stopped:
         return
-
-    print("loop " + str(self.loop_count))
 
     var home_template = self._get_random_house_template()
     var home_tile
@@ -29,7 +28,7 @@ func _loop_tick():
         leash_tile = self.board.map.model.get_tile2(20, 20)
         industrial_distance = 5
 
-    if randi() % 2 == 1:
+    if randi() % 10 <= self.cluster_chance:
         home_tile = self._place_random_building(true, home_template, leash_tile, 10)
         if not home_tile:
             home_tile = self._place_random_building(false, home_template, leash_tile, 10)
@@ -51,7 +50,10 @@ func _loop_tick():
 
     self.loop_count += 1
 
-    self.board.tiles_available += 5
+    if self.loop_count % 5 == 0 and self.cluster_chance < 8:
+        self.cluster_chance += 1
+
+    self.board.tiles_available += (10 - self.cluster_chance)
     self.board.latest_house = home_tile
     self.board.latest_industrial = industrial_tile
     yield(self.board.get_tree().create_timer(self.LOOP_TICK_DURATION), "timeout")
@@ -61,17 +63,15 @@ func _garbage_tick():
     if self.stopped:
         return
 
-    print("garbage tick")
     var result
 
     for house in self.board.map.model.get_house_building_tiles():
         result = house.building.tile.plant_thrash()
         if result:
             self.board.audio.play("garbage_dump")
-            print("garbage planted")
 
         if house.building.tile.thrash_level > 5:
-            self.board.score -= 1
+            self.board.score -= house.building.tile.thrash_level
             if self.board.score < 0:
                 self.board.score = 0
 
@@ -104,6 +104,10 @@ func _get_free_tiles(with_neighbours):
 
     for tile in self.board.map.model.tiles.values():
         if tile.has_content():
+            continue
+
+        var max_size = self.board.map.model.SIZE - 3
+        if tile.position.x < 2 or tile.position.y < 2 or tile.position.x > max_size or tile.position.y > max_size:
             continue
 
         if with_neighbours and not tile.has_neighbouring_home():
