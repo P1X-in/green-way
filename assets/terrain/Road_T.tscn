@@ -7,9 +7,3 @@
 
 [node name="SM_Road_T" parent="." index="0"]
 material/0 = ExtResource( 2 )
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.69435, 0 )
-extents = Vector3( 4, 2, 4 )
-box_projection = true
-enable_shadows = true
