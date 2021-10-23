@@ -42,8 +42,8 @@ environment = ExtResource( 12 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.518929, 0.805738, -0.285481, -0.384389, 0.518248, 0.763979, 0.763517, -0.286715, 0.57865, 24.8979, 28.6066, 1.54649 )
-light_energy = 0.5
 shadow_enabled = true
+directional_shadow_blend_splits = true
 
 [node name="Terrain_Plains_Extra" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 0, 160 )
