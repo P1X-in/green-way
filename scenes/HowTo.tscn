@@ -69,16 +69,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16 )
 [node name="SM_TrashBin_Red" parent="MAP/house1" index="4"]
 visible = true
 
-[node name="SM_Trash_Red" parent="MAP/house1/SM_TrashBin_Red/RootNode/SM_Bin_Red" index="0"]
-visible = true
-
 [node name="house2" parent="MAP" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -16 )
 
 [node name="SM_TrashBin_Blue" parent="MAP/house2" index="2"]
-visible = true
-
-[node name="SM_Trash_Blue" parent="MAP/house2/SM_TrashBin_Blue/RootNode/SM_Bin_Blue" index="0"]
 visible = true
 
 [node name="house3" parent="MAP" instance=ExtResource( 4 )]
@@ -87,52 +81,46 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -16 )
 [node name="SM_TrashBin_Green" parent="MAP/house3" index="3"]
 visible = true
 
-[node name="SM_Trash_Green" parent="MAP/house3/SM_TrashBin_Green/RootNode/SM_Bin_Green" index="0"]
-visible = true
-
 [node name="house4" parent="MAP" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -16 )
 
 [node name="SM_TrashBin_Yellow" parent="MAP/house4" index="5"]
 visible = true
 
-[node name="SM_Trash_Yellow" parent="MAP/house4/SM_TrashBin_Yellow/RootNode/SM_Bin_Yellow" index="0"]
-visible = true
-
 [node name="industry" parent="MAP" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, -4.76837e-07 )
 
-[node name="Red" parent="MAP/industry/Building_Industry/RootNode" index="1"]
+[node name="Red" parent="MAP/industry" index="1"]
 visible = true
 
-[node name="Red" parent="MAP/industry" index="2"]
+[node name="Red" parent="MAP/industry/SM_Building_Industry" index="3"]
 visible = true
 
 [node name="industry2" parent="MAP" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12, 0, 0 )
 
-[node name="Blue" parent="MAP/industry2/Building_Industry/RootNode" index="5"]
+[node name="Blue" parent="MAP/industry2" index="0"]
 visible = true
 
-[node name="Blue" parent="MAP/industry2" index="1"]
+[node name="Blue" parent="MAP/industry2/SM_Building_Industry" index="2"]
 visible = true
 
 [node name="industry3" parent="MAP" instance=ExtResource( 5 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24, 0, 0 )
 
-[node name="Green" parent="MAP/industry3/Building_Industry/RootNode" index="4"]
+[node name="Green" parent="MAP/industry3" index="3"]
 visible = true
 
-[node name="Green" parent="MAP/industry3" index="4"]
+[node name="Green" parent="MAP/industry3/SM_Building_Industry" index="4"]
 visible = true
 
 [node name="industry4" parent="MAP" instance=ExtResource( 5 )]
 transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 44, 0, 0 )
 
-[node name="Yellow" parent="MAP/industry4/Building_Industry/RootNode" index="6"]
+[node name="Yellow" parent="MAP/industry4" index="2"]
 visible = true
 
-[node name="Yellow" parent="MAP/industry4" index="3"]
+[node name="Yellow" parent="MAP/industry4/SM_Building_Industry" index="6"]
 visible = true
 
 [node name="Top" type="Panel" parent="."]
@@ -296,10 +284,10 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36, 0, 
 [editable path="MAP/house4"]
 [editable path="MAP/house4/SM_TrashBin_Yellow"]
 [editable path="MAP/industry"]
-[editable path="MAP/industry/Building_Industry"]
+[editable path="MAP/industry/SM_Building_Industry"]
 [editable path="MAP/industry2"]
-[editable path="MAP/industry2/Building_Industry"]
+[editable path="MAP/industry2/SM_Building_Industry"]
 [editable path="MAP/industry3"]
-[editable path="MAP/industry3/Building_Industry"]
+[editable path="MAP/industry3/SM_Building_Industry"]
 [editable path="MAP/industry4"]
-[editable path="MAP/industry4/Building_Industry"]
+[editable path="MAP/industry4/SM_Building_Industry"]
