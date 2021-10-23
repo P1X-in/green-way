@@ -30,7 +30,8 @@ func plant_thrash():
         return false
 
     self.has_thrash = true
-    self.thrash_level += 1
+    if self.thrash_level < 10:
+        self.thrash_level += 1
 
     if self.thrash_level > 0:
         if self.type == self.THRASH_METAL:

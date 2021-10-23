@@ -81,7 +81,7 @@ func _dispatch(industrial_tile, house_tile):
 
     house.assigned_truck = industrial.truck
 
-    var spawn_tile = self.board.map.model.tiles[path[1]]
+    var spawn_tile = self.board.map.model.tiles[path[0]]
     self.board.map.anchor_truck(industrial.truck, spawn_tile.position)
     industrial.truck.move_to_target()
 

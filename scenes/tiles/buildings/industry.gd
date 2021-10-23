@@ -10,7 +10,6 @@ func is_truck_free():
 func set_type(_type):
     self.type = _type
     self.truck.set_type(_type)
-    print(_type)
     if _type == self.templates.THRASH_METAL:
         $"SM_Building_Industry/Red".visible = true
         $Red.visible = true
@@ -25,6 +24,15 @@ func set_type(_type):
         $Green.visible = true
 
 func dispatch_truck(destination_tile, path, directions, return_directions, board):
+    self.truck.base = self
     self.truck.dispatch(destination_tile, path, directions, return_directions, board)
+    $"Blue/SM_GarbageTruck_Blue".hide()
+    $"Red/SM_GarbageTruck_Red".hide()
+    $"Yellow/SM_GarbageTruck_Yelllow".hide()
+    $"Green/SM_GarbageTruck_Green".hide()
 
-
+func return_truck():
+    $"Blue/SM_GarbageTruck_Blue".show()
+    $"Red/SM_GarbageTruck_Red".show()
+    $"Yellow/SM_GarbageTruck_Yelllow".show()
+    $"Green/SM_GarbageTruck_Green".show()
