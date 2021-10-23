@@ -1,19 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://assets/cars/SM_GarbageTruck_Blue.glb" type="PackedScene" id=1]
-[ext_resource path="res://assets/cars/TrackRun_Blue.anim" type="Animation" id=2]
-[ext_resource path="res://assets/cars/PickupBlue.tres" type="Animation" id=6]
-[ext_resource path="res://assets/cars/TruckLights.tscn" type="PackedScene" id=7]
 
-[node name="GarbageTrack_Blue" type="Spatial"]
-
-[node name="AnimationBlue" type="AnimationPlayer" parent="."]
-autoplay = "TrackRun"
-anims/PickupBlue = ExtResource( 6 )
-anims/TrackRun = ExtResource( 2 )
-
-[node name="SM_GarbageTruck_Blue" parent="." instance=ExtResource( 1 )]
-
-[node name="TruckLights" parent="SM_GarbageTruck_Blue/BodyBlue" index="1" instance=ExtResource( 7 )]
-
-[editable path="SM_GarbageTruck_Blue"]
+[node name="SM_GarbageTruck_Blue" instance=ExtResource( 1 )]

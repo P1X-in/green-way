@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/SM_GarbageTruck_Yelllow.glb-aa5b6276f32299ba7b009f7cbebeb14d.scn"
+path="res://.import/SM_GarbageTruck_Yellow.glb-d779661d9cbbf3ff64da37590f458347.scn"
 
 [deps]
 
-source_file="res://assets/cars/SM_GarbageTruck_Yelllow.glb"
-dest_files=[ "res://.import/SM_GarbageTruck_Yelllow.glb-aa5b6276f32299ba7b009f7cbebeb14d.scn" ]
+source_file="res://assets/cars/SM_GarbageTruck_Yellow.glb"
+dest_files=[ "res://.import/SM_GarbageTruck_Yellow.glb-d779661d9cbbf3ff64da37590f458347.scn" ]
 
 [params]
 

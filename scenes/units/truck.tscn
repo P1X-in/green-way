@@ -50,43 +50,43 @@ tracks/2/keys = {
 } ]
 }
 tracks/3/type = "animation"
-tracks/3/path = NodePath("mesh_anchor/GarbageTrack_Blue/AnimationBlue")
+tracks/3/path = NodePath("mesh_anchor/GarbageTrack_Blue/AnimationPlayer")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"clips": PoolStringArray( "TrackRun" ),
+"clips": PoolStringArray( "RunBlue" ),
 "times": PoolRealArray( 0 )
 }
 tracks/4/type = "animation"
-tracks/4/path = NodePath("mesh_anchor/GarbageTrack_Red/AnimationRed")
+tracks/4/path = NodePath("mesh_anchor/GarbageTrack_Red/AnimationPlayer")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"clips": PoolStringArray( "TrackRun_Red" ),
+"clips": PoolStringArray( "RunRed" ),
 "times": PoolRealArray( 0 )
 }
 tracks/5/type = "animation"
-tracks/5/path = NodePath("mesh_anchor/GarbageTrack_Green/AnimationGreen")
+tracks/5/path = NodePath("mesh_anchor/GarbageTrack_Green/AnimationPlayer")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"clips": PoolStringArray( "TrackRun" ),
+"clips": PoolStringArray( "RunGreen" ),
 "times": PoolRealArray( 0 )
 }
 tracks/6/type = "animation"
-tracks/6/path = NodePath("mesh_anchor/GarbageTrack_Yellow/AnimationYellow")
+tracks/6/path = NodePath("mesh_anchor/GarbageTrack_Yellow/AnimationPlayer")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"clips": PoolStringArray( "TrackRun" ),
+"clips": PoolStringArray( "RunYellow" ),
 "times": PoolRealArray( 0 )
 }
 
