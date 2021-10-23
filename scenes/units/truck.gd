@@ -10,6 +10,9 @@ var return_directions = []
 
 var has_thrash = false
 var current_path_index = 0
+var end_condition = 2
+
+var base = null
 
 onready var animations = $"animations"
 onready var audio = $"/root/SimpleAudioLibrary"
@@ -38,7 +41,8 @@ func dispatch(destination_tile, _path, _directions, _return_directions, _board):
     self.path = _path
     self.directions = _directions
     self.return_directions = _return_directions
-    self.current_path_index = 1
+    self.current_path_index = 0
+    self.end_condition = 2
     self.board = _board
 
 func has_key_in_path(key):
@@ -57,6 +61,9 @@ func abort():
     self.has_thrash = false
     self.get_parent().remove_child(self)
     self.target = null
+
+    if self.base != null:
+        self.base.return_truck()
 
 
 func move_to_target():
@@ -93,7 +100,7 @@ func _animate_next_path_segment():
 
 func _move_in_direction(direction):
     self._rotate_unit_to_direction(direction)
-    if self.current_path_index < self.directions.size() - 2:
+    if self.current_path_index < self.directions.size() - self.end_condition:
         self.animations.play("move")
         #self.sfx_effect("move")
     else:
@@ -108,6 +115,7 @@ func _rotate_unit_to_direction(direction):
 
 func _end_of_path_reached():
     if not self.has_thrash:
+        self.end_condition = 1
         self.animations.play("pickup")
         self._play_garbage_sound()
     else:
@@ -130,6 +138,9 @@ func _come_back():
         self.get_parent().remove_child(self)
         self.target = null
         self.board.score += 1
+
+        if self.base != null:
+            self.base.return_truck()
 
 func _play_garbage_sound():
     var pitch = rand_range(0.7, 1.7)

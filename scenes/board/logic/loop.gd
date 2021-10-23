@@ -56,6 +56,9 @@ func _loop_tick():
     self.board.tiles_available += (10 - self.cluster_chance)
     self.board.latest_house = home_tile
     self.board.latest_industrial = industrial_tile
+
+    Input.start_joy_vibration(0, 0.5, 0.0, 0.5)
+
     yield(self.board.get_tree().create_timer(self.LOOP_TICK_DURATION), "timeout")
     self.call_deferred("_loop_tick")
 
