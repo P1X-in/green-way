@@ -54,8 +54,8 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="top/HBoxContainer"]
-margin_left = 784.0
-margin_right = 1136.0
+margin_left = 464.0
+margin_right = 816.0
 margin_bottom = 48.0
 custom_constants/separation = 0
 
@@ -109,6 +109,7 @@ visible = true
 visible = false
 
 [node name="tiles_left_" type="Label" parent="left/tiles"]
+visible = false
 margin_left = 144.0
 margin_top = 26.0
 margin_right = 294.0
@@ -118,9 +119,9 @@ align = 1
 valign = 1
 
 [node name="count" type="Label" parent="left/tiles"]
-margin_left = 310.0
+margin_left = 144.0
 margin_top = 18.0
-margin_right = 356.0
+margin_right = 190.0
 margin_bottom = 61.0
 custom_styles/normal = ExtResource( 4 )
 text = "5"
@@ -130,15 +131,17 @@ __meta__ = {
 }
 
 [node name="space3" type="Control" parent="left/tiles"]
-margin_left = 372.0
-margin_right = 404.0
+visible = false
+margin_left = 206.0
+margin_right = 238.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 32, 0 )
 
 [node name="new tiles_" type="Label" parent="left/tiles"]
-margin_left = 420.0
+visible = false
+margin_left = 254.0
 margin_top = 26.0
-margin_right = 476.0
+margin_right = 310.0
 margin_bottom = 53.0
 text = "NEW:"
 align = 1
@@ -148,8 +151,8 @@ __meta__ = {
 }
 
 [node name="progress" type="Control" parent="left/tiles"]
-margin_left = 492.0
-margin_right = 684.0
+margin_left = 206.0
+margin_right = 398.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 192, 0 )
 
@@ -186,15 +189,23 @@ anchor_bottom = 1.0
 margin_left = -159.0
 margin_top = -80.0
 margin_right = 159.0
+alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="space4" type="Control" parent="center/attention"]
+margin_right = 32.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 32, 0 )
+
 [node name="Icon3D2" parent="center/attention" instance=ExtResource( 2 )]
-margin_right = 80.0
+margin_left = 48.0
+margin_right = 128.0
 margin_bottom = 80.0
 
 [node name="trash_level_" type="Label" parent="center/attention"]
+visible = false
 margin_left = 96.0
 margin_top = 26.0
 margin_right = 260.0
@@ -204,9 +215,9 @@ align = 1
 valign = 1
 
 [node name="count" type="Label" parent="center/attention"]
-margin_left = 276.0
+margin_left = 144.0
 margin_top = 18.0
-margin_right = 322.0
+margin_right = 190.0
 margin_bottom = 61.0
 custom_styles/normal = ExtResource( 5 )
 text = "0"
@@ -215,27 +226,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="space4" type="Control" parent="center/attention"]
-margin_left = 338.0
-margin_right = 370.0
-margin_bottom = 80.0
-rect_min_size = Vector2( 32, 0 )
-
 [node name="average_" type="Label" parent="center/attention"]
-margin_left = 386.0
+margin_left = 206.0
 margin_top = 26.0
-margin_right = 498.0
+margin_right = 262.0
 margin_bottom = 53.0
-text = "AVERAGE:"
+text = "AVR:"
 align = 1
 valign = 1
 
 [node name="average" type="Label" parent="center/attention"]
-margin_left = 514.0
+margin_left = 278.0
 margin_top = 18.0
-margin_right = 560.0
+margin_right = 324.0
 margin_bottom = 61.0
-custom_styles/normal = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
 text = "0"
 align = 1
 __meta__ = {
@@ -297,7 +302,7 @@ margin_left = 1158.0
 margin_top = 18.0
 margin_right = 1232.0
 margin_bottom = 61.0
-custom_styles/normal = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
 text = "999"
 align = 1
 __meta__ = {
