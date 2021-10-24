@@ -246,7 +246,7 @@ func _update_count():
     if self.score >= self.score_to_win:
         self.loop.stopped = true
         self.map.mouse_layer.detach()
-        return self.get_tree().change_scene("res://scenes/Credits.tscn")
+        return self.get_tree().change_scene("res://scenes/screens/Win.tscn")
 
 func _update_waiting_thrash():
     var count = 0
