@@ -1,30 +1,30 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
-[ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://scenes/Credits.gd" type="Script" id=5]
-[ext_resource path="res://assets/audio/haha_33.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/bins/TrashBin_Green.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/bins/TrashBin_Red.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/bins/TrashBin_Blue.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/buildings/Building_House_1.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=13]
-[ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=14]
-[ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=15]
+[ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/screens/Win.gd" type="Script" id=4]
+[ext_resource path="res://assets/audio/haha_33.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/bins/TrashBin_Green.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/bins/TrashBin_Red.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/bins/TrashBin_Blue.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/buildings/Building_House_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=12]
+[ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=13]
+[ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=14]
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [node name="Lose" type="Spatial"]
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 
-[node name="main_camera" parent="." instance=ExtResource( 3 )]
+[node name="main_camera" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.951056, -0.052082, -0.304596, 0, 0.985695, -0.168541, 0.309017, 0.160292, 0.937451, 0, 0.162, 0.913 )
 fov = 50.0
 
@@ -64,7 +64,7 @@ __meta__ = {
 margin_right = 725.0
 margin_bottom = 93.0
 custom_fonts/font = SubResource( 2 )
-custom_styles/normal = ExtResource( 14 )
+custom_styles/normal = ExtResource( 13 )
 text = "Fail"
 align = 1
 
@@ -72,7 +72,7 @@ align = 1
 margin_top = 105.0
 margin_right = 725.0
 margin_bottom = 148.0
-custom_styles/normal = ExtResource( 13 )
+custom_styles/normal = ExtResource( 12 )
 text = "Recycling is not your best skills."
 align = 1
 
@@ -99,42 +99,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="sm_road_straight" parent="." instance=ExtResource( 11 )]
+[node name="sm_road_straight" parent="." instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.17014, -0.962, 4.76837e-07 )
 
-[node name="sm_road_straight2" parent="." instance=ExtResource( 11 )]
+[node name="sm_road_straight2" parent="." instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.829863, -0.962, 0 )
 
-[node name="sm_road_straight3" parent="." instance=ExtResource( 11 )]
+[node name="sm_road_straight3" parent="." instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.82986, -0.962, -4.76837e-07 )
 
-[node name="Building_House_1" parent="." instance=ExtResource( 10 )]
+[node name="Building_House_1" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.66479, -0.962, -8 )
 
-[node name="Building_House_2" parent="." instance=ExtResource( 10 )]
+[node name="Building_House_2" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3352, -0.962, -8 )
 
-[node name="Building_House_3" parent="." instance=ExtResource( 10 )]
+[node name="Building_House_3" parent="." instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.6648, -0.962, -8 )
 
-[node name="Building_House_4" parent="." instance=ExtResource( 12 )]
+[node name="Building_House_4" parent="." instance=ExtResource( 11 )]
 transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -0.335209, -0.962, -8 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 15 )
+environment = ExtResource( 14 )
 
-[node name="SM_TrashBin_Blue" parent="." instance=ExtResource( 9 )]
+[node name="SM_TrashBin_Blue" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.525947, 0, 0.850518, 0, 1, 0, -0.850518, 0, 0.525947, 0.696521, -1, -0.627957 )
 
-[node name="SM_TrashBIn_Green" parent="." instance=ExtResource( 7 )]
+[node name="SM_TrashBIn_Green" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
-[node name="SM_TrashBin_Red" parent="." instance=ExtResource( 8 )]
+[node name="SM_TrashBin_Red" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.977681, 0, -0.210096, 0, 1, 0, 0.210096, 0, 0.977681, 0.819981, -1, 0.302455 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 autoplay = true
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45816, -3.11189 )
+extents = Vector3( 13.6056, 4, 7.64627 )
+box_projection = true
+enable_shadows = true
 
 [editable path="SM_TrashBin_Blue"]
 [editable path="SM_TrashBIn_Green"]

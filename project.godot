@@ -13,7 +13,7 @@ config_version=4
 config/name="GreenWay - Enchanced Edition"
 config/description="Game made on Polish-Swiss Game Jam 2021
 This is pos-jam enchanced edition."
-run/main_scene="res://scenes/MainMenu.tscn"
+run/main_scene="res://scenes/screens/MainMenu.tscn"
 config/icon="res://assets/icon.png"
 config/windows_native_icon="res://assets/icon.ico"
 

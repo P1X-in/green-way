@@ -1,30 +1,30 @@
 [gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://assets/buildings/Building_House_1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/cars/SM_GarbageTruck_Red.glb" type="PackedScene" id=4]
-[ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=6]
-[ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=7]
-[ext_resource path="res://assets/bins/TrashBin_Green.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/bins/TrashBin_Red.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/bins/TrashBin_Blue.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=11]
-[ext_resource path="res://assets/audio/haha_33.wav" type="AudioStream" id=12]
-[ext_resource path="res://scenes/Credits.gd" type="Script" id=13]
+[ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/screens/Win.gd" type="Script" id=4]
+[ext_resource path="res://assets/audio/haha_33.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/bins/TrashBin_Green.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/bins/TrashBin_Red.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/bins/TrashBin_Blue.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/buildings/Building_House_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/cars/SM_GarbageTruck_Red.glb" type="PackedScene" id=11]
+[ext_resource path="res://assets/cars/SM_GarbageTruck_Blue.glb" type="PackedScene" id=12]
+[ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=14]
 [ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=15]
-[ext_resource path="res://assets/cars/SM_GarbageTruck_Blue.glb" type="PackedScene" id=16]
+[ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=16]
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 11 )
+font_data = ExtResource( 3 )
 
 [node name="GameOver" type="Spatial"]
-script = ExtResource( 13 )
+script = ExtResource( 4 )
 
 [node name="main_camera" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.999391, 0.0096196, -0.0335476, 0, 0.961262, 0.275637, 0.0348995, -0.275469, 0.960676, 0, 1.73014, 5.59434 )
@@ -45,7 +45,7 @@ margin_top = -200.0
 margin_right = 362.5
 margin_bottom = 200.0
 rect_min_size = Vector2( 725, 400 )
-theme = ExtResource( 7 )
+theme = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -121,57 +121,63 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="sm_road_straight" parent="." instance=ExtResource( 5 )]
+[node name="sm_road_straight" parent="." instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.17014, -0.962, 4.76837e-07 )
 
-[node name="sm_road_straight2" parent="." instance=ExtResource( 5 )]
+[node name="sm_road_straight2" parent="." instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.829863, -0.962, 0 )
 
-[node name="sm_road_straight3" parent="." instance=ExtResource( 5 )]
+[node name="sm_road_straight3" parent="." instance=ExtResource( 10 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.82986, -0.962, -4.76837e-07 )
 
-[node name="Building_House_1" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.66479, -0.962, -8 )
+[node name="Building_House_1" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00246, -0.962, -8 )
 
-[node name="Building_House_2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3352, -0.962, -8 )
+[node name="Building_House_2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9975, -0.962, -8 )
 
-[node name="Building_House_3" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.6648, -0.962, -8 )
+[node name="Building_House_3" parent="." instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.0025, -0.962, -8 )
 
-[node name="Building_House_4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -0.335209, -0.962, -8 )
+[node name="Building_House_4" parent="." instance=ExtResource( 13 )]
+transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -1.99754, -0.962, -8 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 6 )
+environment = ExtResource( 16 )
 
-[node name="SM_TrashBin_Blue" parent="." instance=ExtResource( 10 )]
+[node name="SM_TrashBin_Blue" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 2.8585 )
 
 [node name="SM_Trash_Blue" parent="SM_TrashBin_Blue/SM_Bin_Blue" index="0"]
 visible = false
 
-[node name="SM_TrashBIn_Green" parent="." instance=ExtResource( 8 )]
+[node name="SM_TrashBIn_Green" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2.8585 )
 
 [node name="SM_Trash_Green" parent="SM_TrashBIn_Green/SM_Bin_Green" index="0"]
 visible = false
 
-[node name="SM_TrashBin_Red" parent="." instance=ExtResource( 9 )]
+[node name="SM_TrashBin_Red" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 2.8585 )
 
 [node name="SM_Trash_Red" parent="SM_TrashBin_Red/SM_Bin_Red" index="0"]
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 5 )
 autoplay = true
 
-[node name="SM_GarbageTruck_Red" parent="." instance=ExtResource( 4 )]
+[node name="SM_GarbageTruck_Red" parent="." instance=ExtResource( 11 )]
 transform = Transform( -0.222127, 0, -0.975018, 0, 1, 0, 0.975018, 0, -0.222127, -3.03005, -1.00773, -2.29029 )
 
-[node name="SM_GarbageTruck_Blue" parent="." instance=ExtResource( 16 )]
+[node name="SM_GarbageTruck_Blue" parent="." instance=ExtResource( 12 )]
 transform = Transform( -0.423203, 0, 0.906035, 0, 1, 0, -0.906035, 0, -0.423203, 3.74422, -1.02903, -2.50152 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45816, -3.11189 )
+extents = Vector3( 13.6056, 4, 7.64627 )
+box_projection = true
+enable_shadows = true
 
 [editable path="SM_TrashBin_Blue"]
 [editable path="SM_TrashBIn_Green"]
