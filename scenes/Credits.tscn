@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/buildings/Building_House_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/buildings/Building_House_2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/ui/Logo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/cars/SM_GarbageTruck_Red.glb" type="PackedScene" id=4]
 [ext_resource path="res://assets/terrain/Road_Straight.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=6]
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=7]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/Credits.gd" type="Script" id=13]
 [ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=14]
 [ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=15]
+[ext_resource path="res://assets/cars/SM_GarbageTruck_Blue.glb" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=2]
 size = 60
@@ -25,11 +26,8 @@ font_data = ExtResource( 11 )
 [node name="GameOver" type="Spatial"]
 script = ExtResource( 13 )
 
-[node name="Logo" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.5, 0, 0, 0, 0.482963, -0.12941, 0, 0.12941, 0.482963, 0, 1.687, 0 )
-
 [node name="main_camera" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.99939, -0.000927567, -0.0348872, 0, 0.999647, -0.0265782, 0.0348995, 0.0265621, 0.999038, 0, 0.826, 2.583 )
+transform = Transform( 0.999391, 0.0096196, -0.0335476, 0, 0.961262, 0.275637, 0.0348995, -0.275469, 0.960676, 0, 1.73014, 5.59434 )
 fov = 50.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -148,19 +146,33 @@ transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -0.335209
 environment = ExtResource( 6 )
 
 [node name="SM_TrashBin_Blue" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 2.8585 )
+
+[node name="SM_Trash_Blue" parent="SM_TrashBin_Blue/SM_Bin_Blue" index="0"]
+visible = false
 
 [node name="SM_TrashBIn_Green" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2.8585 )
+
+[node name="SM_Trash_Green" parent="SM_TrashBIn_Green/SM_Bin_Green" index="0"]
+visible = false
 
 [node name="SM_TrashBin_Red" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 2.8585 )
+
+[node name="SM_Trash_Red" parent="SM_TrashBin_Red/SM_Bin_Red" index="0"]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
 
-[editable path="Logo"]
+[node name="SM_GarbageTruck_Red" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.222127, 0, -0.975018, 0, 1, 0, 0.975018, 0, -0.222127, -3.03005, -1.00773, -2.29029 )
+
+[node name="SM_GarbageTruck_Blue" parent="." instance=ExtResource( 16 )]
+transform = Transform( -0.423203, 0, 0.906035, 0, 1, 0, -0.906035, 0, -0.423203, 3.74422, -1.02903, -2.50152 )
+
 [editable path="SM_TrashBin_Blue"]
 [editable path="SM_TrashBIn_Green"]
 [editable path="SM_TrashBin_Red"]
