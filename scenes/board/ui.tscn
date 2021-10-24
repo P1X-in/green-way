@@ -17,16 +17,16 @@ script/source = "extends Label
 var fps = 0
 
 func _ready():
-    pass
+	pass
 
 func _process(delta):
-    var current_fps = Performance.get_monitor(Performance.TIME_FPS)
-    if current_fps > fps:
-        fps += 1
-    if current_fps < fps:
-        fps -= 1
-         
-    set_text(str(fps).pad_zeros(2) + 'fps')
+	var current_fps = Performance.get_monitor(Performance.TIME_FPS)
+	if current_fps > fps:
+		fps += 1
+	if current_fps < fps:
+		fps -= 1
+		 
+	set_text(str(fps).pad_zeros(2) + 'fps')
 "
 
 [node name="ui" type="Control"]
@@ -315,22 +315,63 @@ margin_right = 1280.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 32, 0 )
 
-[node name="corner" type="Panel" parent="."]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 106.0
-margin_bottom = 44.0
+[node name="corner_left" type="Panel" parent="."]
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 122.0
+margin_bottom = 52.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fps" type="Label" parent="corner"]
+[node name="fps" type="Label" parent="corner_left"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "144fps"
 align = 1
 valign = 1
 script = SubResource( 2 )
+
+[node name="corner_right" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -48.0
+margin_top = 24.0
+margin_right = -48.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="corner_right"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -250.0
+margin_bottom = 43.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="zoom_out" type="Button" parent="corner_right/HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 43.0
+text = "  -  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="camera_mode" type="Button" parent="corner_right/HBoxContainer"]
+margin_left = 72.0
+margin_right = 178.0
+margin_bottom = 43.0
+text = " CAMERA "
+
+[node name="zoom_in" type="Button" parent="corner_right/HBoxContainer"]
+margin_left = 194.0
+margin_right = 250.0
+margin_bottom = 43.0
+text = "  +  "
 
 [editable path="left/tiles/Icon3D"]
 [editable path="left/tiles/Icon3D/ViewportContainer/Viewport/Camera"]
