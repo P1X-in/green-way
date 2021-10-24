@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/buildings/Building_House_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/main_camera.tscn" type="PackedScene" id=2]
@@ -10,50 +10,27 @@
 [ext_resource path="res://assets/bins/TrashBin_Green.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/bins/TrashBin_Red.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/bins/TrashBin_Blue.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/buildings/Building_Industry_1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://assets/audio/haha_33.wav" type="AudioStream" id=12]
 [ext_resource path="res://scenes/Credits.gd" type="Script" id=13]
+[ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=14]
+[ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=15]
 
-[sub_resource type="Animation" id=1]
-resource_name = "demo"
-length = 8.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("main_camera:translation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 4, 8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( -0.5, 0.418, 2 ), Vector3( 0.5, 0.418, 2 ), Vector3( -0.5, 0.418, 2 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("main_camera:rotation_degrees")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 4, 8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( -12, -2, 0 ), Vector3( -12, 2, 0 ), Vector3( -12, -2, 0 ) ]
-}
+[sub_resource type="DynamicFont" id=2]
+size = 60
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 11 )
 
-[node name="MainMenu" type="Spatial"]
+[node name="GameOver" type="Spatial"]
 script = ExtResource( 13 )
 
 [node name="Logo" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.917, 0 )
-
-[node name="BodyRed001" parent="Logo/RootNode" index="2"]
-visible = false
+transform = Transform( 0.5, 0, 0, 0, 0.482963, -0.12941, 0, 0.12941, 0.482963, 0, 1.687, 0 )
 
 [node name="main_camera" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.99999, -0.000907183, 0.00426796, 0, 0.978148, 0.207912, -0.00436331, -0.20791, 0.978138, 0.0625, 0.418, 2 )
+transform = Transform( 0.99939, -0.000927567, -0.0348872, 0, 0.999647, -0.0265782, 0.0348995, 0.0265621, 0.999038, 0, 0.826, 2.583 )
+fov = 50.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.819152, 0.242404, -0.519837, 0, 0.906308, 0.422618, 0.573577, -0.346189, 0.742404, 0, 0, 0 )
@@ -62,63 +39,85 @@ shadow_enabled = true
 
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 margin_left = -362.5
-margin_top = -128.0
+margin_top = -200.0
 margin_right = 362.5
+margin_bottom = 200.0
+rect_min_size = Vector2( 725, 400 )
 theme = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = -362.5
+margin_top = -382.0
+margin_right = 362.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="game over" type="Label" parent="Panel/VBoxContainer"]
 margin_right = 725.0
-margin_bottom = 27.0
-custom_constants/separation = 96
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = ExtResource( 15 )
+text = "Congratulation!"
+align = 1
+
+[node name="message" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 105.0
+margin_right = 725.0
+margin_bottom = 148.0
+custom_styles/normal = ExtResource( 14 )
+text = "You proved your skills in recycling management."
+align = 1
+
+[node name="space" type="Control" parent="Panel/VBoxContainer"]
+margin_top = 160.0
+margin_right = 725.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 236.0
+margin_right = 725.0
+margin_bottom = 329.0
 alignment = 1
+
+[node name="Score_" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+margin_left = 114.0
+margin_top = 33.0
+margin_right = 198.0
+margin_bottom = 60.0
+text = "SCORE:"
+align = 1
+
+[node name="score" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+margin_left = 214.0
+margin_right = 498.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = ExtResource( 15 )
+text = "0000000"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="wermooz" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 58.0
-margin_right = 156.0
-margin_bottom = 27.0
-text = "WermooZ"
-align = 1
-
-[node name="czlowiekimadlo" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 252.0
-margin_right = 458.0
-margin_bottom = 27.0
-text = "Człowiek Imadło"
-
-[node name="w84death" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 554.0
-margin_right = 666.0
-margin_bottom = 27.0
-text = "w84death"
-
-[node name="p1x" type="Label" parent="Panel/VBoxContainer"]
-margin_top = 39.0
-margin_right = 725.0
-margin_bottom = 66.0
-text = "P1X Indie Game Studio,  https://p1x.in"
-align = 1
-
-[node name="Button" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 78.0
-margin_right = 725.0
-margin_bottom = 121.0
+[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer2"]
+margin_left = 514.0
+margin_right = 610.0
+margin_bottom = 93.0
+rect_min_size = Vector2( 96, 0 )
+rect_pivot_offset = Vector2( 0.5, 0.5 )
 text = "OK"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -137,7 +136,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.8298
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.66479, -0.962, -8 )
 
 [node name="Building_House_2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3352, -0.962, -8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3352, -0.962, -8 )
 
 [node name="Building_House_3" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.6648, -0.962, -8 )
@@ -145,49 +144,23 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.6648
 [node name="Building_House_4" parent="." instance=ExtResource( 3 )]
 transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -0.335209, -0.962, -8 )
 
-[node name="SM_Building_Industry" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.335, -0.962, -8 )
-
-[node name="Red" parent="SM_Building_Industry/RootNode" index="1"]
-visible = false
-
-[node name="Green" parent="SM_Building_Industry/RootNode" index="4"]
-visible = false
-
-[node name="Blue" parent="SM_Building_Industry/RootNode" index="5"]
-visible = false
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 6 )
 
 [node name="SM_TrashBin_Blue" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0 )
 
-[node name="SM_Trash_Blue" parent="SM_TrashBin_Blue/RootNode/SM_Bin_Blue" index="0"]
-visible = true
-
 [node name="SM_TrashBIn_Green" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
-[node name="SM_Trash_Green" parent="SM_TrashBIn_Green/RootNode/SM_Bin_Green" index="0"]
-visible = true
-
 [node name="SM_TrashBin_Red" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0 )
-
-[node name="SM_Trash_Red" parent="SM_TrashBin_Red/RootNode/SM_Bin_Red" index="0"]
-visible = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "demo"
-anims/demo = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 autoplay = true
 
 [editable path="Logo"]
-[editable path="SM_Building_Industry"]
 [editable path="SM_TrashBin_Blue"]
 [editable path="SM_TrashBIn_Green"]
 [editable path="SM_TrashBin_Red"]

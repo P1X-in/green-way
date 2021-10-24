@@ -1,11 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/cars/SM_GarbageTruck_Red.glb" type="PackedScene" id=1]
 [ext_resource path="res://assets/ui/SM_Logo.glb" type="PackedScene" id=2]
 
 [node name="Logo" type="Spatial"]
 
 [node name="SM_Logo" parent="." instance=ExtResource( 2 )]
-
-[node name="SM_GarbageTruck_Red" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.702923, 0, 0.711266, 0, 1, 0, -0.711266, 0, -0.702923, 0.377431, -0.346263, -2.67616 )

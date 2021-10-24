@@ -91,15 +91,15 @@ __meta__ = {
 [node name="Space" type="Control" parent="Panel/VBoxContainer2"]
 margin_top = 55.0
 margin_right = 502.0
-margin_bottom = 134.0
+margin_bottom = 171.0
 rect_min_size = Vector2( 0, 24 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer2"]
-margin_top = 146.0
+margin_top = 183.0
 margin_right = 502.0
-margin_bottom = 219.0
+margin_bottom = 256.0
 custom_styles/normal = ExtResource( 11 )
 text = "Game by P1X made on 
 Polish-Swiss GameJam 2021"
@@ -108,13 +108,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Space2" type="Control" parent="Panel/VBoxContainer2"]
-margin_top = 231.0
+[node name="Label2" type="Label" parent="Panel/VBoxContainer2"]
+margin_top = 268.0
 margin_right = 502.0
 margin_bottom = 311.0
-rect_min_size = Vector2( 0, 24 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
+custom_styles/normal = ExtResource( 11 )
+text = "https://p1x.in"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BackgroundAssets" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.66407 )
