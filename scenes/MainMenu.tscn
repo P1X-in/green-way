@@ -9,8 +9,8 @@
 [ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=7]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=8]
 [ext_resource path="res://assets/cars/GarbageTrack_Blue.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/ui/green.stylebox" type="StyleBox" id=10]
-[ext_resource path="res://scenes/ui/gray.stylebox" type="StyleBox" id=11]
+[ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=10]
+[ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=11]
 
 [sub_resource type="Animation" id=1]
 length = 4.0
@@ -186,5 +186,10 @@ anims/demo = SubResource( 1 )
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 autoplay = "demo"
 anims/demo = SubResource( 2 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+extents = Vector3( 16, 4, 32 )
+box_projection = true
+enable_shadows = true
 
 [editable path="Logo"]

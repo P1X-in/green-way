@@ -13,12 +13,13 @@ size = 8.0
 
 [node name="sm_road_straight" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.433013, -1.49012e-08, -0.25, -0.176777, 0.353553, -0.306186, 0.176777, 0.353553, 0.306186, 0, 0, -14 )
+visible = false
 
 [node name="SM_TrashBin_Red" parent="." instance=ExtResource( 3 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.897, -1.387, -1 )
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0.363, -1.641, -1 )
 
 [node name="Exclamation" parent="SM_TrashBin_Red" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.546, -1.634, -4 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.457, -0.904, -4 )
 
 [node name="GarbageTrack_Red" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.2222e-08, 1.13133e-08, 1, 0.258819, 0.965926, 0, -0.965926, 0.258819, -4.37114e-08, 0, -1.078, -2.097 )

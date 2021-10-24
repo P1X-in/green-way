@@ -47,3 +47,103 @@ directional_shadow_blend_splits = true
 
 [node name="Terrain_Plains_Extra" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 0, 160 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 3, 32 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 3, 32 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe3" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 3, 32 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe5" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 288, 3, 32 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe4" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 3, 32 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe6" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 3, 96 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe7" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 3, 96 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe8" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 3, 96 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe9" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 288, 3, 96 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe10" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 3, 96 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe11" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 3, 160 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe12" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 3, 160 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe13" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 3, 160 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe14" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 288, 3, 160 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe15" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 3, 160 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe16" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 3, 224 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe17" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 3, 224 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe18" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 3, 224 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe19" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 288, 3, 224 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe20" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 3, 224 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe21" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 3, 288 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe22" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 3, 288 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe23" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 3, 288 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe24" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 288, 3, 288 )
+extents = Vector3( 32, 4, 32 )
+
+[node name="ReflectionProbe25" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 3, 288 )
+extents = Vector3( 32, 4, 32 )

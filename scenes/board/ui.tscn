@@ -3,8 +3,8 @@
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/icon3d_road.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://scenes/ui/green.stylebox" type="StyleBox" id=4]
-[ext_resource path="res://scenes/ui/gray.stylebox" type="StyleBox" id=5]
+[ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=4]
+[ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 use_mipmaps = true
@@ -54,8 +54,8 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="top/HBoxContainer"]
-margin_left = 464.0
-margin_right = 816.0
+margin_left = 784.0
+margin_right = 1136.0
 margin_bottom = 48.0
 custom_constants/separation = 0
 
@@ -102,6 +102,9 @@ margin_left = 48.0
 margin_right = 128.0
 margin_bottom = 80.0
 
+[node name="sm_road_straight" parent="left/tiles/Icon3D/ViewportContainer/Viewport/Camera" index="0"]
+visible = true
+
 [node name="SM_TrashBin_Red" parent="left/tiles/Icon3D/ViewportContainer/Viewport/Camera" index="1"]
 visible = false
 
@@ -122,6 +125,42 @@ margin_bottom = 61.0
 custom_styles/normal = ExtResource( 4 )
 text = "5"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space3" type="Control" parent="left/tiles"]
+margin_left = 372.0
+margin_right = 404.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 32, 0 )
+
+[node name="new tiles_" type="Label" parent="left/tiles"]
+margin_left = 420.0
+margin_top = 26.0
+margin_right = 476.0
+margin_bottom = 53.0
+text = "NEW:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress" type="Control" parent="left/tiles"]
+margin_left = 492.0
+margin_right = 684.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 192, 0 )
+
+[node name="bar" type="ProgressBar" parent="left/tiles/progress"]
+margin_top = 16.0
+margin_right = 192.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 192, 48 )
+step = 1.0
+value = 50.0
+percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -155,22 +194,46 @@ __meta__ = {
 margin_right = 80.0
 margin_bottom = 80.0
 
-[node name="sm_road_straight" parent="center/attention/Icon3D2/ViewportContainer/Viewport/Camera" index="0"]
-visible = false
-
-[node name="trash_wait_" type="Label" parent="center/attention"]
+[node name="trash_level_" type="Label" parent="center/attention"]
 margin_left = 96.0
 margin_top = 26.0
-margin_right = 288.0
+margin_right = 260.0
 margin_bottom = 53.0
-text = "TRASH WAITING:"
+text = "TRASH LEVEL:"
 align = 1
 valign = 1
 
 [node name="count" type="Label" parent="center/attention"]
-margin_left = 304.0
+margin_left = 276.0
 margin_top = 18.0
-margin_right = 350.0
+margin_right = 322.0
+margin_bottom = 61.0
+custom_styles/normal = ExtResource( 5 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space4" type="Control" parent="center/attention"]
+margin_left = 338.0
+margin_right = 370.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 32, 0 )
+
+[node name="average_" type="Label" parent="center/attention"]
+margin_left = 386.0
+margin_top = 26.0
+margin_right = 498.0
+margin_bottom = 53.0
+text = "AVERAGE:"
+align = 1
+valign = 1
+
+[node name="average" type="Label" parent="center/attention"]
+margin_left = 514.0
+margin_top = 18.0
+margin_right = 560.0
 margin_bottom = 61.0
 custom_styles/normal = ExtResource( 5 )
 text = "0"
@@ -180,13 +243,12 @@ __meta__ = {
 }
 
 [node name="right" type="Panel" parent="."]
-anchor_left = 0.5
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -640.0
+margin_left = -1280.0
 margin_top = -64.0
-margin_right = 640.0
 rect_min_size = Vector2( 0, 64 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -197,21 +259,20 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -342.0
+margin_left = -1280.0
 margin_top = -80.0
+alignment = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Icon3D2" parent="right/score" instance=ExtResource( 2 )]
-margin_right = 80.0
+margin_left = 962.0
+margin_right = 1042.0
 margin_bottom = 80.0
 
 [node name="Camera" parent="right/score/Icon3D2/ViewportContainer/Viewport" index="0"]
 transform = Transform( 0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 15.8437, 1.08666, 16.7491 )
-
-[node name="sm_road_straight" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera" index="0"]
-visible = false
 
 [node name="SM_TrashBin_Red" parent="right/score/Icon3D2/ViewportContainer/Viewport/Camera" index="1"]
 visible = false
@@ -223,20 +284,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
 visible = true
 
 [node name="score_" type="Label" parent="right/score"]
-margin_left = 96.0
+margin_left = 1058.0
 margin_top = 26.0
-margin_right = 236.0
+margin_right = 1142.0
 margin_bottom = 53.0
-text = "COLLECTED:"
+text = "SCORE:"
 align = 1
 valign = 1
 
 [node name="count" type="Label" parent="right/score"]
-margin_left = 252.0
+margin_left = 1158.0
 margin_top = 18.0
-margin_right = 326.0
+margin_right = 1232.0
 margin_bottom = 61.0
-custom_styles/normal = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
 text = "999"
 align = 1
 __meta__ = {
@@ -244,12 +305,12 @@ __meta__ = {
 }
 
 [node name="space" type="Control" parent="right/score"]
-margin_left = 342.0
-margin_right = 374.0
+margin_left = 1248.0
+margin_right = 1280.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 32, 0 )
 
-[node name="Panel" type="Panel" parent="."]
+[node name="corner" type="Panel" parent="."]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 106.0
@@ -258,7 +319,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="fps" type="Label" parent="corner"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "144fps"

@@ -11,8 +11,8 @@
 [ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://scenes/HowTo.gd" type="Script" id=10]
 [ext_resource path="res://assets/terrain/Road_Bend.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/ui/green.stylebox" type="StyleBox" id=12]
-[ext_resource path="res://scenes/ui/gray.stylebox" type="StyleBox" id=13]
+[ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=12]
+[ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=13]
 
 [sub_resource type="QuadMesh" id=1]
 size = Vector2( 16, 9 )
