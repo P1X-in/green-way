@@ -16,6 +16,28 @@ var base = null
 
 onready var animations = $"animations"
 onready var audio = $"/root/SimpleAudioLibrary"
+
+onready var sound_bites = {
+    "dog_0" : $"dog1",
+    "dog_1" : $"dog2",
+    "dog_2" : $"dog3",
+    "dog_3" : $"dog4",
+    "dog_4" : $"dog5",
+    "dog_5" : $"dog6",
+    "dog_6" : $"dog7",
+    "dog_7" : $"dog8",
+    "garbage_0" : $"garbage1",
+    "garbage_1" : $"garbage2",
+    "garbage_2" : $"garbage3",
+    "garbage_3" : $"garbage4",
+    "garbage_4" : $"garbage5",
+    "garbage_5" : $"garbage6",
+    "garbage_6" : $"garbage7",
+    "garbage_7" : $"garbage8",
+    "garbage_8" : $"garbage9",
+    "garbage_9" : $"garbage10",
+}
+
 var templates = load("res://scenes/map/templates.gd").new()
 
 #func _ready():
@@ -142,12 +164,10 @@ func _come_back():
             self.base.return_truck()
 
 func _play_garbage_sound():
-    var pitch = rand_range(0.7, 1.7)
-    var vol   = rand_range(-1.5, 0.5)
     var sample = ""
     if randi() % 3 == 0:
         sample = "dog_" + str(randi() % 8)
     else:
         sample = "garbage_"+ str(randi() % 10)
-    self.audio.param_play(sample, pitch, vol)
 
+    self.sound_bites[sample].play()
