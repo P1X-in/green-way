@@ -3,6 +3,7 @@ extends Spatial
 onready var map = $"map"
 
 onready var audio = $"/root/SimpleAudioLibrary"
+onready var score_container = $"/root/Score"
 #onready var switcher = $"/root/SceneSwitcher"
 #onready var match_setup = $"/root/MatchSetup"
 onready var ui = $"ui"
@@ -56,6 +57,7 @@ func _physics_process(_delta):
     if self.loop.loop_count >= self.loops_to_complete:
         self.loop.stopped = true
         self.map.mouse_layer.detach()
+        self.score_container.score = self.score
         return self.get_tree().change_scene("res://scenes/screens/Win.tscn")
 
 func hover_tile():

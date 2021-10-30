@@ -17,7 +17,7 @@
 [ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=15]
 [ext_resource path="res://assets/ui/main_menu_env.tres" type="Environment" id=16]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 60
 use_mipmaps = true
 use_filter = true
@@ -50,7 +50,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="vbox" type="VBoxContainer" parent="Panel"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -62,15 +62,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="game over" type="Label" parent="Panel/VBoxContainer"]
+[node name="game over" type="Label" parent="Panel/vbox"]
 margin_right = 725.0
 margin_bottom = 93.0
-custom_fonts/font = SubResource( 2 )
 custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = SubResource( 1 )
 text = "Congratulation!"
 align = 1
 
-[node name="message" type="Label" parent="Panel/VBoxContainer"]
+[node name="message" type="Label" parent="Panel/vbox"]
 margin_top = 105.0
 margin_right = 725.0
 margin_bottom = 148.0
@@ -78,19 +78,19 @@ custom_styles/normal = ExtResource( 14 )
 text = "You proved your skills in recycling management."
 align = 1
 
-[node name="space" type="Control" parent="Panel/VBoxContainer"]
+[node name="space" type="Control" parent="Panel/vbox"]
 margin_top = 160.0
 margin_right = 725.0
 margin_bottom = 224.0
 rect_min_size = Vector2( 0, 64 )
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="hbox" type="HBoxContainer" parent="Panel/vbox"]
 margin_top = 236.0
 margin_right = 725.0
 margin_bottom = 329.0
 alignment = 1
 
-[node name="Score_" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Score_" type="Label" parent="Panel/vbox/hbox"]
 margin_left = 114.0
 margin_top = 33.0
 margin_right = 198.0
@@ -98,19 +98,19 @@ margin_bottom = 60.0
 text = "SCORE:"
 align = 1
 
-[node name="score" type="Label" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="score" type="Label" parent="Panel/vbox/hbox"]
 margin_left = 214.0
 margin_right = 498.0
 margin_bottom = 93.0
-custom_fonts/font = SubResource( 2 )
 custom_styles/normal = ExtResource( 15 )
+custom_fonts/font = SubResource( 1 )
 text = "0000000"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer2"]
+[node name="Button" type="Button" parent="Panel/vbox/hbox"]
 margin_left = 514.0
 margin_right = 610.0
 margin_bottom = 93.0
