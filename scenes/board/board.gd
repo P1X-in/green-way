@@ -5,6 +5,7 @@ onready var map = $"map"
 onready var audio = $"/root/SimpleAudioLibrary"
 #onready var switcher = $"/root/SceneSwitcher"
 #onready var match_setup = $"/root/MatchSetup"
+onready var ui = $"ui"
 
 var loop = preload("res://scenes/board/logic/loop.gd").new()
 var paths = preload("res://scenes/board/logic/paths.gd").new(self)
@@ -16,7 +17,7 @@ var mouse_click_position = null
 
 var tiles_available = 5
 var score = 0
-var score_to_win = 1500
+var loops_to_complete = 50
 var latest_house = null
 var latest_industrial = null
 
@@ -51,6 +52,11 @@ func _physics_process(_delta):
     self.hover_tile()
     self.dispatcher.process_dispatch()
     self._update_count()
+
+    if self.loop.loop_count >= self.loops_to_complete:
+        self.loop.stopped = true
+        self.map.mouse_layer.detach()
+        return self.get_tree().change_scene("res://scenes/screens/Win.tscn")
 
 func hover_tile():
     var tile = self.map.model.get_tile(self.map.tile_box_position)
@@ -242,11 +248,6 @@ func _update_count():
     $"ui/left/tiles/count".set_text(str(self.tiles_available))
     self._update_waiting_thrash()
     $"ui/right/score/count".set_text(str(self.score))
-
-    if self.score >= self.score_to_win:
-        self.loop.stopped = true
-        self.map.mouse_layer.detach()
-        return self.get_tree().change_scene("res://scenes/screens/Win.tscn")
 
 func _update_waiting_thrash():
     var count = 0

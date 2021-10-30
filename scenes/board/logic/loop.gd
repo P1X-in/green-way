@@ -8,10 +8,15 @@ var loop_count = 0
 var stopped = false
 var cluster_chance = 2
 
+var averages = []
+
 func start(_board):
     self.board = _board
     self.call_deferred("_loop_tick")
     self.call_deferred("_garbage_tick")
+
+    for _i in range(10):
+        averages.append([1, 2])
 
 func _loop_tick():
     if self.stopped:
@@ -59,6 +64,7 @@ func _loop_tick():
 
     Input.start_joy_vibration(0, 0.5, 0.0, 0.5)
 
+    self.board.ui.start_bar()
     yield(self.board.get_tree().create_timer(self.LOOP_TICK_DURATION), "timeout")
     self.call_deferred("_loop_tick")
 
@@ -68,15 +74,22 @@ func _garbage_tick():
 
     var result
 
+    var houses_count = 0
+    var uncollected_thrash = 0
+
     for house in self.board.map.model.get_house_building_tiles():
+        houses_count += 1
+        if house.building.tile.has_thrash:
+            uncollected_thrash += 1
+
         result = house.building.tile.plant_thrash()
         if result:
             self.board.audio.play("garbage_dump")
 
-        if house.building.tile.thrash_level > 5:
-            self.board.score -= house.building.tile.thrash_level
-            if self.board.score < 0:
-                self.board.score = 0
+    self.averages.pop_front()
+    self.averages.append([uncollected_thrash, houses_count])
+
+    self._award_points()
 
     yield(self.board.get_tree().create_timer(self.GARBAGE_TICK_DURATION), "timeout")
     self.call_deferred("_garbage_tick")
@@ -151,3 +164,16 @@ func _get_random_thrash_type():
     ]
 
     return types[randi() % types.size()]
+
+func _award_points():
+    var uncollected_sum = 0
+    var total_sum = 0
+
+    for average in self.averages:
+        uncollected_sum += average[0]
+        total_sum += average[1]
+
+    var average = (float(uncollected_sum) / float(total_sum)) * 100.0
+
+    self.board.score += self.board.tiles_available + (100 - int(average))
+    self.board.ui.update_avr(int(average))

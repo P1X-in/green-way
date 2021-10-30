@@ -137,7 +137,6 @@ func _come_back():
         self.has_thrash = false
         self.get_parent().remove_child(self)
         self.target = null
-        self.board.score += 1
 
         if self.base != null:
             self.base.return_truck()

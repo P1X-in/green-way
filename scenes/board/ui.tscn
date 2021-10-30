@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/icon3d_road.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/SourceCodePro-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/ui/green.stylebox" type="StyleBox" id=4]
 [ext_resource path="res://assets/ui/gray.stylebox" type="StyleBox" id=5]
+[ext_resource path="res://scenes/board/ui.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 use_mipmaps = true
@@ -17,22 +18,39 @@ script/source = "extends Label
 var fps = 0
 
 func _ready():
-	pass
+    pass
 
-func _process(delta):
-	var current_fps = Performance.get_monitor(Performance.TIME_FPS)
-	if current_fps > fps:
-		fps += 1
-	if current_fps < fps:
-		fps -= 1
-		 
-	set_text(str(fps).pad_zeros(2) + 'fps')
+func _process(_delta):
+    var current_fps = Performance.get_monitor(Performance.TIME_FPS)
+    if current_fps > fps:
+        fps += 1
+    if current_fps < fps:
+        fps -= 1
+         
+    set_text(str(fps).pad_zeros(2) + 'fps')
 "
+
+[sub_resource type="Animation" id=3]
+resource_name = "tick"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("left/tiles/progress/bar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 30 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 100.0 ]
+}
 
 [node name="ui" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -139,9 +157,9 @@ rect_min_size = Vector2( 32, 0 )
 
 [node name="new tiles_" type="Label" parent="left/tiles"]
 visible = false
-margin_left = 254.0
+margin_left = 206.0
 margin_top = 26.0
-margin_right = 310.0
+margin_right = 262.0
 margin_bottom = 53.0
 text = "NEW:"
 align = 1
@@ -162,7 +180,6 @@ margin_right = 192.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 192, 48 )
 step = 1.0
-value = 50.0
 percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -333,6 +350,7 @@ valign = 1
 script = SubResource( 2 )
 
 [node name="corner_right" type="Panel" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -48.0
@@ -372,6 +390,9 @@ margin_left = 194.0
 margin_right = 250.0
 margin_bottom = 43.0
 text = "  +  "
+
+[node name="animations" type="AnimationPlayer" parent="."]
+anims/tick = SubResource( 3 )
 
 [editable path="left/tiles/Icon3D"]
 [editable path="left/tiles/Icon3D/ViewportContainer/Viewport/Camera"]

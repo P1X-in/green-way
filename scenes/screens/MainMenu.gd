@@ -16,4 +16,4 @@ func _input(event):
 		return self.get_tree().change_scene("res://scenes/screens/HowTo.tscn")
 
 	if event is InputEventKey:
-		return self.get_tree().change_scene("res://scenesscreens//HowTo.tscn")
+		return self.get_tree().change_scene("res://scenes/screens//HowTo.tscn")
