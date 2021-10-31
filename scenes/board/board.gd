@@ -25,6 +25,8 @@ var latest_industrial = null
 func _ready():
     self.set_up_map()
     self.set_up_board()
+    var rand_str = str(1 + randi()%4)
+    self.audio.track("game"+rand_str)
     self.loop.start(self)
 
 func _input(event):

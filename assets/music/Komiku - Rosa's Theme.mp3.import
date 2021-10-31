@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Komiku - Rosa's Theme.mp3-1655c6e569f038bc64f185bdea593a1a.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Komiku - Rosa's Theme.mp3"
+dest_files=[ "res://.import/Komiku - Rosa's Theme.mp3-1655c6e569f038bc64f185bdea593a1a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

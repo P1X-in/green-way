@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Komiku - Road 4 Chill.mp3-edd3939f27ada3c1e5a8c7fdd0f77c27.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Komiku - Road 4 Chill.mp3"
+dest_files=[ "res://.import/Komiku - Road 4 Chill.mp3-edd3939f27ada3c1e5a8c7fdd0f77c27.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

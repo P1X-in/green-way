@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Komiku - The promoters of capitalism.mp3-d515668b4b2ab3d7ffa3657725f480d0.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Komiku - The promoters of capitalism.mp3"
+dest_files=[ "res://.import/Komiku - The promoters of capitalism.mp3-d515668b4b2ab3d7ffa3657725f480d0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
