@@ -25,8 +25,15 @@ var latest_industrial = null
 func _ready():
     self.set_up_map()
     self.set_up_board()
+    
+    # REFACTOR ME PLEASE
     var rand_str = str(1 + randi()%4)
     self.audio.track("game"+rand_str)
+    $"ui/bottom/horizontal/vertical/msg".text = "~ Road "+rand_str+" Chill ~"
+    $"ui/bottom/horizontal/vertical/submsg".text = "Tune by Komiku"
+    $"ui/bottom/horizontal/vertical/AnimationPlayer".play("show")
+    # THANKS
+    
     self.loop.start(self)
 
 func _input(event):

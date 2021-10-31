@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/ui/gui_demo_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/icon3d_road.tscn" type="PackedScene" id=2]
@@ -11,6 +11,34 @@
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "show"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.9, 2.4, 4.9, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Label
@@ -90,6 +118,57 @@ margin_bottom = 48.0
 custom_fonts/font = SubResource( 1 )
 text = "ENCHANCED EDITION"
 align = 1
+
+[node name="bottom" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -88.0
+margin_right = 640.0
+margin_bottom = -88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="horizontal" type="HBoxContainer" parent="bottom"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -640.0
+margin_top = -48.0
+margin_right = 640.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vertical" type="VBoxContainer" parent="bottom/horizontal"]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 590.0
+margin_right = 690.0
+margin_bottom = 48.0
+custom_constants/separation = 0
+
+[node name="msg" type="Label" parent="bottom/horizontal/vertical"]
+margin_right = 100.0
+margin_bottom = 27.0
+text = "MESSAGE"
+align = 1
+
+[node name="submsg" type="Label" parent="bottom/horizontal/vertical"]
+margin_top = 27.0
+margin_right = 100.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 1 )
+text = "SUBMESSAGE"
+align = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="bottom/horizontal/vertical"]
+anims/show = SubResource( 4 )
 
 [node name="left" type="Panel" parent="."]
 anchor_top = 1.0
@@ -219,8 +298,8 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 32, 0 )
 
 [node name="Icon3D2" parent="center/attention" instance=ExtResource( 2 )]
-margin_left = 102.0
-margin_right = 182.0
+margin_left = 57.0
+margin_right = 137.0
 margin_bottom = 80.0
 
 [node name="trash_level_" type="Label" parent="center/attention"]
@@ -234,9 +313,9 @@ align = 1
 valign = 1
 
 [node name="count" type="Label" parent="center/attention"]
-margin_left = 198.0
+margin_left = 153.0
 margin_top = 18.0
-margin_right = 244.0
+margin_right = 199.0
 margin_bottom = 61.0
 custom_styles/normal = ExtResource( 5 )
 text = "0"
@@ -256,9 +335,9 @@ align = 1
 valign = 1
 
 [node name="average" type="Label" parent="center/attention"]
-margin_left = 260.0
+margin_left = 215.0
 margin_top = 18.0
-margin_right = 306.0
+margin_right = 261.0
 margin_bottom = 61.0
 custom_styles/normal = ExtResource( 4 )
 text = "0"
